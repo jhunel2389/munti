@@ -1,9 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
 
-use App\Models\Info;
 use App\Models\User;
-use App\Models\PasswordRecovery;
 use Validator;
 use Response;
 use Auth;
