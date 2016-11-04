@@ -33,7 +33,7 @@
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
 
-    <!--<form>-->
+    <form onSubmit="return regUser();" id="regForm">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Firstname" id="fname" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -68,11 +68,11 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" id="btnSubmit" onclick="regUser();">Register</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" id="btnSubmit">Register</button>
         </div>
         <!-- /.col -->
       </div>
-    <!--</form>-->
+    </form>
 
     <a href="{{URL::Route('getLogin')}}" class="text-center">I already have a membership</a>
   </div>
@@ -118,6 +118,10 @@
     });
   });
 
+  $("#regForm").submit(function(e) {
+      e.preventDefault();
+  });
+
   function validateEmail(email)
   { 
     var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
@@ -137,38 +141,38 @@
     $("#myModal").removeClass("modal-success");
       if($password == $repassword)
       {
-        $("#myModal").addClass("modal-danger");
-        $('#mdl_msg').text("passed");
-        $('#myModal').modal('show');
+        
 
         $("#btnSubmit").empty();
         $("#btnSubmit").append('<div class="overlay tbl-overlay"><i class="fa fa-spinner fa-spin"></i></div>');
         $('#btnSubmit').prop('disabled', true);
-        /*$.post('{{URL::Route('postCreate')}}', { _token: $_token, email: $email , username: $username, password: $password, fname: $fname, lname: $lname}, function(data)
+
+        $.post('{{URL::Route('postCreate')}}', { _token: $_token, email: $email , username: $username, password: $password, fname: $fname, lname: $lname}, function(data)
         {
             $("#btnSubmit").empty();
             $("#btnSubmit").append("Register");
             $('#btnSubmit').prop('disabled', false);
-            /*if(data.status == "success")
+            if(data.status == "success")
             {
-
-              $('.has-error').empty();
-              $('#mdl_registration').modal('hide');
-              promptMsg(data.status,data.message)
+              $("#myModal").addClass("modal-success");
+              $('#mdl_msg').text(data.message);
+              $('#myModal').modal('show');
+              $("input, textarea").val("");
             }
             else
             {
-              $('.has-error').empty();
-              $('.has-error').append($('<label />' , {'class' :  'control-label' , 'html' : '<i class="fa fa-times-circle-o"></i> '+data.message+''}));
+              $("#myModal").addClass("modal-danger");
+              $('#mdl_msg').text(data.message);
+              $('#myModal').modal('show');
             }
             //console.log(data);
-        });*/
+        });
       }
       else
       {
         
         $("#myModal").addClass("modal-danger");
-        $('#mdl_msg').text("failed");
+        $('#mdl_msg').text("Password does not match.");
         $('#myModal').modal('show');
 
         //alert("pass");
