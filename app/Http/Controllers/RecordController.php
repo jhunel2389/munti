@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Household;
+use App\Models\HouseholdMember;
 use App\Http\Requests;
 use Auth;
 use App;
 use View;
+use Validator;
 
 class RecordController extends Controller
 {
@@ -17,8 +19,270 @@ class RecordController extends Controller
 		return View::Make("records.record")->with("userInfo",$userInfo)->with('mt','re');
     }
 
-    function addRecord()
+    function addRecordHousehold()
     {
-    	
+    	$region = Request::get('region');
+		$province = Request::get('province');
+		$city = Request::get('city');
+		$brgy_id = Request::get('brgy_id');
+		$household_id_no = Request::get('household_id_no');
+		$name_of_respondent = Request::get('name_of_respondent');
+		$date = Request::get('date');
+		$time_started = Request::get('time_started');
+		$interviewer_enumerator = Request::get('interviewer_enumerator');
+		$a_1 = Request::get('a_1');
+		$a_2 = Request::get('a_2');
+		$a_3 = Request::get('a_3');
+		$a_4 = Request::get('a_4');
+		$b_5 = Request::get('b_5');
+		$b_6 = Request::get('b_6');
+		$b_7 = Request::get('b_7');
+		$b_8 = Request::get('b_8');
+		$b_9 = Request::get('b_9');
+		$c_10 = Request::get('c_10');
+		$encoded_by = Request::get('encoded_by');
+
+		$validator = Validator::make(Request::all(), array(
+			'region' => 'required',
+			'province' => 'required',
+			'city' => 'required',
+			'brgy_id' => 'required',
+			'household_id_no' => 'required',
+			'name_of_respondent' => 'required',
+			'date' => 'required',
+			'time_started' => 'required',
+			'interviewer_enumerator' => 'required',
+			'a_1' => 'required',
+			'a_2' => 'required',
+			'a_3' => 'required',
+			'a_4' => 'required',
+			'b_5' => 'required',
+			'b_6' => 'required',
+			'b_7' => 'required',
+			'b_8' => 'required',
+			'b_9' => 'required',
+			'c_10' => 'required',
+			'encoded_by' => 'required',
+		));
+
+		if ($validator -> fails())
+		{
+			return  Response::json(array(
+	                    'status'  => 'fail',
+	                    'message'  => 'Fill out all fields.',
+	                ));
+		}
+		else
+		{
+			$household = new Household();
+			$household -> region = $region;
+			$household -> province = $province;
+			$household -> city = $city;
+			$household -> brgy_id = $brgy_id;
+			$household -> household_id_no = $household_id_no;
+			$household -> name_of_respondent = $name_of_respondent;
+			$household -> date = $date;
+			$household -> time_started = $time_started;
+			$household -> interviewer_enumerator = $interviewer_enumerator;
+			$household -> a_1 = $a_1;
+			$household -> a_2 = $a_2;
+			$household -> a_3 = $a_3;
+			$household -> a_4 = $a_4;
+			$household -> b_5 = $b_5;
+			$household -> b_6 = $b_6;
+			$household -> b_7 = $b_7;
+			$household -> b_8 = $b_8;
+			$household -> b_9 = $b_9;
+			$household -> c_10 = $c_10;
+			$household -> encoded_by = $encoded_by;
+
+			if ($household -> save())
+			{
+				return Response::json(array(
+		                    'status'  => 'success',
+		                    'message'  => 'New household record is successfully save.',
+		                ));
+			}
+			else
+			{
+				return  Response::json(array(
+		                    'status'  => 'fail',
+		                    'message'  => 'An error occured while creating the new household record. Please try again.',
+		                ));
+			}
+		}
+    }
+
+    function addHouseholdMember()
+    {
+    	$household_system_id = Request::get('household_system_id');
+    	$household_member_no = Request::get('household_member_no');
+    	$fname = Request::get('fname');
+    	$lname = Request::get('lname');
+    	$mname = Request::get('mname');
+    	$12 = Request::get('12');
+    	$13 = Request::get('13');
+    	$14_sex = Request::get('14_sex');
+    	$15_dob = Request::get('15_dob');
+    	$16_civil_reg = Request::get('16_civil_reg');
+    	$17_stats = Request::get('17_stats');
+    	$18 = Request::get('18');
+    	$19_ofw = Request::get('19_ofw');
+    	$20 = Request::get('20');
+    	$d_21_schooling = Request::get('d_21_schooling');
+    	$d_22 = Request::get('d_22');
+    	$d_23 = Request::get('d_23');
+    	$d_24 = Request::get('d_24');
+    	$d_25_a = Request::get('d_25_a');
+    	$d_25_b = Request::get('d_25_b');
+    	$d_26 = Request::get('d_26');
+    	$f_27 = Request::get('f_27');
+    	$f_28 = Request::get('f_28');
+    	$f_29 = Request::get('f_29');
+    	$f_30 = Request::get('f_30');
+    	$f_40 = Request::get('f_40');
+    	$f_41 = Request::get('f_41');
+    	$f_42 = Request::get('f_42');
+    	$f_43 = Request::get('f_43');
+    	$f_44 = Request::get('f_44');
+    	$f_45 = Request::get('f_45');
+    	$f_46 = Request::get('f_46');
+    	$f_47 = Request::get('f_47');
+    	$f_31 = Request::get('f_31');
+    	$f_32 = Request::get('f_32');
+    	$f_33 = Request::get('f_33');
+    	$f_34 = Request::get('f_34');
+    	$f_35 = Request::get('f_35');
+    	$f_36 = Request::get('f_36');
+    	$f_37 = Request::get('f_37');
+    	$f_38 = Request::get('f_38');
+    	$f_39 = Request::get('f_39');
+    	$f_48_a = Request::get('f_48_a');
+    	$f_48_b = Request::get('f_48_b');
+    	$f_49 = Request::get('f_49');
+    	$encoded_by = Request::get('encoded_by');
+
+
+    	$validator = Validator::make(Request::all(), array(
+			'household_system_id' => 'required',
+			'household_member_no' => 'required',
+			'fname' => 'required',
+			'lname' => 'required',
+			'mname' => 'required',
+			'12' => 'required',
+			'13' => 'required',
+			'14_sex' => 'required',
+			'15_dob' => 'required',
+			'16_civil_reg' => 'required',
+			'17_stats' => 'required',
+			'18' => 'required',
+			'19_ofw' => 'required',
+			'20' => 'required',
+			'd_21_schooling' => 'required',
+			'd_22' => 'required',
+			'd_23' => 'required',
+			'd_24' => 'required',
+			'd_25_a' => 'required',
+			'd_25_b' => 'required',
+			'd_26' => 'required',
+			'f_27' => 'required',
+			'f_28' => 'required',
+			'f_29' => 'required',
+			'f_30' => 'required',
+			'f_40' => 'required',
+			'f_41' => 'required',
+			'f_42' => 'required',
+			'f_43' => 'required',
+			'f_44' => 'required',
+			'f_45' => 'required',
+			'f_46' => 'required',
+			'f_47' => 'required',
+			'f_31' => 'required',
+			'f_32' => 'required',
+			'f_33' => 'required',
+			'f_34' => 'required',
+			'f_35' => 'required',
+			'f_36' => 'required',
+			'f_37' => 'required',
+			'f_38' => 'required',
+			'f_39' => 'required',
+			'f_48_a' => 'required',
+			'f_48_b' => 'required',
+			'f_49' => 'required',
+			'encoded_by' => 'required',
+		));
+
+		if ($validator -> fails())
+		{
+			return  Response::json(array(
+	                    'status'  => 'fail',
+	                    'message'  => 'Fill out all fields.',
+	                ));
+		}
+		else
+		{
+			$householdMember = new HouseholdMember();
+			$householdMember -> household_system_id = $household_system_id;
+			$householdMember -> household_member_no = $household_member_no;
+			$householdMember -> fname = $fname;
+			$householdMember -> lname = $lname;
+			$householdMember -> mname = $mname;
+			$householdMember -> 12 = $12;
+			$householdMember -> 13 = $13;
+			$householdMember -> 14_sex = $14_sex;
+			$householdMember -> 15_dob = $15_dob;
+			$householdMember -> 16_civil_reg = $16_civil_reg;
+			$householdMember -> 17_stats = $17_stats;
+			$householdMember -> 18 = $18;
+			$householdMember -> 19_ofw = $19_ofw;
+			$householdMember -> 20 = $20;
+			$householdMember -> d_21_schooling = $d_21_schooling;
+			$householdMember -> d_22 = $d_22;
+			$householdMember -> d_23 = $d_23;
+			$householdMember -> d_24 = $d_24;
+			$householdMember -> d_25_a = $d_25_a;
+			$householdMember -> d_25_b = $d_25_b;
+			$householdMember -> d_26 = $d_26;
+			$householdMember -> f_27 = $f_27;
+			$householdMember -> f_28 = $f_28;
+			$householdMember -> f_29 = $f_29;
+			$householdMember -> f_30 = $f_30;
+			$householdMember -> f_40 = $f_40;
+			$householdMember -> f_41 = $f_41;
+			$householdMember -> f_42 = $f_42;
+			$householdMember -> f_43 = $f_43;
+			$householdMember -> f_44 = $f_44;
+			$householdMember -> f_45 = $f_45;
+			$householdMember -> f_46 = $f_46;
+			$householdMember -> f_47 = $f_47;
+			$householdMember -> f_31 = $f_31;
+			$householdMember -> f_32 = $f_32;
+			$householdMember -> f_33 = $f_33;
+			$householdMember -> f_34 = $f_34;
+			$householdMember -> f_35 = $f_35;
+			$householdMember -> f_36 = $f_36;
+			$householdMember -> f_37 = $f_37;
+			$householdMember -> f_38 = $f_38;
+			$householdMember -> f_39 = $f_39;
+			$householdMember -> f_48_a = $f_48_a;
+			$householdMember -> f_48_b = $f_48_b;
+			$householdMember -> f_49 = $f_49;
+			$householdMember -> encoded_by = $encoded_by;
+
+			if ($householdMember -> save())
+			{
+				return Response::json(array(
+		                    'status'  => 'success',
+		                    'message'  => 'New household member is successfully added.',
+		                ));
+			}
+			else
+			{
+				return  Response::json(array(
+		                    'status'  => 'fail',
+		                    'message'  => 'An error occured while adding the new household member to the record. Please try again.',
+		                ));
+			}
+		}
     }
 }

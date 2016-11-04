@@ -164,7 +164,7 @@ class UserController extends Controller {
 	}
 
 
-		public function postCreate()
+	public function postCreate()
 	{
 		$email = Request::get('email');
 		$username = Request::get('username');
