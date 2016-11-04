@@ -63,22 +63,133 @@
 							  	<span class="input-group-addon" id="sizing-addon2">III. Name of respondent ( Pangelan ng nakapanayam )</span>
 							  	<input type="text" class="form-control" placeholder="Name of respondent ( Pangelan ng nakapanayam )" aria-describedby="sizing-addon2">
 							</div>
-							<div class="input-group">
-							  	<span class="input-group-addon" id="sizing-addon2">IV. Date ( Petsa ng panayam )</span>
-							  	<input type="text" class="form-control" placeholder="Date ( Petsa ng panayam )" aria-describedby="sizing-addon2">
-							</div>
-							<div class="input-group date">
-			                  	<span class="input-group-addon" id="sizing-addon2">IV. Date ( Petsa ng panayam )</span>
-			                  	<input type="text" class="form-control pull-right" id="datepicker">
-			                </div>
-							<div class="input-group">
-							  	<span class="input-group-addon" id="sizing-addon2">V. Date ( Petsa ng panayam )</span>
-							  	<input type="text" class="form-control" placeholder="Date ( Petsa ng panayam )" aria-describedby="sizing-addon2">
-							</div>
+							<div class="bootstrap-timepicker">
+								<div class="input-group date">
+				                  	<span class="input-group-addon" id="sizing-addon2">IV. Date ( Petsa ng panayam )</span>
+				                  	<input type="text" class="form-control pull-right" id="datepicker">
+				                </div>
+				            </div>
+				            <div class="bootstrap-timepicker">
+			                  <div class="input-group">
+			                  	<div class="input-group-addon">
+			                      V. Time started ( Oras ng panayam )
+			                    </div>
+			                    <input type="text" class="form-control timepicker">
+			                  </div>
+              				</div>
 							<div class="input-group">
 							  	<span class="input-group-addon" id="sizing-addon2">VI. Interviewer ( Tagapanayam )</span>
 							  	<input type="text" class="form-control" placeholder="Interviewer ( Tagapanayam )" aria-describedby="sizing-addon2">
 							</div>
+							
+					  	</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+          			<div class="panel panel-default">
+          				<div class="panel-heading">A. Dwelling</div>
+					  	<div class="panel-body">
+						    <div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 1. In what type of building does the household reside?</label>
+						    	<span class="help-block">Ano ang uri ng tirahan ng sambahayan?</span>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				                      Single house
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Duplex
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Multi-unit residential(three units or more)
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Commercial/industrial/agricultural building
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Others(boat, cave, etc.)
+				                    </label>
+				                </div>
+				            </div>
+				            <div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 2. How many bedrooms does this housing unit have?</label>
+						    	<span class="help-block">Ilang silid/kwarto mayroon ang tirahan ng sambahayan?</span>
+						         <input type="text" class="form-control"  placeholder="" style="width: 60px">
+				            </div>
+				            <div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 3. What type of construction materials are the roofs made of?</label>
+						    	<span class="help-block">Anong uri ng materyales ang ginamit sa paggawa ng bubong ng tirahan?</span>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				                      Strong materials(concrete, brick, stone, wood, galvanized iron)
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Ligh materials( bamboo, sawali, cogon, nipa)
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Salvaged/makeshift materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Mixed but predominantly strong materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Mixed but predominantly light materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Mixed but predominantly salvaged materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Not applicable
+				                    </label>
+				                </div>
+				            </div>
+					  	</div>
+					</div>
+					<div class="panel panel-default">
+          				<div class="panel-heading">B. Household Characteristics</div>
+					  	<div class="panel-body">
+						    
+					  	</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+          			<div class="panel panel-default">
+          				<div class="panel-heading">C. Demography</div>
+					  	<div class="panel-body">
+						    
 					  	</div>
 					</div>
 				</div>
@@ -95,14 +206,15 @@
   @include('includes.footer')
   @include('includes.settingSidebar')
 </div>
-<!-- InputMask -->
-<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.js"></script>
-<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.extensions.js"></script>
 <script type="text/javascript">
+$(function () {
     $('#datepicker').datepicker({
       autoclose: true
     });
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+});
 </script>
 @endsection
 

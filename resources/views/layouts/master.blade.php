@@ -12,6 +12,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 		<!-- Ionicons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<!-- Bootstrap time Picker -->
+  		<link rel="stylesheet" href="{{env('FILE_PATH_CUSTOM')}}plugins/timepicker/bootstrap-timepicker.css">
 		<!-- iCheck -->
 		<link rel="stylesheet" href="{{env('FILE_PATH_CUSTOM')}}plugins/iCheck/flat/blue.css">
 		<!-- jvectormap -->
@@ -169,6 +171,8 @@
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/daterangepicker/daterangepicker.js"></script>
 	<!-- datepicker -->
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/datepicker/bootstrap-datepicker.js"></script>
+	<!-- bootstrap time picker -->
+	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/timepicker/bootstrap-timepicker.js"></script>
 	<!-- Bootstrap WYSIHTML5 -->
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 	<!-- Slimscroll -->
@@ -191,6 +195,7 @@
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.js"></script>
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
 
 </body>
 </html>
