@@ -1,9 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
 
-use App\Models\Info;
 use App\Models\User;
-use App\Models\PasswordRecovery;
 use Validator;
 use Response;
 use Auth;
@@ -166,7 +164,7 @@ class UserController extends Controller {
 	}
 
 
-		public function postCreate()
+	public function postCreate()
 	{
 		$email = Request::get('email');
 		$username = Request::get('username');
