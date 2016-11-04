@@ -43,8 +43,9 @@ class UserController extends Controller {
 		else
 		{
 			$remember = (Request::has('remember')) ? true : false;
+			$field = filter_var(Request::get('txtUsername'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 			$auth = Auth::attempt(array(
-				'username' => Request::get('txtUsername'),
+				$field => Request::get('txtUsername'),
 				'password' => Request::get('txtPassword'),
 			), $remember);
 
@@ -167,26 +168,19 @@ class UserController extends Controller {
 
 		public function postCreate()
 	{
-		$email = Input::get('email');
-		$username = Input::get('username');
-		$password = Input::get('password');
-		$fname = Input::get('fname');
-		$lname = Input::get('lname');
-		$gender = Input::get('gender');
-		$dob = Input::get('dob');
-		$mobile = Input::get('mobile');
-		$address = Input::get('address');
+		$email = Request::get('email');
+		$username = Request::get('username');
+		$password = Request::get('password');
+		$fname = Request::get('fname');
+		$lname = Request::get('lname');
+		$gender = Request::get('gender');
 
-		$validator = Validator::make(Input::all(), array(
+		$validator = Validator::make(Request::all(), array(
 			'email' => 'required',
 			'username' => 'required',
 			'password' => 'required',
 			'fname' => 'required',
 			'lname' => 'required',
-			'gender' => 'required',
-			'dob' => 'required',
-			'mobile' => 'required',
-			'address' => 'required'
 		));
 		if ($validator -> fails())
 		{
@@ -201,20 +195,19 @@ class UserController extends Controller {
 			$result2 = User::where('email','=',$email)->first();
 
 			if(empty($result1) && empty($result2))
-			{
-				$date = new DateTime();
-				$vCode = date_format($date, 'U').str_random(110);		
+			{	
 				$user = new User();
-				$user -> username = Input::get('username');
-				$user -> password = Hash::make(Input::get('password'));
+				$user -> username = Request::get('username');
+				$user -> password = Hash::make(Request::get('password'));
 				$user -> email = $email;
-				$user -> Vcode = $vCode;
+				$user -> lname = $lname;
+				$user -> fname = $fname;
 				
 				if ($user -> save())
 				{
 					return Response::json(array(
 			                    'status'  => 'success',
-			                    'message'  => 'Please check your email to verify your e-mail.Thank you.',
+			                    'message'  => 'Please go to login page and you may login now.',
 			                ));
 				}
 				else
