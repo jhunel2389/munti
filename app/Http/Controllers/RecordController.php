@@ -120,15 +120,15 @@ class RecordController extends Controller
     	$fname = Request::get('fname');
     	$lname = Request::get('lname');
     	$mname = Request::get('mname');
-    	$12 = Request::get('12');
-    	$13 = Request::get('13');
-    	$14_sex = Request::get('14_sex');
-    	$15_dob = Request::get('15_dob');
-    	$16_civil_reg = Request::get('16_civil_reg');
-    	$17_stats = Request::get('17_stats');
-    	$18 = Request::get('18');
-    	$19_ofw = Request::get('19_ofw');
-    	$20 = Request::get('20');
+    	$l12 = Request::get('12');
+    	$l13 = Request::get('13');
+    	$l14_sex = Request::get('14_sex');
+    	$l15_dob = Request::get('15_dob');
+    	$l16_civil_reg = Request::get('16_civil_reg');
+    	$l17_stats = Request::get('17_stats');
+    	$l18 = Request::get('18s');
+    	$l19_ofw = Request::get('19_ofw');
+    	$l20 = Request::get('20s');
     	$d_21_schooling = Request::get('d_21_schooling');
     	$d_22 = Request::get('d_22');
     	$d_23 = Request::get('d_23');
@@ -169,15 +169,15 @@ class RecordController extends Controller
 			'fname' => 'required',
 			'lname' => 'required',
 			'mname' => 'required',
-			'12' => 'required',
-			'13' => 'required',
+			'12s' => 'required',
+			'13s' => 'required',
 			'14_sex' => 'required',
 			'15_dob' => 'required',
 			'16_civil_reg' => 'required',
 			'17_stats' => 'required',
-			'18' => 'required',
+			'18s' => 'required',
 			'19_ofw' => 'required',
-			'20' => 'required',
+			'20s' => 'required',
 			'd_21_schooling' => 'required',
 			'd_22' => 'required',
 			'd_23' => 'required',
@@ -222,20 +222,20 @@ class RecordController extends Controller
 		else
 		{
 			$householdMember = new HouseholdMember();
-			$householdMember -> household_system_id = $household_system_id;
+			/*$householdMember -> household_system_id = $household_system_id;
 			$householdMember -> household_member_no = $household_member_no;
 			$householdMember -> fname = $fname;
 			$householdMember -> lname = $lname;
 			$householdMember -> mname = $mname;
-			$householdMember -> 12 = $12;
-			$householdMember -> 13 = $13;
-			$householdMember -> 14_sex = $14_sex;
-			$householdMember -> 15_dob = $15_dob;
-			$householdMember -> 16_civil_reg = $16_civil_reg;
-			$householdMember -> 17_stats = $17_stats;
-			$householdMember -> 18 = $18;
+			$householdMember -> 12 = $l12;
+			$householdMember -> 13 = $l13;
+			$householdMember -> 14_sex = $l14_sex;
+			$householdMember -> 15_dob = $l15_dob;
+			$householdMember -> 16_civil_reg = $l16_civil_reg;
+			$householdMember -> 17_stats = $l17_stats;
+			$householdMember -> 18 = $l18;
 			$householdMember -> 19_ofw = $19_ofw;
-			$householdMember -> 20 = $20;
+			$householdMember -> 20 = $l20;
 			$householdMember -> d_21_schooling = $d_21_schooling;
 			$householdMember -> d_22 = $d_22;
 			$householdMember -> d_23 = $d_23;
@@ -267,7 +267,7 @@ class RecordController extends Controller
 			$householdMember -> f_48_a = $f_48_a;
 			$householdMember -> f_48_b = $f_48_b;
 			$householdMember -> f_49 = $f_49;
-			$householdMember -> encoded_by = $encoded_by;
+			$householdMember -> encoded_by = $encoded_by;*/
 
 			if ($householdMember -> save())
 			{
