@@ -187,6 +187,10 @@
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/datatables/dataTables.bootstrap.min.js"></script>
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 	<script src="{{env('FILE_PATH_CUSTOM')}}dist/js/pages/dashboard.js"></script>
+	<!-- InputMask -->
+	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.js"></script>
+	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
 </body>
 </html>

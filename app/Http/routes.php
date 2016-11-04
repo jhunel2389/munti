@@ -60,6 +60,13 @@ Route::group(array('prefix' => '/ajax'),function()
 		});
 	});
 });
+Route::group(array('prefix' => '/records'),function()
+{
+	Route::group(array('before' => 'auth'), function()
+	{
+		Route::get('/',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));
+	});
+});
 
 Route::group(array('prefix' => '/filemaintenance'),function()
 {
