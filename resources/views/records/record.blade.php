@@ -176,20 +176,128 @@
 				                    </label>
 				                </div>
 				            </div>
+				            <div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 4. What type of construction materials are the walls made of?</label>
+						    	<span class="help-block">Anong uri ng materyales ang ginamit sa paggawa ng dingding ng tirahan?</span>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+				                      Strong materials(concrete, brick, stone, wood, galvanized iron)
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Ligh materials( bamboo, sawali, cogon, nipa)
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Salvaged/makeshift materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Mixed but predominantly strong materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Mixed but predominantly light materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Mixed but predominantly salvaged materials
+				                    </label>
+				                </div>
+				                <div class="radio">
+				                    <label>
+				                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+				                      Not applicable
+				                    </label>
+				                </div>
+				            </div>
 					  	</div>
 					</div>
+					
+				</div>
+				<div class="col-lg-6">
 					<div class="panel panel-default">
           				<div class="panel-heading">B. Household Characteristics</div>
 					  	<div class="panel-body">
-						    
+							<div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 5. How many members of the households are OFWs?</label>
+						    	<span class="help-block">Ilang miyembro dito sa inyong sambahayan ang OFW?</span>
+						         <input type="text" class="form-control"  placeholder="" style="width: 60px">
+				            </div>
+				            <div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 6. How many families are there in the household?</label>
+						    	<span class="help-block">Ilang pamilya ang nasa sambahayan?</span>
+						         <input type="text" class="form-control"  placeholder="" style="width: 60px">
+				            </div>
+				            <div class="form-group">
+				            	<label class="control-label" for="inputWarning"> 7. Are there members of the household who are pregnant?</label>
+						    	<span class="help-block">Mayroon bang miyembro sa sambahayan na buntis?</span>
+				                <div class="checkbox">
+				                    <label>
+				                      <input type="checkbox" class="q7">
+				                      Yes
+				                    </label>
+				                </div>
+								<div class="checkbox">
+									<label>
+									  <input type="checkbox" class="q7">
+									  No
+									</label>
+								</div>
+			                </div>
+			                <div class="form-group">
+				            	<label class="control-label" for="inputWarning"> 8. Are there members of the household who are solo parents?</label>
+						    	<span class="help-block">Mayroon bang miyembro sa sambahayan na nag iisang magulang?</span>
+				                <div class="checkbox">
+				                    <label>
+				                      <input type="checkbox" class="q8">
+				                      Yes
+				                    </label>
+				                </div>
+								<div class="checkbox">
+									<label>
+									  <input type="checkbox" class="q8">
+									  No
+									</label>
+								</div>
+			                </div>
+			                <div class="form-group">
+				            	<label class="control-label" for="inputWarning"> 9. Are there members of the household who are disabled?</label>
+						    	<span class="help-block">Mayroon bang miyembro sa sambahayan na may kapansanan?</span>
+				                <div class="checkbox">
+				                    <label>
+				                      <input type="checkbox" class="q9">
+				                      Yes
+				                    </label>
+				                </div>
+								<div class="checkbox">
+									<label>
+									  <input type="checkbox" class="q9">
+									  No
+									</label>
+								</div>
+			                </div>
 					  	</div>
 					</div>
-				</div>
-				<div class="col-lg-6">
           			<div class="panel panel-default">
           				<div class="panel-heading">C. Demography</div>
 					  	<div class="panel-body">
-						    
+						    <div class="form-group">
+						    	<label class="control-label" for="inputWarning"> 10. How many members are there in the household including OFWs?</label>
+						    	<span class="help-block">Ilang miyembro mayroon dito sa inyong sambahayankabilang ang OFW?</span>
+						         <input type="text" class="form-control"  placeholder="" style="width: 60px">
+				            </div>
 					  	</div>
 					</div>
 				</div>
@@ -214,6 +322,21 @@ $(function () {
     $(".timepicker").timepicker({
       showInputs: false
     });
+});
+$(".q7").change(function()
+{
+  $(".q7").prop('checked',false);
+  $(this).prop('checked',true);
+});
+$(".q8").change(function()
+{
+  $(".q8").prop('checked',false);
+  $(this).prop('checked',true);
+});
+$(".q9").change(function()
+{
+  $(".q9").prop('checked',false);
+  $(this).prop('checked',true);
 });
 </script>
 @endsection
