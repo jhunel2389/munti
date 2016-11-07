@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Household;
 use App\Models\HouseholdMember;
+use App\Models\Barangay;
 use Request;
 use Auth;
 use App;
@@ -26,7 +27,8 @@ class RecordController extends Controller
     {
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
     	$householdInfo = Household::find($cid);
-		return View::Make("records.record")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with('mt','re');
+    	$brgy = Barangay::all();
+		return View::Make("records.record")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with("brgy",$brgy)->with('mt','re');
     }
 
     public function householdList()
@@ -101,6 +103,14 @@ class RecordController extends Controller
 			}
 			else
 			{
+				$householdCheck = Household::where('household_id_no','=',$household_id_no)->get();
+				if(count($householdCheck) != 0)
+				{
+					return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'The given Household Identification is already exist in the system. Please check and try again.',
+			                ));
+				}
 				$household = new Household();
 			}
 

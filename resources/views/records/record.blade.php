@@ -47,7 +47,11 @@
 							</div>
 							<div class="input-group">
 							  	<span class="input-group-addon" id="sizing-addon2">c. Barangay</span>
-							  	<input type="text" class="form-control" placeholder="Barangay" aria-describedby="sizing-addon2" id="brgy_id" value="{{!empty($householdInfo['brgy_id']) ? $householdInfo['brgy_id'] : ''}}" required>
+								  	<select class="form-control select2" style="width: 100%;" id="brgy_id">
+								  		@foreach($brgy as $brgyi)
+						                  <option value="{{$brgyi['id']}}" {{($householdInfo['brgy_id'] == $brgyi['id']) ? 'selected' : ''}}>{{$brgyi['name']}}</option>
+						                 @endforeach
+					                </select>
 							</div>
 					  	</div>
 					</div>
@@ -315,7 +319,9 @@
   @include('includes.settingSidebar')
 </div>
 <script type="text/javascript">
+
 $(function () {
+	$(".select2").select2();
     $('#datepicker').datepicker({
       autoclose: true
     });
@@ -380,9 +386,9 @@ function regHouseHold()
 	$b_9 = $('input[name=q9]:checked', '#regForm').val();
 	$c_10 = $("#c_10").val();
 
-    /*$("#btnSubmit").empty();
+    $("#btnSubmit").empty();
     $("#btnSubmit").append('<div class="overlay tbl-overlay"><i class="fa fa-spinner fa-spin"></i></div>');
-    $('#btnSubmit').prop('disabled', true);*/
+    $('#btnSubmit').prop('disabled', true);
 
     $.post('{{URL::Route('savingRecordHousehold')}}', { _token: $_token, region: $region , province: $province, city: $city, brgy_id: $brgy_id, household_id_no: $household_id_no, name_of_respondent: $name_of_respondent, date: $date, time_started: $time_started, interviewer_enumerator: $interviewer_enumerator, a_1: $a_1, a_2: $a_2, a_3: $a_3, a_4: $a_4, b_5: $b_5, b_6: $b_6, b_7: $b_7, b_8: $b_8, b_9: $b_9, c_10: $c_10 ,cid: $cid}, function(data)
     {
@@ -401,6 +407,8 @@ function regHouseHold()
         }
     });
 }
+
+
 </script>
 @endsection
 
