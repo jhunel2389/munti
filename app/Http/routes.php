@@ -64,8 +64,9 @@ Route::group(array('prefix' => '/ajax'),function()
 Route::group(array('prefix' => '/records'),function()
 {
 	Route::get('/household',array('uses' => 'RecordController@index', 'as' => 'gethousehold'));
-	Route::get('/member',array('uses' => 'RecordController@getMembers', 'as' => 'getMembers'));
+	Route::get('/member/{cid}',array('uses' => 'RecordController@getMembers', 'as' => 'getMembers'));
 	Route::get('/houdeholdUrlGenerator',array('uses' => 'RecordController@houdeholdUrlGenerator', 'as' => 'houdeholdUrlGenerator'));
+	Route::get('/generateHMemberUrl',array('uses' => 'RecordController@generateHMemberUrl', 'as' => 'generateHMemberUrl'));
 	Route::group(array('before' => 'auth'), function()
 	{
 		Route::get('/{cid}',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));

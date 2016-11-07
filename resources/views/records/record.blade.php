@@ -309,6 +309,9 @@
           </div>
           <div class="box-footer">
             <button type="submit" class="btn btn-primary" id="btnSubmit">{{!empty($householdInfo['id']) ? "Update" : "Submit"}}</button>
+            @if(!empty($householdInfo['id']))
+            	<button type="button" class="btn btn-primary" onClick="viewHousholdMem({{$householdInfo['id']}})">View Houshold Member</button>
+            @endif
           </div>
         </form>
       </div>
@@ -361,6 +364,13 @@ $(".input_num").keydown(function (event) {
     }
 });
 
+function viewHousholdMem(cid)
+{
+	$.get('{{URL::Route('generateHMemberUrl')}}', { cid: cid}, function(data)
+    	{
+			window.location.replace(data);
+		});
+}
 
 function regHouseHold()
 {

@@ -36,7 +36,7 @@ class RecordController extends Controller
 		return Household::all();
 	}
 
-    function getMembers()
+    function getMembers($cid)
     {
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
 		return View::Make("records.member")->with("userInfo",$userInfo)->with('mt','re');
@@ -332,5 +332,11 @@ class RecordController extends Controller
     {
     	$cid = Request::get('cid');
     	return URL::Route('getRecord',$cid);
+    }
+
+    function generateHMemberUrl()
+    {
+    	$cid = Request::get('cid');
+    	return URL::Route('getMembers',$cid);
     }
 }
