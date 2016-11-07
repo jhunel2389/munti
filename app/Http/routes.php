@@ -64,7 +64,7 @@ Route::group(array('prefix' => '/records'),function()
 {
 	Route::group(array('before' => 'auth'), function()
 	{
-		Route::get('/',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));
+		Route::get('/{cid}',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));
 	});
 });
 
