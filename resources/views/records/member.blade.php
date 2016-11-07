@@ -66,6 +66,257 @@
 								                    	<input type="text" class="form-control" id="hh_no" placeholder="Household Member Number">\
 								                  	</div>\
 							                	</div>\
+							                	<label class="control-label" for="inputWarning"> 11. Surname, Firstname, Middle name</label>\
+						    					<span class="help-block">Apelyido, Pangalan, Panggitnang pangalan</span>\
+						    					<div class="form-group">\
+								                  	<div class="col-sm-4">\
+								                    	<input type="text" class="form-control" id="hh_no" placeholder="Surname">\
+								                  	</div>\
+								                  	<div class="col-sm-4">\
+								                    	<input type="text" class="form-control" id="hh_no" placeholder="Firstname">\
+								                  	</div>\
+								                  	<div class="col-sm-4">\
+								                    	<input type="text" class="form-control" id="hh_no" placeholder="Middle name">\
+								                  	</div>\
+							                	</div>\
+							                	<label class="control-label" for="inputWarning"> 12. In which nuclear family does he/she belong?</label>\
+						    					<span class="help-block">Sa aling pamilya napapabilang siya napapabilang?</span>\
+						    					<div class="form-group">\
+								                  	<div class="col-sm-8">\
+								                    	<input type="text" class="form-control" id="hh_no" placeholder="">\
+								                  	</div>\
+							                	</div>\
+							                	<label class="control-label" for="inputWarning"> 13. What is the relationship of household member to the head of the household?</label>\
+						    					<span class="help-block">Ano ang relasyon niya sa puno ng sambahayan?</span>\
+						    					<div class="form-group">\
+								                  	<div class="col-sm-4">\
+								                    	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Head\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Wife/Spouse\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Son/Daughter\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+								                  	<div class="col-sm-4">\
+								                    	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Son-in-law/Daughter-in-law\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Grandson/grandaughter\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Father/mother\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+								                  	<div class="col-sm-4">\
+								                    	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Other relatives\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Housemaid/boy\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Other non-relatives\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+							                	</div>\
+							                	<div class="row">\
+							                		<div class="col-md-3">\
+							                			<label class="control-label" for="inputWarning"> 14. Sex(Kasarian)</label>\
+							                		</div>\
+							                		<div class="col-md-5">\
+							                			<div class="form-group">\
+								                  		<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+										                     		Male\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+									                  	<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+										                     		Female\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+								                	</div>\
+							                		</div>\
+							                	</div>\
+							                	<div class="row">\
+							                		<div class="col-md-5">\
+							                			<label class="control-label" for="inputWarning"> 15. Birthday(Petsa ng kapanganakan)</label>\
+							                		</div>\
+							                		<div class="col-md-5">\
+							                			<input type="text" class="form-control" id="datepicker" placeholder="Birthday">\
+							                		</div>\
+							                	</div>\
+							                	<div class="row">\
+							                		<div class="col-md-6">\
+							                			<label class="control-label" for="inputWarning"> 16. Registered Birth to the CIVIL Registry Office</label>\
+							                		</div>\
+							                		<div class="col-md-4">\
+							                			<div class="form-group">\
+								                  		<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+										                     		Yes\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+									                  	<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+										                     		No\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+								                	</div>\
+							                		</div>\
+							                	</div>\
+							                	<div class="row">\
+							                		<div class="col-md-8">\
+							                			<label class="control-label" for="inputWarning"> 17. Ethnicity By Blood(Kinabibilangang Etnika ex. Bicolano)</label>\
+							                		</div>\
+							                		<div class="col-md-4">\
+							                			<input type="text" class="form-control" id="" placeholder="etnika">\
+							                		</div>\
+							                	</div>\
+							                	<label class="control-label" for="inputWarning"> 18. Martial Status/ Katayuan Sibil?</label>\
+						    					<div class="form-group">\
+								                  	<div class="col-sm-3">\
+								                    	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Walang asawa\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		May asawa\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+								                  	<div class="col-sm-3">\
+								                    	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Balo\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Live-in\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+								                  	<div class="col-sm-3">\
+								                  		<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Hiwalay\
+									                    	</label>\
+									                  	</div>\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Hiwalay sa asawa\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+								                  	<div class="col-sm-3">\
+								                  		<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+									                     		Hindi alam\
+									                    	</label>\
+									                  	</div>\
+								                  	</div>\
+							                	</div>\
+							                	<div class="row">\
+							                		<div class="col-md-6">\
+							                			<label class="control-label" for="inputWarning"> 19. Is he/she an OFW? Siya ba ay isang OFW?</label>\
+							                		</div>\
+							                		<div class="col-md-4">\
+							                			<div class="form-group">\
+								                  		<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+										                     		Yes\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+									                  	<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+										                     		No\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+								                	</div>\
+							                		</div>\
+							                	</div>\
+							                	<label class="control-label" for="inputWarning"> 20. Where was he/she residing 3 years ago?</label>\
+							                	<span class="help-block">Saan siya nakatira noong nakaraaang 3 taon?</span>\
+							                	<div class="form-group">\
+							                		<div class="col-sm-2">\
+									                  	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>\
+									                      		Same Address\
+									                    	</label>\
+									                  	</div>\
+									                </div>\
+									                <div class="col-sm-3">\
+									                	<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">\
+									                      		Other Address: Address 3 years ago\
+									                    	</label>\
+									                  	</div>\
+									                </div>\
+									                <div class="col-sm-7">\
+								                    	<input type="text" class="form-control" id="hh_no" placeholder="">\
+								                  	</div>\
+								                </div>\
 											</div>\
 										</div>\
 									  	<div id="education" class="tab-pane fade">\
@@ -97,10 +348,16 @@
                         </div>\
                       </div>');
         $('.modal_info').modal('show');
+        $(function () {
+		    $('#datepicker').datepicker({
+		      autoclose: true
+		    });
+		});
 	});
 	$(document).on("hidden.bs.modal",".modal_info",function(){
       	$(this).remove();
   	});
+  	
 </script>
 @endsection
 
