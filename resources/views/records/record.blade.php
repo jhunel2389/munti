@@ -251,7 +251,7 @@
 				                </div>
 								<div class="checkbox">
 									<label>
-									  <input type="checkbox" class="q7">
+									  <input type="checkbox" class="q7" checked>
 									  No
 									</label>
 								</div>
@@ -267,7 +267,7 @@
 				                </div>
 								<div class="checkbox">
 									<label>
-									  <input type="checkbox" class="q8">
+									  <input type="checkbox" class="q8" checked>
 									  No
 									</label>
 								</div>
@@ -283,7 +283,7 @@
 				                </div>
 								<div class="checkbox">
 									<label>
-									  <input type="checkbox" class="q9">
+									  <input type="checkbox" class="q9" checked>
 									  No
 									</label>
 								</div>
