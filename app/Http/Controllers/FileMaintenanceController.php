@@ -28,6 +28,15 @@ class FileMaintenanceController extends Controller {
 	
 	public function addBrgy()
 	{
+		$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
+    	if($actChecker['status'] == "fail")
+    	{
+    		return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'Your account accesss level are not allowed to process the request.',
+			                ));
+    	}
+
 		$cid = Request::get('cid');
 		$status = Request::get('status');
     	$name = Request::get('name');

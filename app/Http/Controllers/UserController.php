@@ -110,6 +110,14 @@ class UserController extends Controller {
 		$uid = Request::get('uid');
 		$role = Request::get('role');
 		$userCheck = User::where("id","=",$uid)->where("isAdmin","=",0)->first();
+		$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
+    	if($actChecker['status'] == "fail")
+    	{
+    		return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'Your account accesss level are not allowed to process the request.',
+			                ));
+    	}
 		if(!empty($userCheck))
 		{
 			$userCheck['isAdmin'] = $role;
@@ -136,9 +144,20 @@ class UserController extends Controller {
 
 	public function updateAdmin()
 	{
+
+		$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
+    	if($actChecker['status'] == "fail")
+    	{
+    		return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'Your account accesss level are not allowed to process the request.',
+			                ));
+    	}
+
 		$uid = Request::get('uid');
 		$role = Request::get('role');
 		$roleChecker = User::where("id","=",$uid)->where("isAdmin","!=",0)->first();
+
 		if(!empty($roleChecker))
 		{
 			$roleChecker['isAdmin'] = $role;

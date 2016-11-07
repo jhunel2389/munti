@@ -44,6 +44,15 @@ class RecordController extends Controller
 
     function savingRecordHousehold()
     {
+    	$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
+    	if($actChecker['status'] == "fail")
+    	{
+    		return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'Your account accesss level are not allowed to process the request.',
+			                ));
+    	}
+
     	$cid = Request::get('cid');
     	$region = Request::get('region');
 		$province = Request::get('province');
