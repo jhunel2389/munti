@@ -51,6 +51,7 @@ Route::group(array('prefix' => '/ajax'),function()
 			Route::post('/updateAdmin', array('uses' => 'UserController@updateAdmin', 'as' => 'updateAdmin','middleware' => 'auth'));
 
 			Route::get('/brgy/list', array('uses' => 'FileMaintenanceController@brgyList', 'as' => 'brgyList','middleware' => 'auth'));
+			Route::get('/household/list', array('uses' => 'RecordController@householdList', 'as' => 'householdList','middleware' => 'auth'));
 			Route::get('/brgy/brgyInfo/{cid}', array('uses' => 'GlobalController@brgyInfo', 'as' => 'brgyInfo','middleware' => 'auth'));
 			Route::post('/brgy/addBrgy', array('uses' => 'FileMaintenanceController@addBrgy', 'as' => 'addBrgy','middleware' => 'auth'));
 
@@ -62,7 +63,9 @@ Route::group(array('prefix' => '/ajax'),function()
 });
 Route::group(array('prefix' => '/records'),function()
 {
+	Route::get('/household',array('uses' => 'RecordController@index', 'as' => 'gethousehold'));
 	Route::get('/member',array('uses' => 'RecordController@getMembers', 'as' => 'getMembers'));
+	Route::get('/houdeholdUrlGenerator',array('uses' => 'RecordController@houdeholdUrlGenerator', 'as' => 'houdeholdUrlGenerator'));
 	Route::group(array('before' => 'auth'), function()
 	{
 		Route::get('/{cid}',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));

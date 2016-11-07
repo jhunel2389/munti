@@ -44,7 +44,7 @@
 
         <!--end filemaintenance part -->
         <li class="treeview {{ ($mt == "re") ? "active" : ""}}">
-          <a href="{{ URL::Route('getRecord' , 'add') }}">
+          <a href="{{ URL::Route('gethousehold') }}">
             <i class="fa fa-print"></i> <span>Records</span> <i class="fa pull-right"></i>
           </a>
         </li>

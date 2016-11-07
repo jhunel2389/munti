@@ -15,12 +15,24 @@ use URL;
 
 class RecordController extends Controller
 {
+
+	function index()
+	{
+		$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
+		return View::Make("records.index")->with("userInfo",$userInfo)->with('mt','re');
+	}
+
     function getRecord($cid)
     {
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
     	$householdInfo = Household::find($cid);
 		return View::Make("records.record")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with('mt','re');
     }
+
+    public function householdList()
+	{
+		return Household::all();
+	}
 
     function getMembers()
     {
@@ -304,5 +316,11 @@ class RecordController extends Controller
 		                ));
 			}
 		}
+    }
+
+    function houdeholdUrlGenerator()
+    {
+    	$cid = Request::get('cid');
+    	return URL::Route('getRecord',$cid);
     }
 }
