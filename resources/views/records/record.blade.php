@@ -128,7 +128,7 @@
 				            <div class="form-group">
 						    	<label class="control-label" for="inputWarning"> 2. How many bedrooms does this housing unit have?</label>
 						    	<span class="help-block">Ilang silid/kwarto mayroon ang tirahan ng sambahayan?</span>
-						         <input type="text" class="form-control"  placeholder="" style="width: 60px" id="a_2" value="{{!empty($householdInfo['a_2']) ? $householdInfo['a_2'] : ''}}" required>
+						         <input type="text" class="form-control input_num" maxlength="2"  placeholder="" style="width: 60px" id="a_2" value="{{!empty($householdInfo['a_2']) ? $householdInfo['a_2'] : ''}}" required>
 				            </div>
 				            <div class="form-group">
 						    	<label class="control-label" for="inputWarning"> 3. What type of construction materials are the roofs made of?</label>
@@ -233,12 +233,12 @@
 							<div class="form-group">
 						    	<label class="control-label" for="inputWarning"> 5. How many members of the households are OFWs?</label>
 						    	<span class="help-block">Ilang miyembro dito sa inyong sambahayan ang OFW?</span>
-						         <input type="text" class="form-control"  placeholder="" style="width: 60px" id="b_5" value="{{!empty($householdInfo['b_5']) ? $householdInfo['b_5'] : ''}}" required>
+						         <input type="text" class="form-control input_num" maxlength="2" placeholder="" style="width: 60px" id="b_5" value="{{!empty($householdInfo['b_5']) ? $householdInfo['b_5'] : ''}}" required>
 				            </div>
 				            <div class="form-group">
 						    	<label class="control-label" for="inputWarning"> 6. How many families are there in the household?</label>
 						    	<span class="help-block">Ilang pamilya ang nasa sambahayan?</span>
-						         <input type="text" class="form-control"  placeholder="" style="width: 60px" id="b_6" value="{{!empty($householdInfo['b_6']) ? $householdInfo['b_6'] : ''}}" required>
+						         <input type="text" class="form-control input_num" maxlength="2" placeholder="" style="width: 60px" id="b_6" value="{{!empty($householdInfo['b_6']) ? $householdInfo['b_6'] : ''}}" required>
 				            </div>
 				            <div class="form-group">
 				            	<label class="control-label" for="inputWarning"> 7. Are there members of the household who are pregnant?</label>
@@ -296,7 +296,7 @@
 						    <div class="form-group">
 						    	<label class="control-label" for="inputWarning"> 10. How many members are there in the household including OFWs?</label>
 						    	<span class="help-block">Ilang miyembro mayroon dito sa inyong sambahayankabilang ang OFW?</span>
-						         <input type="text" class="form-control"  placeholder="" style="width: 60px" id="c_10" value="{{!empty($householdInfo['c_10']) ? $householdInfo['c_10'] : ''}}" required>
+						         <input type="text" class="form-control input_num" maxlength="2"  placeholder="" style="width: 60px" id="c_10" value="{{!empty($householdInfo['c_10']) ? $householdInfo['c_10'] : ''}}" required>
 				            </div>
 					  	</div>
 					</div>
@@ -341,6 +341,18 @@ $(".q9").change(function()
 
 $("#regForm").submit(function(e) {
   e.preventDefault();
+});
+$(".input_num").keydown(function (event) {
+    
+    //prevent using shift with numbers
+    if (event.shiftKey == true) {
+        event.preventDefault();
+    }
+
+    if (!((event.keyCode == 190) || (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39 || event.keyCode == 46)) {
+        event.preventDefault();
+
+    }
 });
 
 

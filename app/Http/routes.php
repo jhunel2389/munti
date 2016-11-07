@@ -62,6 +62,7 @@ Route::group(array('prefix' => '/ajax'),function()
 });
 Route::group(array('prefix' => '/records'),function()
 {
+	Route::get('/member',array('uses' => 'RecordController@getMembers', 'as' => 'getMembers'));
 	Route::group(array('before' => 'auth'), function()
 	{
 		Route::get('/{cid}',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));

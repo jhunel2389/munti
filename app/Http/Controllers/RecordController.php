@@ -22,6 +22,12 @@ class RecordController extends Controller
 		return View::Make("records.record")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with('mt','re');
     }
 
+    function getMembers()
+    {
+    	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
+		return View::Make("records.member")->with("userInfo",$userInfo)->with('mt','re');
+    }
+
     function savingRecordHousehold()
     {
     	$cid = Request::get('cid');
