@@ -2,25 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Household;
 use App\Models\HouseholdMember;
-use App\Http\Requests;
+use Request;
 use Auth;
 use App;
 use View;
 use Validator;
+use Response;
+use Redirect;
+use URL;
 
 class RecordController extends Controller
 {
     function getRecord($cid)
     {
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
-		return View::Make("records.record")->with("userInfo",$userInfo)->with('mt','re');
+    	$householdInfo = Household::find($cid);
+		return View::Make("records.record")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with('mt','re');
     }
 
-    function addRecordHousehold()
+    function savingRecordHousehold()
     {
+    	$cid = Request::get('cid');
     	$region = Request::get('region');
 		$province = Request::get('province');
 		$city = Request::get('city');
@@ -40,7 +44,7 @@ class RecordController extends Controller
 		$b_8 = Request::get('b_8');
 		$b_9 = Request::get('b_9');
 		$c_10 = Request::get('c_10');
-		$encoded_by = Request::get('encoded_by');
+		$encoded_by = Auth::User()['id'];
 
 		$validator = Validator::make(Request::all(), array(
 			'region' => 'required',
@@ -62,7 +66,6 @@ class RecordController extends Controller
 			'b_8' => 'required',
 			'b_9' => 'required',
 			'c_10' => 'required',
-			'encoded_by' => 'required',
 		));
 
 		if ($validator -> fails())
@@ -74,7 +77,15 @@ class RecordController extends Controller
 		}
 		else
 		{
-			$household = new Household();
+			if(!empty($cid))
+			{
+				$household = Household::find($cid);
+			}
+			else
+			{
+				$household = new Household();
+			}
+
 			$household -> region = $region;
 			$household -> province = $province;
 			$household -> city = $city;
@@ -100,8 +111,11 @@ class RecordController extends Controller
 			{
 				return Response::json(array(
 		                    'status'  => 'success',
-		                    'message'  => 'New household record is successfully save.',
+		                    'message'  => 'New household record is successfully save/update.',
+		                    'postback' => URL::Route('getRecord',$household['id']),
 		                ));
+
+		        //return Redirect::route('getRecord',$household['id'])->with('success','New household record is successfully save.');
 			}
 			else
 			{

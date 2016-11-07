@@ -65,6 +65,11 @@ Route::group(array('prefix' => '/records'),function()
 	Route::group(array('before' => 'auth'), function()
 	{
 		Route::get('/{cid}',array('uses' => 'RecordController@getRecord', 'as' => 'getRecord'));
+
+		Route::group(array('before' => 'csrf'), function()
+		{
+			Route::post('/saving',array('uses' => 'RecordController@savingRecordHousehold', 'as' => 'savingRecordHousehold'));
+		});
 	});
 });
 
