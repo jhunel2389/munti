@@ -349,6 +349,17 @@
 						                	</div>\
 						                	<div class="forq21">\
 						                	</div>\
+						                	<div class="row">\
+						                		<div class="col-md-6">\
+						                			<div class="form-group">\
+							                			<label class="control-label" for="inputWarning"> 25. What is his/her highest educational attainment?</label>\
+						    							<span class="help-block">Ano ang pinakamataas na ?</span>\
+						    						</div>\
+						                		</div>\
+						                		<div class="col-md-4">\
+						                			<input type="text" class="form-control" id="hh_no" placeholder="Household Member Number">\
+						                		</div>\
+						                	</div>\
 									  	</div>\
 									  	<div id="komunidad" class="tab-pane fade">\
 									    	<h3>Menu 2</h3>\
