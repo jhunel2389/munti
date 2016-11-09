@@ -243,7 +243,7 @@
 
     function saveNewEntry()
     {
-    	promptConfirmation("Are you sure you want to add this new barangay?");
+    	promptConfirmation("Are you sure you want to add this new Secret Question?");
     	$('#btnYes').click(function() {
 	    	$_token = "{{ csrf_token() }}";
 	    	$name = $('#name').val();

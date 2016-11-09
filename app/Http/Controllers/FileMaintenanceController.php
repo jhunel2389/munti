@@ -90,7 +90,7 @@ class FileMaintenanceController extends Controller {
     	$name = Request::get('name');
     	$description = Request::get('description');
 
-    	$procategory = (!empty($cid)) ? Barangay::find($cid) :new Barangay();
+    	$procategory = (!empty($cid)) ? SecretQuestion::find($cid) :new SecretQuestion();
     	if(!empty($procategory))
     	{
 	    	$procategory['name'] = $name;
