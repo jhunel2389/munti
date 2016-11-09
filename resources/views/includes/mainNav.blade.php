@@ -40,6 +40,9 @@
           <ul class="treeview-menu">
                 <li class="{{ $mt == "fm" ? (($cc == "pc") ? "active" : "") : ""}}"><a href="{{ URL::Route('getBrgy') }}"><i class="fa fa-globe"></i> Barangay</a></li>
           </ul>
+          <ul class="treeview-menu">
+                <li class="{{ $mt == "fm" ? (($cc == "sq") ? "active" : "") : ""}}"><a href="{{ URL::Route('getSecret') }}"><i class="fa fa-globe"></i> Secret Question</a></li>
+          </ul>
         </li>
 
         <!--end filemaintenance part -->

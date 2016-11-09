@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Barangay;
+use App\Models\SecretQuestion;
 use Auth;
 use DB;
 use Input;
@@ -57,6 +58,13 @@ class GlobalController extends Controller {
 	{
 		$id = (!empty($cid)) ? $cid : Request::get("cid");
 		return Barangay::find($id);
+	}
+
+
+	public function secretInfo($cid)
+	{
+		$id = (!empty($cid)) ? $cid : Request::get("cid");
+		return SecretQuestion::find($id);
 	}
 
 	public function accountAccessChecker($event)

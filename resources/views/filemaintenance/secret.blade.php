@@ -17,7 +17,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ URL::Route('getUAL') }}"><i class="fa fa-dashboard"></i> File Maintenance</a></li>
-        <li class="active">Barangay</li>
+        <li class="active">Secret Question</li>
       </ol>
     </section>
 
@@ -35,8 +35,8 @@
               <table id="dtUAList" class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                  <th>Brgy ID</th>
-                  <th>Brgy Name</th>
+                  <th>ID</th>
+                  <th>Question Name</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,7 @@
 	brgyList();
 	function brgyList()
 	{
-		$.get('{{URL::Route('brgyList')}}', function(data)
+		$.get('{{URL::Route('secretList')}}', function(data)
 		{
 			$('.tbl-overlay').remove();
 			if(data.length != 0)
@@ -93,14 +93,14 @@
 		$('#div-entry').append('<div class="overlay">\
 	            	<i class="fa fa-spinner fa-spin"></i>\
 	            </div>');
-		$.get('{{URL::Route('brgyInfo',0)}}',{ cid: cid}, function(data)
+		$.get('{{URL::Route('secretInfo',0)}}',{ cid: cid}, function(data)
 		{
 			if(data.length != 0)
 			{
 				$('#div-entry').empty();
 				$('#div-entry').append(
 					$('<div />', {'class': 'box-header with-border' }).append(
-						$('<h3 />' , {'class': 'box-title' , 'text': 'View Barangay Information' }),
+						$('<h3 />' , {'class': 'box-title' , 'text': 'View Information' }),
 						$('<div/>', {'class': 'box-tools pull-right event-btn' }).append(
 							'<button class="btn btn-success btn-sm" type="button" onClick="setNewEntry();">\
 								<i class="fa fa-plus-circle"></i>\
@@ -171,7 +171,7 @@
 	   	$('#div-entry').empty();
 		$('#div-entry').append(
 				$('<div />' , { 'class' : 'box-header with-border'}).append(
-					$('<h3 />' , { 'class' : 'box-title' , 'text' : 'Barangay'}),
+					$('<h3 />' , { 'class' : 'box-title' , 'text' : 'Secret Question'}),
 					$('<div />' , { 'class' : 'box-tools pull-right'}).append(
 						'<button id="btn-new-user" class="btn btn-primary btn-sm" type="button" onClick="setNewEntry();">\
 							<i class="fa fa-plus-circle"></i>\
@@ -185,7 +185,7 @@
 						$('<div />' , {'class' : 'col-md-12 col-lg-12'}).append(
 							$('<h1 />' , { 'class': 'text-center'}).append(
 								$('<small />').append(
-									$('<button />' , { 'id':'btn-new-user-icn' , 'class':'btn btn-app' , 'data-placement':'top' , 'data-toggle':'tooltip' , 'type':'button' , 'onClick':'setNewEntry();' , 'html' : '<i class="fa fa-plus-circle fa-3x"></i>Add Barangay'}).append(
+									$('<button />' , { 'id':'btn-new-user-icn' , 'class':'btn btn-app' , 'data-placement':'top' , 'data-toggle':'tooltip' , 'type':'button' , 'onClick':'setNewEntry();' , 'html' : '<i class="fa fa-plus-circle fa-3x"></i>Add Secret Question'}).append(
 										''),
 									$('<br />'),
 									'Click on the below list for preview'))))),
@@ -206,7 +206,7 @@
 					$('#div-entry').empty();
 					$('#div-entry').append($('<form />' ,{'id' : 'frmEntry', 'onsubmit' : 'return saveNewEntry()'}).append(
 						$('<div />',{ 'class' : 'box-header with-border'}).append(
-							$('<h3 />',{'class':'box-title' , 'text' : 'Add New Barangay'}),
+							$('<h3 />',{'class':'box-title' , 'text' : 'Add New Secret Question'}),
 							$('<div />', { 'class' : 'box-tools pull-right'}).append(
 								'<button id="btn-new-user" class="btn btn-success btn-sm" type="submit">\
 									<i class="fa fa-times-circle"></i>\
@@ -223,8 +223,8 @@
 								$('<div />', {'class' : 'col-md-4 col-sm-6'}).append(
 									$('<div />', {'class' : 'col-md-12 col-sm-12'}).append(
 										$('<div />' , {'class' : 'form-group'}).append(
-											$('<label />' , { 'class' : 'control-label' , 'for' : 'name' , 'text' : 'Name:'}),
-											$('<input />' , { 'id':'name' ,'class':'form-control' ,'type':'text','name':'name', 'placeholder':'Enter Name', 'required' : true})))),
+											$('<label />' , { 'class' : 'control-label' , 'for' : 'name' , 'text' : 'Question:'}),
+											$('<input />' , { 'id':'name' ,'class':'form-control' ,'type':'text','name':'name', 'placeholder':'Enter Question', 'required' : true})))),
 								$('<div />', {'class' : 'col-md-4 col-sm-6'}).append(
 									$('<div />', {'class' : 'col-md-12 col-sm-12'}).append(
 										$('<div />' , {'class' : 'form-group'}).append(
@@ -251,7 +251,7 @@
 	    	$('#div-entry').append('<div class="overlay">\
 				        	<i class="fa fa-spinner fa-spin"></i>\
 				        </div>');
-	    	$.post('{{URL::Route('addBrgy')}}',{ _token: $_token, name: $name, description: $description}, function(data)
+	    	$.post('{{URL::Route('addSecret')}}',{ _token: $_token, name: $name, description: $description}, function(data)
 			{
 				if(data.length != 0)
 				{
@@ -289,7 +289,7 @@
 				    	$description = $('#description').val();
 				    	$drpStatus = $('#drpStatus').val();
 				    	
-				    	$.post('{{URL::Route('addBrgy')}}',{ _token: $_token, name: $name, description: $description , status: $drpStatus, cid: cid}, function(data)
+				    	$.post('{{URL::Route('addSecret')}}',{ _token: $_token, name: $name, description: $description , status: $drpStatus, cid: cid}, function(data)
 						{
 							if(data.length != 0)
 							{

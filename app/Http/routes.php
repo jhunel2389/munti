@@ -51,9 +51,12 @@ Route::group(array('prefix' => '/ajax'),function()
 			Route::post('/updateAdmin', array('uses' => 'UserController@updateAdmin', 'as' => 'updateAdmin','middleware' => 'auth'));
 
 			Route::get('/brgy/list', array('uses' => 'FileMaintenanceController@brgyList', 'as' => 'brgyList','middleware' => 'auth'));
+			Route::get('/secret/list', array('uses' => 'FileMaintenanceController@secretList', 'as' => 'secretList','middleware' => 'auth'));
 			Route::get('/household/list', array('uses' => 'RecordController@householdList', 'as' => 'householdList','middleware' => 'auth'));
 			Route::get('/brgy/brgyInfo/{cid}', array('uses' => 'GlobalController@brgyInfo', 'as' => 'brgyInfo','middleware' => 'auth'));
+			Route::get('/secret/secretInfo/{cid}', array('uses' => 'GlobalController@secretInfo', 'as' => 'secretInfo','middleware' => 'auth'));
 			Route::post('/brgy/addBrgy', array('uses' => 'FileMaintenanceController@addBrgy', 'as' => 'addBrgy','middleware' => 'auth'));
+			Route::post('/secret/addSecret', array('uses' => 'FileMaintenanceController@addSecret', 'as' => 'addSecret','middleware' => 'auth'));
 
 
 			Route::get('/admin/accountAccessChecker/{event}', array('uses' => 'GlobalController@accountAccessChecker', 'as' => 'accountAccessChecker','
@@ -83,5 +86,6 @@ Route::group(array('prefix' => '/filemaintenance'),function()
 	Route::group(array('before' => 'auth'), function()
 	{
 		Route::get('/getBrgy', array('uses' => 'FileMaintenanceController@getBrgy', 'as' => 'getBrgy','middleware' => 'auth'));
+		Route::get('/getSecret', array('uses' => 'FileMaintenanceController@getSecret', 'as' => 'getSecret','middleware' => 'auth'));
 	});
 });
