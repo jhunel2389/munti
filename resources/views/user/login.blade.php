@@ -42,7 +42,7 @@
     <p class="login-box-msg">Log in to start your session</p>
 
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" id="email" name="email" placeholder="Username">
+        <input type="email" class="form-control" id="email" name="email" placeholder="Username / Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">

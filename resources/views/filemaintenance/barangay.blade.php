@@ -69,11 +69,6 @@
 				$('#dtUAList').DataTable().clear();
 				for (var i = 0; i < data.length; i++) 
 				{
-
-					/*$('#tbUAList').append('<tr style="cursor:pointer">\
-							                  <td>'+data[i].id+'</td>\
-							                  <td>'+data[i].name+'</td>\
-							                </tr>');*/
 					$('#dtUAList').DataTable().row.add([''+data[i].id+'', 
                                                   ''+data[i].name+'',
                                                   ]).draw();

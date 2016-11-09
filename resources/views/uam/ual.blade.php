@@ -37,7 +37,7 @@
                   <th>Lastname</th>
                 </tr>
                 </thead>
-                <tbody id="tbUAList">
+                <tbody>
                 </tbody>
               </table>
             </div>
@@ -62,15 +62,14 @@
 			$('.tbl-overlay').remove();
 			if(data.length != 0)
 			{
-				$('#tbUAList').empty();
+				$('#dtUAList').DataTable().clear();
 				for (var i = 0; i < data.length; i++) 
 				{
-					$('#tbUAList').append('<tr style="cursor:pointer">\
-							                  <td>'+data[i].user_id+'</td>\
-							                  <td>'+data[i].un+'</td>\
-							                  <td>'+data[i].fname+'</td>\
-							                  <td>'+data[i].lname+'</td>\
-							                </tr>');
+					$('#dtUAList').DataTable().row.add([''+data[i].user_id+'', 
+                                                  ''+data[i].un+'',
+                                                  ''+data[i].fname+'',
+                                                  ''+data[i].lname+'',
+                                                  ]).draw();		                
 				}
 				var table = $("#dtUAList").DataTable();
 				$('#dtUAList tbody').on('click', 'tr', function () {
