@@ -349,21 +349,56 @@
 						                	</div>\
 						                	<div class="forq21">\
 						                	</div>\
-						                	<div class="row">\
-						                		<div class="col-md-6">\
-						                			<div class="form-group">\
-							                			<label class="control-label" for="inputWarning"> 25. What is his/her highest educational attainment?</label>\
-						    							<span class="help-block">Ano ang pinakamataas na ?</span>\
-						    						</div>\
-						                		</div>\
-						                		<div class="col-md-4">\
-						                			<input type="text" class="form-control" id="hh_no" placeholder="Household Member Number">\
-						                		</div>\
-						                	</div>\
+						                	<div class="form-group">\
+					                			<label class="control-label" for="inputWarning"> 25. What is his/her highest educational attainment?</label>\
+				    							<span class="help-block">Ano ang pinakamataas na antas ng pag aaral ang natapos niya?</span>\
+				    							<input style="width: 200px" type="text" class="form-control" id="hh_no" placeholder="">\
+				    						</div>\
+				    						<div class="form-group">\
+					                			<label class="control-label" for="inputWarning"> If college graduate, what is his/her course?</label>\
+				    							<span class="help-block">Anong kurso ang natapos niya?</span>\
+				    							<input style="width: 200px" type="text" class="form-control" id="hh_no" placeholder="kurso">\
+				    						</div>\
 									  	</div>\
 									  	<div id="komunidad" class="tab-pane fade">\
-									    	<h3>Menu 2</h3>\
-									    	<p>Some content in menu 2.</p>\
+									    	<div class="form-group">\
+					                			<label class="control-label" for="inputWarning"> 27. Siya ba ay rehistradong botante?</label>\
+				    							<span class="help-block">Is he/she a registered voter?</span>\
+				    							<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="" class="" id="" value="yes">\
+							                     		Yes\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="" class="" id="" value="no">\
+							                     		No\
+							                    	</label>\
+							                  	</div>\
+				    						</div>\
+				    						<div class="form-group">\
+					                			<label class="control-label" for="inputWarning"> 28. Kung oo,suya ba ay bumoto noong nakaraang eleksyon?</label>\
+				    							<span class="help-block">If yes, did he/she voted last election?</span>\
+				    							<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="" class="" id="" value="yes">\
+							                     		Yes\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="" class="" id="" value="no">\
+							                     		No\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="" class="" id="" value="">\
+							                     		Dont know\
+							                    	</label>\
+							                  	</div>\
+				    						</div>\
 									  	</div>\
 									  	<div id="ecom" class="tab-pane fade">\
 									    	<h3>Menu 2</h3>\
