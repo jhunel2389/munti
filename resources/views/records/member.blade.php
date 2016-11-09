@@ -320,8 +320,35 @@
 											</div>\
 										</div>\
 									  	<div id="education" class="tab-pane fade">\
-									    	<h3>Menu 1</h3>\
-									    	<p>Some content in menu 1.</p>\
+									    	<h3>Education(of household member)</h3>\
+						    				<div class="row">\
+						                		<div class="col-md-6">\
+						                			<label class="control-label" for="inputWarning"> 21. Is he/she attending school?</label>\
+					    							<span class="help-block">Nag aaral ba siya sa paaralan?</span>\
+						                		</div>\
+						                		<div class="col-md-4">\
+						                			<div class="form-group">\
+								                  		<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="q21Radio" class="q21Radio" id="q21" value="yes">\
+										                     		Yes\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+									                  	<div class="col-sm-4">\
+									                    	<div class="radio">\
+										                    	<label>\
+										                      		<input type="radio" name="q21Radio" class="q21Radio" id="q21" value="no">\
+										                     		No\
+										                    	</label>\
+										                  	</div>\
+									                  	</div>\
+								                	</div>\
+						                		</div>\
+						                	</div>\
+						                	<div class="forq21">\
+						                	</div>\
 									  	</div>\
 									  	<div id="komunidad" class="tab-pane fade">\
 									    	<h3>Menu 2</h3>\
@@ -352,6 +379,138 @@
 		    $('#datepicker').datepicker({
 		      autoclose: true
 		    });
+		});
+		$(document).on("change",".q21Radio",function(){
+		    if( $(this).is(":checked") ){ // check if the radio is checked
+            	var val = $(this).val(); // retrieve the value
+            	$(".forq21yn").fadeOut("fast", function() {
+			        $(this).remove();
+			    });
+            	if(val == "yes"){
+            		$(".forq21").append('<div class="forq21yn">\
+	            							<label class="control-label" for="inputWarning"> 22. What grade/year he/she currently attending? (Pls. specify)</label>\
+					                		<input type="text" class="form-control" id="hh_no" placeholder="Example grade 6">\
+					                		<label class="control-label" for="inputWarning"> 23.Where does he/she attend school?</label>\
+					    					<div class="form-group">\
+						                    	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Public(School name)\
+							                    	</label>\
+							                  	</div>\
+							                  	<input type="text" class="form-control" id="hh_no" placeholder="name of school">\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Private(School name)\
+							                    	</label>\
+							                  	</div>\
+							                  	<input type="text" class="form-control" id="hh_no" placeholder="name of school">\
+						                	</div>\
+					                	</div>\
+				                		');
+            	}
+            	else{
+            		$(".forq21").append('<div class="forq21yn">\
+            								<label class="control-label" for="inputWarning"> 24. Why he/she not attending school?</label>\
+            								<span class="help-block">Bakit hindi siya nag aaral?</span>\
+            								<div class="form-group">\
+						                    	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Malayo ang paaralan\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Walang paaralan sa barangay\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		walang regular na transportatyon\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Mahal ang pagaaral\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Pagkakasakit/kapansanan\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Dahil sa gawaing bahay\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Pagpapakasal\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Hanapbuhay/naghahanap ngtrabaho\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Walang interes mag aral\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Hindi makapag adjust sa pag aaral\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		May problema saschool record\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Tapos ng mag aral\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Problema sa birth certificate\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Masyado pang bata para mag aral\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">\
+							                     		Iba pa\
+							                    	</label>\
+							                  	</div>\
+							                  	<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px" >\
+						                	</div>\
+					                	</div>\
+				                		');
+            	}
+        	}
 		});
 	});
 	$(document).on("hidden.bs.modal",".modal_info",function(){
