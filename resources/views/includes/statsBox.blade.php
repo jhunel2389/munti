@@ -34,5 +34,4 @@
           });
         }
         countstatsbox();
-        window.setInterval(function () {countstatsbox()}, 5000);
     </script>

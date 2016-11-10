@@ -103,13 +103,13 @@ class FileMaintenanceController extends Controller {
 	    	{
 	    		return Response::json(array(
 	                'status'  => 'success',
-	                'message'  => 'You succesfully added new barangay.',
+	                'message'  => 'You succesfully added new secret question.',
 	            ));
 	    	}
     	}
     	return Response::json(array(
             'status'  => 'fail',
-            'message'  => 'An error occured while creating the new barangay. Please try again. .',
+            'message'  => 'An error occured while creating the new secret question. Please try again. .',
         ));
 	}
 }
