@@ -27,7 +27,7 @@ class RecordController extends Controller
     {
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
     	$householdInfo = Household::find($cid);
-    	$brgy = Barangay::all();
+    	$brgy = Barangay::whereStatus(1)->get();
 		return View::Make("records.record")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with("brgy",$brgy)->with('mt','re');
     }
 
