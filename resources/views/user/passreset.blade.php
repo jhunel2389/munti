@@ -31,24 +31,12 @@
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg">Reset Password</p>
 
-    <form onSubmit="return regUser();" id="regForm">
+    <form onSubmit="return resPass();" id="regForm">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Firstname" id="fname" required>
+        <input type="text" class="form-control" placeholder="Username or Email" id="regusername" required>
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Lastname" id="lname" required>
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Username" id="regusername" required>
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
-      </div>
-      <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email" id="regemail" required>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <label>Select Secret Question:</label>
@@ -63,30 +51,22 @@
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" id="regPassword" required>
+        <input type="password" class="form-control" placeholder="New password" id="regPassword" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Retype password" id="re-password" required>
+        <input type="password" class="form-control" placeholder="Retype new password" id="re-password" required>
         <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
-          <div class="checkbox icheck">
-            <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
-            </label>
-          </div>
-        </div>
-        <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" id="btnSubmit">Register</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" id="btnSubmit">Submit</button>
         </div>
         <!-- /.col -->
       </div>
     </form>
 
-    <a href="{{URL::Route('getPassRes')}}">Forgot Password</a><br>
+    <a href="{{URL::Route('getRegister')}}">Register</a><br>
     <a href="{{URL::Route('getLogin')}}" class="text-center">I already have a membership</a>
   </div>
   <!-- /.form-box -->
@@ -135,43 +115,33 @@
       e.preventDefault();
   });
 
-  function validateEmail(email)
-  { 
-    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
-    return re.test(email);
-  }
-
   $(document).keypress(function(e) {
       if(e.which == 13) {
-        regUser();
+        resPass();
       }
   });
 
-  function regUser()
+  function resPass()
   {
     $_token = "{{ csrf_token() }}";
     $username = $("#regusername").val();
-    $email = $("#regemail").val();
     $password = $("#regPassword").val();
     $repassword = $("#re-password").val();
-    $fname = $("#fname").val();
-    $lname = $("#lname").val();
     $secret_id = $("#secret_id").val();
     $sec_ans = $("#sec_ans").val();
     $("#myModal").removeClass("modal-danger");
     $("#myModal").removeClass("modal-success");
-      if($password == $repassword)
-      {
-        
+    
 
-        $("#btnSubmit").empty();
-        $("#btnSubmit").append('<div class="overlay tbl-overlay"><i class="fa fa-spinner fa-spin"></i></div>');
-        $('#btnSubmit').prop('disabled', true);
-
-        $.post('{{URL::Route('postCreate')}}', { _token: $_token, email: $email , username: $username, password: $password, fname: $fname, lname: $lname, secret_id: $secret_id, sec_ans: $sec_ans}, function(data)
+    if($password == $repassword)
+    {
+      $("#btnSubmit").empty();
+      $("#btnSubmit").append('<div class="overlay tbl-overlay"><i class="fa fa-spinner fa-spin"></i></div>');
+      $('#btnSubmit').prop('disabled', true);
+       $.post('{{URL::Route('postPassReset')}}', { _token: $_token, username: $username, password: $password, secret_id: $secret_id, sec_ans: $sec_ans}, function(data)
         {
             $("#btnSubmit").empty();
-            $("#btnSubmit").append("Register");
+            $("#btnSubmit").append("Submit");
             $('#btnSubmit').prop('disabled', false);
             if(data.status == "success")
             {
@@ -188,18 +158,18 @@
             }
             //console.log(data);
         });
-      }
-      else
-      {
-        
-        $("#myModal").addClass("modal-danger");
-        $('#mdl_msg').text("Password does not match.");
-        $('#myModal').modal('show');
+    }
+    else
+    {
+      
+      $("#myModal").addClass("modal-danger");
+      $('#mdl_msg').text("Password does not match.");
+      $('#myModal').modal('show');
 
-        //alert("pass");
-        /*$('.has-error').empty();
-            $('.has-error').append($('<label />' , {'class' :  'control-label' , 'html' : '<i class="fa fa-times-circle-o"></i>Password does not match.'}));*/
-      }
+      //alert("pass");
+      /*$('.has-error').empty();
+          $('.has-error').append($('<label />' , {'class' :  'control-label' , 'html' : '<i class="fa fa-times-circle-o"></i>Password does not match.'}));*/
+    }
   }
 </script>
 </body>

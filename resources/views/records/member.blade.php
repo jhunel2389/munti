@@ -40,7 +40,6 @@
   </div>
   <!-- /.content-wrapper -->
   @include('includes.footer')
-  @include('includes.settingSidebar')
 </div>
 <script type="text/javascript">
 	$(document).on("click",".btn_add",function(){

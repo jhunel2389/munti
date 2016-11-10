@@ -319,7 +319,6 @@
   </div>
   <!-- /.content-wrapper -->
   @include('includes.footer')
-  @include('includes.settingSidebar')
 </div>
 <script type="text/javascript">
 

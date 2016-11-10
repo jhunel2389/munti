@@ -20,6 +20,7 @@
 	<li class="active">Dashboard</li>
 	</ol>
 	</section>
+	@include('includes.statsBox')
 	<!-- Main content -->
 	<section class="content">
 
@@ -34,7 +35,6 @@
 	</div>
 	<!-- /.content-wrapper -->
 	@include('includes.footer')
-	@include('includes.settingSidebar')
 </div>
 <script type="text/javascript">
     

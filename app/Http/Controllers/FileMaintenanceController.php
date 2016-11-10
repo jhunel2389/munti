@@ -8,6 +8,7 @@ use App\Models\Barangay;
 use App\Models\SecretQuestion;
 use Request;
 use Response;
+use Redirect;
 
 class FileMaintenanceController extends Controller {
 
@@ -18,12 +19,14 @@ class FileMaintenanceController extends Controller {
 
 	public function getBrgy()
 	{
+		if(!Auth::User()['isAdmin'] == 1) return Redirect::route('index');
 		$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
 		return View::Make("filemaintenance.barangay")->with("userInfo",$userInfo)->with('mt','fm')->with('cc','pc');
 	}
 	
 	public function getSecret()
 	{
+		if(!Auth::User()['isAdmin'] == 1) return Redirect::route('index');
 		$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
 		return View::Make("filemaintenance.secret")->with("userInfo",$userInfo)->with('mt','fm')->with('cc','sq');
 	}

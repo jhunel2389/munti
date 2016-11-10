@@ -22,35 +22,37 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa pull-right"></i>
           </a>
         </li> 
-        <li class="treeview {{ ($mt == "uam") ? "active" : ""}}">
-          <a href="{{ URL::Route('index') }}">
-            <i class="fa fa-users"></i> <span>User Access Management</span> <i class="fa pull-right"></i>
-            <i class="fa fa-angle-left pull-right"></i>
-          </a>
-          <ul class="treeview-menu">
-            <li class="{{ $mt == "uam" ? (($cc == "ual") ? "active" : "") : ""}}"><a href="{{ URL::Route('getUAL') }}"><i class="fa fa-users"></i> User Access Level</a></li>
-          </ul>
-        </li>
 
-        <li class="{{ ($mt == "fm") ? "active" : ""}} treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i> <span>File Maintenance</span>
-            <i class="fa fa-angle-left pull-right"></i>
-          </a>
-          <ul class="treeview-menu">
-                <li class="{{ $mt == "fm" ? (($cc == "pc") ? "active" : "") : ""}}"><a href="{{ URL::Route('getBrgy') }}"><i class="fa fa-globe"></i> Barangay</a></li>
-          </ul>
-          <ul class="treeview-menu">
-                <li class="{{ $mt == "fm" ? (($cc == "sq") ? "active" : "") : ""}}"><a href="{{ URL::Route('getSecret') }}"><i class="fa fa-globe"></i> Secret Question</a></li>
-          </ul>
-        </li>
+        @if(Auth::User()['isAdmin'] == 1)
+          <li class="treeview {{ ($mt == "uam") ? "active" : ""}}">
+            <a href="{{ URL::Route('index') }}">
+              <i class="fa fa-users"></i> <span>User Access Management</span> <i class="fa pull-right"></i>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+              <li class="{{ $mt == "uam" ? (($cc == "ual") ? "active" : "") : ""}}"><a href="{{ URL::Route('getUAL') }}"><i class="fa fa-users"></i> User Access Level</a></li>
+            </ul>
+          </li>
+          <li class="{{ ($mt == "fm") ? "active" : ""}} treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i> <span>File Maintenance</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+                  <li class="{{ $mt == "fm" ? (($cc == "pc") ? "active" : "") : ""}}"><a href="{{ URL::Route('getBrgy') }}"><i class="fa fa-globe"></i> Barangay</a></li>
+            </ul>
+            <ul class="treeview-menu">
+                  <li class="{{ $mt == "fm" ? (($cc == "sq") ? "active" : "") : ""}}"><a href="{{ URL::Route('getSecret') }}"><i class="fa fa-globe"></i> Secret Question</a></li>
+            </ul>
+          </li>
 
-        <!--end filemaintenance part -->
-        <li class="treeview {{ ($mt == "re") ? "active" : ""}}">
-          <a href="{{ URL::Route('gethousehold') }}">
-            <i class="fa fa-print"></i> <span>Records</span> <i class="fa pull-right"></i>
-          </a>
-        </li>
+          <!--end filemaintenance part -->
+          <li class="treeview {{ ($mt == "re") ? "active" : ""}}">
+            <a href="{{ URL::Route('gethousehold') }}">
+              <i class="fa fa-print"></i> <span>Records</span> <i class="fa pull-right"></i>
+            </a>
+          </li>
+        @endif
       </ul>
     </section>
     <!-- /.sidebar -->

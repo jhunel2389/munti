@@ -17,10 +17,12 @@ Route::group(array('before' => 'guest'), function()
 {
 	Route::get('/login',array('uses' =>'UserController@getLogin', 'as' => 'getLogin'));
 	Route::get('/register',array('uses' =>'UserController@getRegister', 'as' => 'getRegister'));
+	Route::get('/getPassRes',array('uses' =>'UserController@getPassRes', 'as' => 'getPassRes'));
 	Route::group(array('before' => 'csrf'), function()
 	{
 		Route::post('/user/login',array('uses' => 'UserController@postLogin', 'as' => 'postLogin'));
 		Route::post('/user/create', array('uses' => 'UserController@postCreate', 'as' => 'postCreate'));
+		Route::post('/user/passreset', array('uses' => 'UserController@postPassReset', 'as' => 'postPassReset'));
 	});
 });
 
@@ -61,6 +63,8 @@ Route::group(array('prefix' => '/ajax'),function()
 
 			Route::get('/admin/accountAccessChecker/{event}', array('uses' => 'GlobalController@accountAccessChecker', 'as' => 'accountAccessChecker','
 					middleware' => 'auth'));
+
+			Route::get('/statsbox', array('uses' => 'GlobalController@statsbox', 'as' => 'statsbox','middleware' => 'auth'));
 		});
 	});
 });

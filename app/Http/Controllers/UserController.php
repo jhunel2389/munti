@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\SecretQuestion;
 use Validator;
 use Response;
 use Auth;
@@ -22,9 +23,16 @@ class UserController extends Controller {
 
 	public function getRegister()
 	{
-		return view::make('user.register');
+		$secretQuestions = SecretQuestion::whereStatus(1)->get();
+		return view::make('user.register')->with('secretQuestions',$secretQuestions);
 	}
 	
+	public function getPassRes()
+	{
+		$secretQuestions = SecretQuestion::all();
+		return view::make('user.passreset')->with('secretQuestions',$secretQuestions);
+	}
+
 	public function postLogin()
 	{
 		$validator = Validator::make(Request::all(), array(
@@ -70,6 +78,8 @@ class UserController extends Controller {
 
 	public function getUAL()
 	{
+		if(!Auth::User()['isAdmin'] == 1) return Redirect::route('index');
+		
 		$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
 		return View::Make("uam.ual")->with("userInfo",$userInfo)->with('mt','uam')->with('cc','ual');
 	}
@@ -191,6 +201,8 @@ class UserController extends Controller {
 		$fname = Request::get('fname');
 		$lname = Request::get('lname');
 		$gender = Request::get('gender');
+		$secret_id = Request::get('secret_id');
+		$sec_ans = Request::get('sec_ans');
 
 		$validator = Validator::make(Request::all(), array(
 			'email' => 'required',
@@ -198,7 +210,10 @@ class UserController extends Controller {
 			'password' => 'required',
 			'fname' => 'required',
 			'lname' => 'required',
+			'secret_id' => 'required',
+			'sec_ans' => 'required',
 		));
+
 		if ($validator -> fails())
 		{
 			return  Response::json(array(
@@ -219,6 +234,8 @@ class UserController extends Controller {
 				$user -> email = $email;
 				$user -> lname = $lname;
 				$user -> fname = $fname;
+				$user -> secret_id = $secret_id;
+				$user -> sec_ans = $sec_ans;
 				
 				if ($user -> save())
 				{
@@ -240,6 +257,75 @@ class UserController extends Controller {
 				return  Response::json(array(
 			                    'status'  => 'fail',
 			                    'message'  => 'Your email/username has already taken. Please Try again',
+			                ));
+			}
+		}
+	}
+
+	public function postPassReset()
+	{
+		$username = Request::get('username');
+		$password = Request::get('password');
+		$gender = Request::get('gender');
+		$secret_id = Request::get('secret_id');
+		$sec_ans = Request::get('sec_ans');
+
+		$validator = Validator::make(Request::all(), array(
+			'username' => 'required',
+			'password' => 'required',
+			'secret_id' => 'required',
+			'sec_ans' => 'required',
+		));
+
+		if ($validator -> fails())
+		{
+			return  Response::json(array(
+	                    'status'  => 'fail',
+	                    'message'  => 'Fill out all fields.',
+	                ));
+		}
+		else
+		{
+			$field = filter_var($username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+			$result1 = User::where($field,'=',$username)->first();
+			//$result2 = User::where('email','=',$username)->first();
+
+			if(!empty($result1))
+			{	
+				$user = User::find($result1['id']);
+
+				if($user['secret_id'] == $secret_id && $user['sec_ans'] == $sec_ans)
+				{
+
+					$user -> password = Hash::make(Request::get('password'));					
+					if ($user -> save())
+					{
+						return Response::json(array(
+				                    'status'  => 'success',
+				                    'message'  => 'Please go to login page and you may login now.',
+				                ));
+					}
+					else
+					{
+						return  Response::json(array(
+				                    'status'  => 'fail',
+				                    'message'  => 'An error occured while requesting change password to particular account. Please try again.',
+				                ));
+					}
+				}
+				else
+				{
+					return  Response::json(array(
+				                    'status'  => 'fail',
+				                    'message'  => 'You provide invalid information. Please check and try again.',
+				                ));
+				}
+			}
+			else
+			{
+				return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'You provide invalid information. Please check and try again.',
 			                ));
 			}
 		}

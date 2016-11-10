@@ -65,6 +65,7 @@
       </div>
 
     <a href="{{URL::Route('getRegister')}}">Register</a><br>
+    <a href="{{URL::Route('getPassRes')}}">Forgot Password</a><br>
 
   </div>
   <!-- /.login-box-body -->
@@ -102,6 +103,16 @@
             increaseArea: '20%' // optional
         });
     });
+
+
+
+  $(document).keypress(function(e) {
+      if(e.which == 13) {
+        validateCreds();
+      }
+  });
+
+
 
     function validateCreds()
     {

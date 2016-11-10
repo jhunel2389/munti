@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Barangay;
 use App\Models\SecretQuestion;
+use App\Models\Household;
+use App\Models\HouseholdMember;
 use Auth;
 use DB;
 use Input;
 use Response;
 use Request;
+
 
 class GlobalController extends Controller {
 
@@ -85,5 +88,25 @@ class GlobalController extends Controller {
                 'message'  => 'You have no permission to add, update, and delete data or records.',
             );
 		}
+	}
+
+
+	public function statsbox()
+	{
+		$response = array();
+		$brgyList = Barangay::all();
+
+		if(!empty($brgyList))
+		{
+			foreach ($brgyList as $brgyListi) {
+				$total_pop = Household::whereBrgy_id($brgyListi['id'])->sum('c_10');
+				$response[] = array(
+					"total_population" => (!empty($total_pop)) ? $total_pop : 0,
+					"brgy_name" => $brgyListi['name'],
+				);
+			}
+		}
+
+		return $response;
 	}
 }
