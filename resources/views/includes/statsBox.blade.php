@@ -1,64 +1,5 @@
 <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3 id="nu">0</h3>
-
-              <p>New Users This Month</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3 id="ou">0</h3>
-
-              <p>Online User</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3 id="ru">0</h3>
-
-              <p>Registered User</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
-          </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3 id="uvu">0</h3>
-
-              <p>Unverified User</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
-          </div>
-        </div>
+      <div class="row" id="statsbox_brgy">
         <!-- ./col -->
       </div>
       <!-- /.row -->
@@ -67,10 +8,29 @@
         {
           $.get('{{URL::Route('statsbox')}}', function(data)
           {
-            $("#nu").text(data.nu);
-            $("#ou").text(data.ou);
-            $("#ru").text(data.ru);
-            $("#uvu").text(data.uvu);
+            if(data.length != 0)
+            {
+              $('#statsbox_brgy').empty();
+              for (var i = 0; i < data.length; i++) 
+              {
+                $('#statsbox_brgy').append(
+                    $('<div />', {'class': 'col-lg-3 col-xs-6' }).append(
+                        $('<div />', {'class': 'small-box bg-aqua' }).append(
+                             $('<div />', {'class': 'inner' }).append(
+                               $('<h3 />', {'id': 'nu' , 'text' : data[i]['total_population']}),
+                                $('<p />', {'text': 'Total population for Brgy. '+data[i]['brgy_name'] })
+                              ),
+                              $('<div />', {'class': 'icon' }).append(
+                                $('<i />', {'class': 'ion ion-android-locate' })
+                              ),
+                              $('<a  />', {'class': 'small-box-footer' , 'html': 'Summary statistic<i class="fa fa-arrow-circle-right"></i>' })
+                             )));
+              }
+            }
+            else
+            {
+              promptMsg('fail',"No records yet.")
+            }
           });
         }
         countstatsbox();
