@@ -42,6 +42,13 @@ class RecordController extends Controller
 		return View::Make("records.member")->with("userInfo",$userInfo)->with('mt','re');
     }
 
+    function brgySummary($cid)
+    {
+    	$brgyInfo = App::make("App\Http\Controllers\GlobalController")->brgyInfo($cid);
+    	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
+		return View::Make("records.summary")->with("userInfo",$userInfo)->with('mt','db')->with("brgyInfo",$brgyInfo);
+    }
+
     function savingRecordHousehold()
     {
     	$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");

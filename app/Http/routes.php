@@ -71,6 +71,7 @@ Route::group(array('prefix' => '/ajax'),function()
 Route::group(array('prefix' => '/records'),function()
 {
 	Route::get('/household',array('uses' => 'RecordController@index', 'as' => 'gethousehold'));
+	Route::get('/summary/{cid}',array('uses' => 'RecordController@brgySummary', 'as' => 'brgySummary'));
 	Route::get('/member/{cid}',array('uses' => 'RecordController@getMembers', 'as' => 'getMembers'));
 	Route::get('/houdeholdUrlGenerator',array('uses' => 'RecordController@houdeholdUrlGenerator', 'as' => 'houdeholdUrlGenerator'));
 	Route::get('/generateHMemberUrl',array('uses' => 'RecordController@generateHMemberUrl', 'as' => 'generateHMemberUrl'));

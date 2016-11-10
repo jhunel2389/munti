@@ -23,7 +23,7 @@
                               $('<div />', {'class': 'icon' }).append(
                                 $('<i />', {'class': 'ion ion-android-locate' })
                               ),
-                              $('<a  />', {'class': 'small-box-footer' , 'html': 'Summary statistic<i class="fa fa-arrow-circle-right"></i>' })
+                              $('<a  />', {'class': 'small-box-footer' , 'html': 'Summary statistic <i class="fa fa-arrow-circle-right"></i>' , 'href' : data[i]['link'] })
                              )));
               }
             }

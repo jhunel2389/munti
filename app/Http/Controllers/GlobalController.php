@@ -11,6 +11,7 @@ use DB;
 use Input;
 use Response;
 use Request;
+use URL;
 
 
 class GlobalController extends Controller {
@@ -103,6 +104,7 @@ class GlobalController extends Controller {
 				$response[] = array(
 					"total_population" => (!empty($total_pop)) ? $total_pop : 0,
 					"brgy_name" => $brgyListi['name'],
+					"link" => URL::route('brgySummary',$brgyListi['id']),
 				);
 			}
 		}
