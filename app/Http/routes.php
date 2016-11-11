@@ -67,6 +67,8 @@ Route::group(array('prefix' => '/ajax'),function()
 			Route::get('/statsbox', array('uses' => 'GlobalController@statsbox', 'as' => 'statsbox','middleware' => 'auth'));
 			Route::get('/statisticSummarry/{bid}', array('uses' => 'GlobalController@statisticSummarry', 'as' => 'statisticSummarry','
 					middleware' => 'auth'));
+			Route::get('/householdMemInfo', array('uses' => 'GlobalController@householdMemInfo', 'as' => 'householdMemInfo','
+					middleware' => 'auth'));
 		});
 	});
 });
@@ -84,6 +86,7 @@ Route::group(array('prefix' => '/records'),function()
 		Route::group(array('before' => 'csrf'), function()
 		{
 			Route::post('/saving',array('uses' => 'RecordController@savingRecordHousehold', 'as' => 'savingRecordHousehold'));
+			Route::post('/savingHouseholdMember',array('uses' => 'RecordController@savingHouseholdMember', 'as' => 'savingHouseholdMember'));
 		});
 	});
 });

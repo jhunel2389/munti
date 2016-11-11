@@ -24,7 +24,7 @@
     <section class="content">
 		<div class="box box-primary">
 	        <div class="box-header with-border">
-	          <h3 class="box-title">Family Members</h3>
+	          <h3 class="box-title">Family Members of Household I.D.No. : {{$householdInfo['household_id_no']}}</h3>
 	        </div>
 	        <div class="box-body">
 	        	<div class="row">
@@ -34,6 +34,26 @@
 
 		            </div>
 		        </div>
+		        <div class="panel panel-default">
+		        	<div class="panel-body table-responsive">
+		        		<table class="table	table-bordered table-hover table-striped">
+		        			<tr>
+							  <th colspan="1" style="text-align: center;">System ID</th>
+							  <th colspan="1" style="text-align: center;">Household Member No.</th>
+							  <th colspan="1" style="text-align: center;">Name</th>
+							  <th colspan="1" style="text-align: center;">View</th>
+							</tr>
+							@foreach ($householdMember as $householdMemberi)
+							<tr>
+							  <th colspan="1" style="text-align: center;">{{$householdMemberi['id']}}</th>
+							  <th colspan="1" style="text-align: center;">{{$householdMemberi['household_member_no']}}</th>
+							  <th colspan="1" style="text-align: center;">{{$householdMemberi['fname'].' '.$householdMemberi['lname']}}</th>
+							  <th colspan="1" style="text-align: center;"><button type="button" class="btn btn-info pull-left" onclick="fillInfo({{$householdMemberi['id']}});">view</button></th>
+							</tr>
+							@endforeach
+		        		</table>
+		        	</div>
+		        </div>
 			</div>
     	</div>
     </section>
@@ -42,6 +62,7 @@
   @include('includes.footer')
 </div>
 <script type="text/javascript">
+
 	$(document).on("click",".btn_add",function(){
 		$('body').append('<div class="modal fade modal_info" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">\
                         <div class="modal-dialog" style="width:645px;">\
@@ -299,7 +320,7 @@
 							                		<div class="col-sm-2">\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="mem_20" id="mem_20" value="1" checked>\
+									                      		<input type="radio" name="mem_20" id="mem_20" value="1">\
 									                      		Same Address\
 									                    	</label>\
 									                  	</div>\
@@ -1346,12 +1367,25 @@
 	$(document).on("hidden.bs.modal",".modal_info",function(){
       	$(this).remove();
   	});
-  	
+
+  	function fillInfo(cid)
+	{
+		//btn_add
+		$(".btn_add").click();
+		$.get('{{URL::Route('householdMemInfo')}}', { cid : cid}, function(data)
+		{
+			if(data.length != 0)
+			{
+				$("#household_member_no").val(data.household_member_no);
+			}
+		});
+	}
+
   	function submitMem()
   	{
   		$_token = "{{ csrf_token() }}";
 		//$cid = 0;
-		$household_system_id = $("#household_system_id").val();
+		$household_system_id = "{{$householdInfo['id']}}";
 		$household_member_no = $("#household_member_no").val();
 		$fname = $("#fname").val();
 		$lname = $("#lname").val();
@@ -1374,7 +1408,7 @@
 		$d_24 = $('input[name=d_24]:checked').val();
 		$d_24_b = $("#d_24_b").val();
 		$d_25_a = $("#d_23_b").val();
-		$d_25_b = $("#d_23_c").val();
+		$d_25_b = $("#d_25_b").val();
 		$f_27 = $('input[name=f_27]:checked').val();
 		$f_28 = $('input[name=f_28]:checked').val();
 		$f_29 = $('input[name=f_29]:checked').val();
@@ -1391,6 +1425,7 @@
 		$f_40 = $('input[name=f_40]:checked').val();
 		$f_41 = $('input[name=f_41]:checked').val();
 		$f_42 = $('input[name=f_42]:checked').val();
+		$f_42_b = $("#f_42_b").val();
 		$f_43 = $("#f_43").val();
 		$f_44 = $('input[name=f_44]:checked').val();
 		$f_44_b = $("#f_44_b").val();
@@ -1408,30 +1443,28 @@
 		$g_55 = $('input[name=g_55]:checked').val();
 		$g_58 = $('input[name=g_58]:checked').val();
 
-
-		//alert($mem_13);
-
-		/*$household_id_no = $("#household_id_no").val();
-		$name_of_respondent = $("#name_of_respondent").val();
-		
-		$time_started = $("#time_started").val();
-		$interviewer_enumerator = $("#interviewer_enumerator").val();
-		$a_1 = $('input[name=opt1_a]:checked', '#regForm').val();
-		$a_2 = $("#a_2").val();
-		$a_3 = $('input[name=opt3_a]:checked', '#regForm').val();
-		$a_4 = $('input[name=opt4_a]:checked', '#regForm').val();
-		$b_5 = $("#b_5").val();
-		$b_6 = $("#b_6").val();
-		$b_7 = $('input[name=q7]:checked', '#regForm').val();
-		$b_8 = $('input[name=q8]:checked', '#regForm').val();
-		$b_9 = $('input[name=q9]:checked', '#regForm').val();
-		$c_10 = $("#c_10").val();
-
   		
-  		$("#btnSubmit").empty();
+  		/*$("#btnSubmit").empty();
 	    $("#btnSubmit").append('<i class="fa fa-spinner fa-spin"></i>');
 	    $('#btnSubmit').prop('disabled', true);
 	    $('.btnClose').prop('disabled', true);*/
+
+	    $.post('{{URL::Route('savingHouseholdMember')}}', { _token: $_token, household_system_id: $household_system_id, household_member_no: $household_member_no, fname: $fname, lname: $lname, mname: $mname, mem_12: $mem_12, mem_13: $mem_13, sex_14: $sex_14, dob_15: $dob_15, civil_reg_16: $civil_reg_16, stats_17: $stats_17, mem_18: $mem_18, ofw_19: $ofw_19, mem_20: $mem_20, mem_20_b: $mem_20_b, d_21_schooling: $d_21_schooling, d_22: $d_22, d_23: $d_23, d_23_b: $d_23_b, d_23_c: $d_23_c, d_24: $d_24, d_24_b: $d_24_b, d_25_a: $d_25_a, d_25_b: $d_25_b, f_27: $f_27, f_28: $f_28, f_29: $f_29, f_30: $f_30, f_31: $f_31, f_32: $f_32, f_33: $f_33, f_34: $f_34, f_35: $f_35, f_36: $f_36, f_37: $f_37, f_38: $f_38, f_39: $f_39, f_40: $f_40, f_41: $f_41, f_42: $f_42, f_42_b: $f_42_b, f_43: $f_43, f_44: $f_44, f_44_b: $f_44_b, f_45: $f_45, f_46: $f_46, f_47: $f_47, f_48_a: $f_48_a, f_48_b: $f_48_b, f_49: $f_49, g_50: $g_50, g_51: $g_51, g_52: $g_52, g_53: $g_53, g_54: $g_54, g_55: $g_55, g_58: $g_58}, function(data)
+    {
+        $("#btnSubmit").empty();
+        $("#btnSubmit").append("Submit");
+        $('#btnSubmit').prop('disabled', false);
+        if(data.status == "success")
+        {
+          //promptMsg(data.status,data.message);
+          //alert(data.postback);
+          window.location.replace(data.postback);
+        }
+        else
+        {
+          //promptMsg(data.status,data.message);
+        }
+    });
 	    
   	}
 </script>

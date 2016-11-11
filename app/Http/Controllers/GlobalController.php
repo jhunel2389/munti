@@ -91,6 +91,11 @@ class GlobalController extends Controller {
 		}
 	}
 
+	public function householdMemInfo()
+	{
+		$cid = Request::get("cid");
+		return HouseholdMember::find($cid);
+	}
 
 	public function statsbox()
 	{

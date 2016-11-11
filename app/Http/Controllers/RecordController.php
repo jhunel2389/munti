@@ -39,7 +39,9 @@ class RecordController extends Controller
     function getMembers($cid)
     {
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
-		return View::Make("records.member")->with("userInfo",$userInfo)->with('mt','re');
+    	$householdInfo = Household::find($cid);
+    	$householdMember = HouseholdMember::whereHousehold_system_id($cid)->get();
+		return View::Make("records.member")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with("householdMember",$householdMember)->with('mt','re');
     }
 
     function brgySummary($cid)
@@ -172,7 +174,7 @@ class RecordController extends Controller
 		}
     }
 
-    function addHouseholdMember()
+    function savingHouseholdMember()
     {
     	$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
     	if($actChecker['status'] == "fail")
@@ -215,6 +217,7 @@ class RecordController extends Controller
     	$f_40 = Request::get('f_40');
     	$f_41 = Request::get('f_41');
     	$f_42 = Request::get('f_42');
+    	$f_42_b = Request::get('f_42_b');
     	$f_43 = Request::get('f_43');
     	$f_44 = Request::get('f_44');
     	$f_44_b = Request::get('f_44_b');
@@ -233,7 +236,7 @@ class RecordController extends Controller
     	$f_48_a = Request::get('f_48_a');
     	$f_48_b = Request::get('f_48_b');
     	$f_49 = Request::get('f_49');
-    	$encoded_by = Request::get('encoded_by');
+    	$encoded_by = Auth::User()['id'];
     	$g_50 = Request::get('g_50');
     	$g_51 = Request::get('g_51');
     	$g_52 = Request::get('g_52');
@@ -354,6 +357,7 @@ class RecordController extends Controller
 				return Response::json(array(
 		                    'status'  => 'success',
 		                    'message'  => 'New household member is successfully added.',
+		                    'postback' => URL::Route('getMembers',$householdMember['household_system_id']),
 		                ));
 			}
 			else
