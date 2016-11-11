@@ -70,7 +70,7 @@
 							<div class="bootstrap-timepicker">
 								<div class="input-group date">
 				                  	<span class="input-group-addon" id="sizing-addon2">IV. Date ( Petsa ng panayam )</span>
-				                  	<input type="text" class="form-control pull-right" id="datepicker" value="{{!empty($householdInfo['date']) ? $householdInfo['date'] : ''}}" required>
+				                  	<input type="text" class="form-control pull-right" id="datepicker" value="{{!empty($householdInfo['date']) ? date_format(date_create($householdInfo['date']),'m/d/Y') : ''}}" required>
 				                </div>
 				            </div>
 				            <div class="bootstrap-timepicker">

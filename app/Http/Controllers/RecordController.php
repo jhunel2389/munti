@@ -136,7 +136,7 @@ class RecordController extends Controller
 			$household -> brgy_id = $brgy_id;
 			$household -> household_id_no = $household_id_no;
 			$household -> name_of_respondent = $name_of_respondent;
-			$household -> date = $date;
+			$household -> date = date_format(date_create($date),"Y-m-d");
 			$household -> time_started = $time_started;
 			$household -> interviewer_enumerator = $interviewer_enumerator;
 			$household -> a_1 = $a_1;
