@@ -174,6 +174,15 @@ class RecordController extends Controller
 
     function addHouseholdMember()
     {
+    	$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
+    	if($actChecker['status'] == "fail")
+    	{
+    		return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'Your account accesss level are not allowed to process the request.',
+			                ));
+    	}
+
     	$household_system_id = Request::get('household_system_id');
     	$household_member_no = Request::get('household_member_no');
     	$fname = Request::get('fname');
@@ -280,7 +289,24 @@ class RecordController extends Controller
 		}
 		else
 		{
-			$householdMember = new HouseholdMember();
+
+			if(!empty($cid))
+			{
+				$householdMember = HouseholdMember::find($cid);
+			}
+			else
+			{
+				$householdCheck = HouseholdMember::where('household_member_no','=',$household_member_no)->where('household_system_id','=',$household_system_id)->get();
+				if(count($householdCheck) != 0)
+				{
+					return  Response::json(array(
+			                    'status'  => 'fail',
+			                    'message'  => 'The given Household Member Number is already exist in this particular household. Please check and try again.',
+			                ));
+				}
+				$householdMember = new HouseholdMember();
+			}
+
 			$householdMember -> household_system_id = $household_system_id;
 			$householdMember -> household_member_no = $household_member_no;
 			$householdMember -> fname = $fname;
@@ -289,7 +315,7 @@ class RecordController extends Controller
 			$householdMember -> mem_12 = $mem_12;
 			$householdMember -> mem_13 = $mem_13;
 			$householdMember -> sex_14 = $sex_14;
-			$householdMember -> dob_15 = $dob_15;
+			$householdMember -> dob_15 = date_format(date_create($dob_15),"Y-m-d");
 			$householdMember -> civil_reg_16 = $civil_reg_16;
 			$householdMember -> stats_17 = $stats_17;
 			$householdMember -> mem_18 = $mem_18;
