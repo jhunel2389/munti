@@ -449,25 +449,25 @@
 				    							<span class="help-block">Siya ba ay miyembro ng SS o GSIS?</span>\
 									    		<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="yes">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="1">\
 							                     		SSS only\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="no">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="2">\
 							                     		GSIS only\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="no">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="3">\
 							                     		Both SSS and GSIS\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="no">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="4">\
 							                     		Neither\
 							                    	</label>\
 							                  	</div>\
@@ -573,7 +573,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q55Radio" name="g_55" class="" id="g_55" value="yes">\
+									                      		<input type="radio" class="q55Radio" name="g_55" class="" id="g_55" value="1">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -581,7 +581,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q55Radio" name="g_55" class="" id="g_55" value="yes">\
+									                      		<input type="radio" class="q55Radio" name="g_55" class="" id="g_55" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
