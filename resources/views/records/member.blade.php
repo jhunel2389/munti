@@ -649,7 +649,7 @@
 			if( $(this).is(":checked") ){
 				var val = $(this).val();
 				$(".forq52y").empty();
-				if(val == "yes"){
+				if(val == "1"){
 					$(".forq52y").append('<div class="form-group">\
 											<label class="control-label" for="inputWarning"> 53. What type of disablity does he/she have?</label>\
 			    							<div class="row">\
@@ -771,9 +771,11 @@
 		});
 
 		$(document).on("change",".q29Radio",function(){
+			$(".forq29y").empty();
+			$(".forq29n").empty();
 			if( $(this).is(":checked") ){
 				var val = $(this).val();
-				if(val == "yes"){
+				if(val == "1"){
 					$(".forq29n").append('<div class="form-group">\
 					                			<label class="control-label" for="inputWarning"> 30. Although he/she did not work, did he/she have a job or business during the pastweek?</label>\
 				    							<span class="help-block">(Kung hindi naghahanapbuhay, mayroon ba siyang negosyo noon nakaraang linggo?)</span>\
@@ -953,7 +955,7 @@
 				var val = $(this).val();
 				$(".forq30n").empty();
 				$(".forq29y").empty();
-				if(val == "yes"){
+				if(val == "1"){
 					$(".forq29y").empty();
 					append_forq29y();
 				}
@@ -984,7 +986,7 @@
 			if( $(this).is(":checked") ){ 
 				$(".forq40").empty();
 				var val = $(this).val();
-				if(val == "yes"){
+				if(val == "1"){
 					$(".forq40").append('<div class="form-group">\
 											<label class="control-label" for="inputWarning"> 41. Is this the first time for him/her to look for work or establish a business?</label>\
 			    							<span class="help-block">(Ito ba ang kaniyang unang beses na naghahanap ng trabaho o sinubukang mag simula ng negosyo?)</span>\
@@ -1215,7 +1217,7 @@
             	$(".forq21yn").fadeOut("fast", function() {
 			        $(this).remove();
 			    });
-            	if(val == "yes"){
+            	if(val == "1"){
             		$(".forq21").append('<div class="forq21yn">\
 	            							<label class="control-label" for="inputWarning"> 22. What grade/year he/she currently attending? (Pls. specify)</label>\
 					                		<input type="text" class="form-control" id="hh_no" placeholder="Example grade 6">\
