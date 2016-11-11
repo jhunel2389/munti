@@ -197,10 +197,14 @@ class RecordController extends Controller
     	$mem_18 = Request::get('mem_18');
     	$ofw_19 = Request::get('ofw_19');
     	$mem_20 = Request::get('mem_20');
+    	$mem_20_b = Request::get('mem_20_b');
     	$d_21_schooling = Request::get('d_21_schooling');
     	$d_22 = Request::get('d_22');
     	$d_23 = Request::get('d_23');
+    	$d_23_b = Request::get('d_23_b');
+    	$d_23_c = Request::get('d_23_c');
     	$d_24 = Request::get('d_24');
+    	$d_24_b = Request::get('d_24_b');
     	$d_25_a = Request::get('d_25_a');
     	$d_25_b = Request::get('d_25_b');
     	$d_26 = Request::get('d_26');
@@ -213,6 +217,7 @@ class RecordController extends Controller
     	$f_42 = Request::get('f_42');
     	$f_43 = Request::get('f_43');
     	$f_44 = Request::get('f_44');
+    	$f_44_b = Request::get('f_44_b');
     	$f_45 = Request::get('f_45');
     	$f_46 = Request::get('f_46');
     	$f_47 = Request::get('f_47');
@@ -229,8 +234,6 @@ class RecordController extends Controller
     	$f_48_b = Request::get('f_48_b');
     	$f_49 = Request::get('f_49');
     	$encoded_by = Request::get('encoded_by');
-
-
     	$g_50 = Request::get('g_50');
     	$g_51 = Request::get('g_51');
     	$g_52 = Request::get('g_52');
@@ -239,7 +242,8 @@ class RecordController extends Controller
     	$g_54 = Request::get('g_54');
     	$g_55 = Request::get('g_55');
     	$g_58 = Request::get('g_58');
-    	$mem_20 = Request::get('mem_20');
+
+    	
     	$validator = Validator::make(Request::all(), array(
 			'household_system_id' => 'required',
 			'household_member_no' => 'required',
@@ -255,45 +259,13 @@ class RecordController extends Controller
 			'mem_18' => 'required',
 			'ofw_19' => 'required',
 			'mem_20' => 'required',
-			'd_21_schooling' => 'required',
-			'd_22' => 'required',
-			'd_23' => 'required',
-			'd_24' => 'required',
-			'd_25_a' => 'required',
-			'd_25_b' => 'required',
-			'd_26' => 'required',
-			'f_27' => 'required',
-			'f_28' => 'required',
-			'f_29' => 'required',
-			'f_30' => 'required',
-			'f_40' => 'required',
-			'f_41' => 'required',
-			'f_42' => 'required',
-			'f_43' => 'required',
-			'f_44' => 'required',
-			'f_45' => 'required',
-			'f_46' => 'required',
-			'f_47' => 'required',
-			'f_31' => 'required',
-			'f_32' => 'required',
-			'f_33' => 'required',
-			'f_34' => 'required',
-			'f_35' => 'required',
-			'f_36' => 'required',
-			'f_37' => 'required',
-			'f_38' => 'required',
-			'f_39' => 'required',
-			'f_48_a' => 'required',
-			'f_48_b' => 'required',
-			'f_49' => 'required',
-			'encoded_by' => 'required',
 		));
 
 		if ($validator -> fails())
 		{
 			return  Response::json(array(
 	                    'status'  => 'fail',
-	                    'message'  => 'Fill out all fields.',
+	                    'message'  => 'Fill out all basic information fields.',
 	                ));
 		}
 		else
@@ -334,7 +306,10 @@ class RecordController extends Controller
 			$householdMember -> d_21_schooling = $d_21_schooling;
 			$householdMember -> d_22 = $d_22;
 			$householdMember -> d_23 = $d_23;
+			$householdMember -> d_23_b = $d_23_b;
+			$householdMember -> d_23_c = $d_23_c;
 			$householdMember -> d_24 = $d_24;
+			$householdMember -> d_24_b = $d_24_b;
 			$householdMember -> d_25_a = $d_25_a;
 			$householdMember -> d_25_b = $d_25_b;
 			$householdMember -> d_26 = $d_26;
@@ -345,8 +320,10 @@ class RecordController extends Controller
 			$householdMember -> f_40 = $f_40;
 			$householdMember -> f_41 = $f_41;
 			$householdMember -> f_42 = $f_42;
+			$householdMember -> f_42_b = $f_42_b;
 			$householdMember -> f_43 = $f_43;
 			$householdMember -> f_44 = $f_44;
+			$householdMember -> f_44_b = $f_44_b;
 			$householdMember -> f_45 = $f_45;
 			$householdMember -> f_46 = $f_46;
 			$householdMember -> f_47 = $f_47;

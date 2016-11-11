@@ -313,7 +313,7 @@
 									                  	</div>\
 									                </div>\
 									                <div class="col-sm-7">\
-								                    	<input type="text" class="form-control" id="mem_20_other" placeholder="">\
+								                    	<input type="text" class="form-control" id="mem_20_b" placeholder="">\
 								                  	</div>\
 								                </div>\
 											</div>\
@@ -622,7 +622,7 @@
 	                            </div>\
 	                            <div class="modal-footer">\
 	                              	<button type="button" class="btn btn-default btnClose" >Close</button>\
-	                              	<button type="button" class="btn btn-info" >Submit</button>\
+	                              	<button type="button" class="btn btn-info" id="btnSubmit" onClick="submitMem();">Submit</button>\
 	                            </div>\
                           	</div>\
                         </div>\
@@ -1049,7 +1049,7 @@
 								                     		Others(pls. Specify)\
 								                    	</label>\
 								                  	</div>\
-								                  	<input style="width: 200px" type="text" class="form-control" id="hh_no" placeholder="">\
+								                  	<input style="width: 200px" type="text" class="form-control" id="f_42_b" placeholder="">\
 			    								</div>\
 			    							</div>\
 										</div>\
@@ -1060,7 +1060,7 @@
 						                			<span class="help-block">(Ilang linggo na siyang naghahanap ng trabaho?)</span>\
 						                		</div>\
 						                		<div class="col-md-3">\
-						                			<input type="text" style="width: 60px" class="form-control"  placeholder="">\
+						                			<input type="text" style="width: 60px" class="form-control" id="f_43" placeholder="">\
 						                		</div>\
 						                	</div>\
 						                </div>\
@@ -1074,25 +1074,25 @@
 				    								<div class="col-md-6">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="yes">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="1">\
 									                     		Tired/Believes no is available\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="2">\
 									                     		Awaiting results of job application\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="3">\
 									                     		Bad Weather\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="4">\
 									                     		Too young/old or retired/with disablity\
 									                    	</label>\
 									                  	</div>\
@@ -1100,37 +1100,37 @@
 				    								<div class="col-md-6">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="yes">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="5">\
 									                     		Waiting for rehire/job recall\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="6">\
 									                     		Temporary illness/disablity\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="7">\
 									                     		Household, family duties\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+									                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="8">\
 									                     		Schooling\
 									                    	</label>\
 									                  	</div>\
 				    								</div>\
 				    								<div class="radio col-sm-4">\
 								                    	<label>\
-								                      		<input type="radio" class="q44Radio" name="r44" class="" id="" value="no">\
+								                      		<input type="radio" class="q44Radio" name="f_44" class="" id="f_44" value="9">\
 								                     		Others(pls. specify)\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="col-sm-8">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="">\
+								                    	<input type="text" class="form-control" id="f_44_b" placeholder="">\
 								                  	</div>\
 				    							</div>\
 				    							<label class="control-label" for="inputWarning"> 45. When was the last time he/she looked for work?</label>\
@@ -1139,13 +1139,13 @@
 				    								<div class="col-md-6">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q45Radio" name="r45" class="" id="" value="yes">\
+									                      		<input type="radio" class="q45Radio" name="f_45" class="" id="f_45" value="1">\
 									                     		With in the past 1 month\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q45Radio" name="r45" class="" id="" value="no">\
+									                      		<input type="radio" class="q45Radio" name="f_45" class="" id="f_45" value="2">\
 									                     		More than 6 months\
 									                    	</label>\
 									                  	</div>\
@@ -1153,13 +1153,13 @@
 				    								<div class="col-md-6">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q45Radio" name="r45" class="" id="" value="yes">\
+									                      		<input type="radio" class="q45Radio" name="f_45" class="" id="f_45" value="3">\
 									                     		1 to 6 months\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q45Radio" name="r45" class="" id="" value="no">\
+									                      		<input type="radio" class="q45Radio" name="f_45" class="" id="f_45" value="4">\
 									                     		Never(hindi kailanman)\
 									                    	</label>\
 									                  	</div>\
@@ -1171,7 +1171,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q46Radio" name="r46" class="" id="" value="yes">\
+									                      		<input type="radio" class="q46Radio" name="f_46" class="" id="f_46" value="1">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -1179,7 +1179,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q46Radio" name="r46" class="" id="" value="no">\
+									                      		<input type="radio" class="q46Radio" name="f_46" class="" id="f_46" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -1191,7 +1191,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q47Radio" name="r47" class="" id="" value="yes">\
+									                      		<input type="radio" class="q47Radio" name="f_47" class="" id="f_47" value="1">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -1199,7 +1199,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q47Radio" name="r47" class="" id="" value="no">\
+									                      		<input type="radio" class="q47Radio" name="f_47" class="" id="f_47" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -1219,23 +1219,23 @@
             	if(val == "1"){
             		$(".forq21").append('<div class="forq21yn">\
 	            							<label class="control-label" for="inputWarning"> 22. What grade/year he/she currently attending? (Pls. specify)</label>\
-					                		<input type="text" class="form-control" id="hh_no" placeholder="Example grade 6">\
+					                		<input type="text" class="form-control" id="d_22" placeholder="Example grade 6">\
 					                		<label class="control-label" for="inputWarning"> 23.Where does he/she attend school?</label>\
 					    					<div class="form-group">\
 						                    	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r22" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_23" id="optionsRadios1" value="1">\
 							                     		Public(School name)\
 							                    	</label>\
 							                  	</div>\
-							                  	<input type="text" class="form-control" id="hh_no" placeholder="name of school">\
+							                  	<input type="text" class="form-control" id="d_23_b" placeholder="name of school">\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r22" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_23" id="optionsRadios1" value="2">\
 							                     		Private(School name)\
 							                    	</label>\
 							                  	</div>\
-							                  	<input type="text" class="form-control" id="hh_no" placeholder="name of school">\
+							                  	<input type="text" class="form-control" id="d_23_c" placeholder="name of school">\
 						                	</div>\
 					                	</div>\
 				                		');
@@ -1247,95 +1247,95 @@
             								<div class="form-group">\
 						                    	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="1">\
 							                     		Malayo ang paaralan\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="2">\
 							                     		Walang paaralan sa barangay\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="3">\
 							                     		walang regular na transportatyon\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="4">\
 							                     		Mahal ang pagaaral\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="5">\
 							                     		Pagkakasakit/kapansanan\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="6">\
 							                     		Dahil sa gawaing bahay\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="7">\
 							                     		Pagpapakasal\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="8">\
 							                     		Hanapbuhay/naghahanap ngtrabaho\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="9">\
 							                     		Walang interes mag aral\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="10">\
 							                     		Hindi makapag adjust sa pag aaral\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="11">\
 							                     		May problema saschool record\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="12">\
 							                     		Tapos ng mag aral\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="13">\
 							                     		Problema sa birth certificate\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="14">\
 							                     		Masyado pang bata para mag aral\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="r24" id="optionsRadios1" value="option1">\
+							                      		<input type="radio" name="d_24" id="d_24" value="15">\
 							                     		Iba pa\
 							                    	</label>\
 							                  	</div>\
-							                  	<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px" >\
+							                  	<input type="text" class="form-control" id="d_24_b" placeholder="" style="width: 200px" >\
 						                	</div>\
 					                	</div>\
 				                		');
@@ -1347,6 +1347,93 @@
       	$(this).remove();
   	});
   	
+  	function submitMem()
+  	{
+  		$_token = "{{ csrf_token() }}";
+		//$cid = 0;
+		$household_system_id = $("#household_system_id").val();
+		$household_member_no = $("#household_member_no").val();
+		$fname = $("#fname").val();
+		$lname = $("#lname").val();
+		$mname = $("#mname").val();
+		$mem_12 = $("#mem_12").val();
+		$mem_13 = $('input[name=mem_13]:checked').val();
+		$sex_14 = $('input[name=sex_14]:checked').val();
+		$dob_15 = $("#datepicker").val();
+		$civil_reg_16 = $('input[name=civil_reg_16]:checked').val();
+		$stats_17 = $("#stats_17").val();
+		$mem_18 = $('input[name=mem_18]:checked').val();
+		$ofw_19 = $('input[name=ofw_19]:checked').val();
+		$mem_20 = $('input[name=mem_20]:checked').val();
+		$mem_20_b = $("#mem_20_b").val();
+		$d_21_schooling = $('input[name=d_21_schooling]:checked').val();
+		$d_22 = $("#d_22").val();
+		$d_23 = $('input[name=d_23]:checked').val();
+		$d_23_b = $("#d_23_b").val();
+		$d_23_c = $("#d_23_c").val();
+		$d_24 = $('input[name=d_24]:checked').val();
+		$d_24_b = $("#d_24_b").val();
+		$d_25_a = $("#d_23_b").val();
+		$d_25_b = $("#d_23_c").val();
+		$f_27 = $('input[name=f_27]:checked').val();
+		$f_28 = $('input[name=f_28]:checked').val();
+		$f_29 = $('input[name=f_29]:checked').val();
+		$f_30 = $('input[name=f_30]:checked').val();
+		$f_31 = $("#f_31").val();
+		$f_32 = $("#f_32").val();
+		$f_33 = $("#f_33").val();
+		$f_34 = $('input[name=f_34]:checked').val();
+		$f_35 = $("#f_35").val();
+		$f_36 = $("#f_36").val();
+		$f_37 = $('input[name=f_37]:checked').val();
+		$f_38 = $('input[name=f_38]:checked').val();
+		$f_39 = $('input[name=f_39]:checked').val();
+		$f_40 = $('input[name=f_40]:checked').val();
+		$f_41 = $('input[name=f_41]:checked').val();
+		$f_42 = $('input[name=f_42]:checked').val();
+		$f_43 = $("#f_43").val();
+		$f_44 = $('input[name=f_44]:checked').val();
+		$f_44_b = $("#f_44_b").val();
+		$f_45 = $('input[name=f_45]:checked').val();
+		$f_46 = $('input[name=f_46]:checked').val();
+		$f_47 = $('input[name=f_47]:checked').val();
+		$f_48_a = $("#f_48_a").val();
+		$f_48_b = $("#f_48_b").val();
+		$f_49 = $('input[name=f_49]:checked').val();
+		$g_50 = $('input[name=g_50]:checked').val();
+		$g_51 = $('input[name=g_51]:checked').val();
+		$g_52 = $('input[name=g_52]:checked').val();
+		$g_53 = $('input[name=g_53]:checked').val();
+		$g_54 = $('input[name=g_54]:checked').val();
+		$g_55 = $('input[name=g_55]:checked').val();
+		$g_58 = $('input[name=g_58]:checked').val();
+
+
+		//alert($mem_13);
+
+		/*$household_id_no = $("#household_id_no").val();
+		$name_of_respondent = $("#name_of_respondent").val();
+		
+		$time_started = $("#time_started").val();
+		$interviewer_enumerator = $("#interviewer_enumerator").val();
+		$a_1 = $('input[name=opt1_a]:checked', '#regForm').val();
+		$a_2 = $("#a_2").val();
+		$a_3 = $('input[name=opt3_a]:checked', '#regForm').val();
+		$a_4 = $('input[name=opt4_a]:checked', '#regForm').val();
+		$b_5 = $("#b_5").val();
+		$b_6 = $("#b_6").val();
+		$b_7 = $('input[name=q7]:checked', '#regForm').val();
+		$b_8 = $('input[name=q8]:checked', '#regForm').val();
+		$b_9 = $('input[name=q9]:checked', '#regForm').val();
+		$c_10 = $("#c_10").val();
+
+  		
+  		$("#btnSubmit").empty();
+	    $("#btnSubmit").append('<i class="fa fa-spinner fa-spin"></i>');
+	    $('#btnSubmit').prop('disabled', true);
+	    $('.btnClose').prop('disabled', true);*/
+	    
+  	}
 </script>
 @endsection
 
