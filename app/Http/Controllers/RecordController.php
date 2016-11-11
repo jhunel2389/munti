@@ -231,6 +231,14 @@ class RecordController extends Controller
     	$encoded_by = Request::get('encoded_by');
 
 
+    	$g_50 = Request::get('g_50');
+    	$g_51 = Request::get('g_51');
+    	$g_52 = Request::get('g_52');
+    	$g_53 = Request::get('g_53');
+    	$g_53_b = Request::get('g_53_b');
+    	$g_54 = Request::get('g_54');
+    	$g_55 = Request::get('g_55');
+    	$g_58 = Request::get('g_58');
     	$validator = Validator::make(Request::all(), array(
 			'household_system_id' => 'required',
 			'household_member_no' => 'required',

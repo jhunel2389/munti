@@ -62,27 +62,27 @@
 												<div class="form-group">\
 							                  		<label for="hh_no" class="col-sm-4 control-label">Household Member Number</label>\
 								                  	<div class="col-sm-8">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="Household Member Number">\
+								                    	<input type="text" class="form-control" id="household_member_no" placeholder="Household Member Number">\
 								                  	</div>\
 							                	</div>\
 							                	<label class="control-label" for="inputWarning"> 11. Surname, Firstname, Middle name</label>\
 						    					<span class="help-block">Apelyido, Pangalan, Panggitnang pangalan</span>\
 						    					<div class="form-group">\
 								                  	<div class="col-sm-4">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="Surname">\
+								                    	<input type="text" class="form-control" id="lname" placeholder="Surname">\
 								                  	</div>\
 								                  	<div class="col-sm-4">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="Firstname">\
+								                    	<input type="text" class="form-control" id="fname" placeholder="Firstname">\
 								                  	</div>\
 								                  	<div class="col-sm-4">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="Middle name">\
+								                    	<input type="text" class="form-control" id="mname" placeholder="Middle name">\
 								                  	</div>\
 							                	</div>\
 							                	<label class="control-label" for="inputWarning"> 12. In which nuclear family does he/she belong?</label>\
 						    					<span class="help-block">Sa aling pamilya napapabilang siya napapabilang?</span>\
 						    					<div class="form-group">\
 								                  	<div class="col-sm-8">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="">\
+								                    	<input type="text" class="form-control" id="mem_12" placeholder="">\
 								                  	</div>\
 							                	</div>\
 							                	<label class="control-label" for="inputWarning"> 13. What is the relationship of household member to the head of the household?</label>\
@@ -91,19 +91,19 @@
 								                  	<div class="col-sm-4">\
 								                    	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="1">\
 									                     		Head\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="2">\
 									                     		Wife/Spouse\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="3">\
 									                     		Son/Daughter\
 									                    	</label>\
 									                  	</div>\
@@ -111,19 +111,19 @@
 								                  	<div class="col-sm-4">\
 								                    	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="4">\
 									                     		Son-in-law/Daughter-in-law\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="5">\
 									                     		Grandson/grandaughter\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="6">\
 									                     		Father/mother\
 									                    	</label>\
 									                  	</div>\
@@ -131,19 +131,19 @@
 								                  	<div class="col-sm-4">\
 								                    	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="7">\
 									                     		Other relatives\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="8">\
 									                     		Housemaid/boy\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r13" id="r13" value="option1">\
+									                      		<input type="radio" name="mem_13" id="mem_13" value="9">\
 									                     		Other non-relatives\
 									                    	</label>\
 									                  	</div>\
@@ -158,7 +158,7 @@
 								                  		<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="optionsRadios" id="r14" value="option1">\
+										                      		<input type="radio" name="sex_14" id="sex_14" value="1">\
 										                     		Male\
 										                    	</label>\
 										                  	</div>\
@@ -166,7 +166,7 @@
 									                  	<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="optionsRadios" id="r14" value="option1">\
+										                      		<input type="radio" name="sex_14" id="sex_14" value="2">\
 										                     		Female\
 										                    	</label>\
 										                  	</div>\
@@ -191,7 +191,7 @@
 								                  		<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="r16" id="optionsRadios1" value="option1">\
+										                      		<input type="radio" name="civil_reg_16" id="civil_reg_16" value="1">\
 										                     		Yes\
 										                    	</label>\
 										                  	</div>\
@@ -199,7 +199,7 @@
 									                  	<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="r16" id="optionsRadios1" value="option1">\
+										                      		<input type="radio" name="civil_reg_16" id="civil_reg_16" value="2">\
 										                     		No\
 										                    	</label>\
 										                  	</div>\
@@ -212,7 +212,7 @@
 							                			<label class="control-label" for="inputWarning"> 17. Ethnicity By Blood(Kinabibilangang Etnika ex. Bicolano)</label>\
 							                		</div>\
 							                		<div class="col-md-4">\
-							                			<input type="text" class="form-control" id="" placeholder="etnika">\
+							                			<input type="text" class="form-control" id="stats_17" placeholder="etnika">\
 							                		</div>\
 							                	</div>\
 							                	<label class="control-label" for="inputWarning"> 18. Martial Status/ Katayuan Sibil?</label>\
@@ -220,13 +220,13 @@
 								                  	<div class="col-sm-3">\
 								                    	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="1">\
 									                     		Walang asawa\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="2">\
 									                     		May asawa\
 									                    	</label>\
 									                  	</div>\
@@ -234,13 +234,13 @@
 								                  	<div class="col-sm-3">\
 								                    	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="3">\
 									                     		Balo\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="4">\
 									                     		Live-in\
 									                    	</label>\
 									                  	</div>\
@@ -248,13 +248,13 @@
 								                  	<div class="col-sm-3">\
 								                  		<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="5">\
 									                     		Hiwalay\
 									                    	</label>\
 									                  	</div>\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="6">\
 									                     		Hiwalay sa asawa\
 									                    	</label>\
 									                  	</div>\
@@ -262,7 +262,7 @@
 								                  	<div class="col-sm-3">\
 								                  		<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r18" id="optionsRadios1" value="option1">\
+									                      		<input type="radio" name="mem_18" id="mem_18" value="7">\
 									                     		Hindi alam\
 									                    	</label>\
 									                  	</div>\
@@ -277,7 +277,7 @@
 								                  		<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="r19" id="optionsRadios1" value="option1">\
+										                      		<input type="radio" name="ofw_19" id="ofw_19" value="1">\
 										                     		Yes\
 										                    	</label>\
 										                  	</div>\
@@ -285,7 +285,7 @@
 									                  	<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="r19" id="optionsRadios1" value="option1">\
+										                      		<input type="radio" name="ofw_19" id="ofw_19" value="2">\
 										                     		No\
 										                    	</label>\
 										                  	</div>\
@@ -299,7 +299,7 @@
 							                		<div class="col-sm-2">\
 									                  	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r20" id="optionsRadios1" value="option1" checked>\
+									                      		<input type="radio" name="mem_20" id="mem_20" value="1" checked>\
 									                      		Same Address\
 									                    	</label>\
 									                  	</div>\
@@ -307,13 +307,13 @@
 									                <div class="col-sm-3">\
 									                	<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" name="r20" id="optionsRadios2" value="option2">\
+									                      		<input type="radio" name="mem_20" id="mem_20" value="2">\
 									                      		Other Address: Address 3 years ago\
 									                    	</label>\
 									                  	</div>\
 									                </div>\
 									                <div class="col-sm-7">\
-								                    	<input type="text" class="form-control" id="hh_no" placeholder="">\
+								                    	<input type="text" class="form-control" id="mem_20_other" placeholder="">\
 								                  	</div>\
 								                </div>\
 											</div>\
@@ -330,7 +330,7 @@
 								                  		<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="q21Radio" class="q21Radio" id="q21" value="yes">\
+										                      		<input type="radio" name="d_21_schooling" class="q21Radio" id="d_21_schooling" value="1">\
 										                     		Yes\
 										                    	</label>\
 										                  	</div>\
@@ -338,7 +338,7 @@
 									                  	<div class="col-sm-4">\
 									                    	<div class="radio">\
 										                    	<label>\
-										                      		<input type="radio" name="q21Radio" class="q21Radio" id="q21" value="no">\
+										                      		<input type="radio" name="d_21_schooling" class="q21Radio" id="d_21_schooling" value="2">\
 										                     		No\
 										                    	</label>\
 										                  	</div>\
@@ -351,12 +351,12 @@
 						                	<div class="form-group">\
 					                			<label class="control-label" for="inputWarning"> 25. What is his/her highest educational attainment?</label>\
 				    							<span class="help-block">Ano ang pinakamataas na antas ng pag aaral ang natapos niya?</span>\
-				    							<input style="width: 200px" type="text" class="form-control" id="hh_no" placeholder="">\
+				    							<input style="width: 200px" type="text" class="form-control" id="d_25_a" placeholder="">\
 				    						</div>\
 				    						<div class="form-group">\
 					                			<label class="control-label" for="inputWarning"> If college graduate, what is his/her course?</label>\
 				    							<span class="help-block">Anong kurso ang natapos niya?</span>\
-				    							<input style="width: 200px" type="text" class="form-control" id="hh_no" placeholder="kurso">\
+				    							<input style="width: 200px" type="text" class="form-control" id="d_25_b" placeholder="kurso">\
 				    						</div>\
 									  	</div>\
 									  	<div id="komunidad" class="tab-pane fade">\
@@ -366,13 +366,13 @@
 				    							<span class="help-block">Is he/she a registered voter?</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="" class="" id="" value="yes">\
+							                      		<input type="radio" name="f_27" class="" id="f_27" value="1">\
 							                     		Yes\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="" class="" id="" value="no">\
+							                      		<input type="radio" name="f_27" class="" id="f_27" value="2">\
 							                     		No\
 							                    	</label>\
 							                  	</div>\
@@ -382,19 +382,19 @@
 				    							<span class="help-block">If yes, did he/she voted last election?</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="" class="" id="" value="yes">\
+							                      		<input type="radio" name="f_28" class="" id="f_28" value="1">\
 							                     		Yes\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="" class="" id="" value="no">\
+							                      		<input type="radio" name="f_28" class="" id="f_28" value="2">\
 							                     		No\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" name="" class="" id="" value="">\
+							                      		<input type="radio" name="f_28" class="" id="f_28" value="3">\
 							                     		Dont know\
 							                    	</label>\
 							                  	</div>\
@@ -408,7 +408,7 @@
 						                			<span class="help-block">(Ilang hanapbuhay/negosyo ang mayroon siya?)</span>\
 						                		</div>\
 						                		<div class="col-md-3">\
-						                			<input type="text" style="width: 60px" class="form-control"  placeholder="">\
+						                			<input type="text" style="width: 60px" class="form-control" id="f_31" placeholder="">\
 						                		</div>\
 						                	</div>\
 						                	<div class="form-group">\
@@ -416,7 +416,7 @@
 				    							<span class="help-block">(Siya ba ay may hanapbuhay kahit isang oras noong nakaraang lingo?)</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q29Radio" name="r29" class="" id="" value="yes">\
+							                      		<input type="radio" class="q29Radio" name="f_29" class="" id="f_29" value="1">\
 							                     		No; if no:\
 							                    	</label>\
 							                  	</div>\
@@ -424,7 +424,7 @@
 						                		</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q29Radio" name="r29" class="" id="" value="no">\
+							                      		<input type="radio" class="q29Radio" name="f_29" class="" id="f_29" value="2">\
 							                     		Yes; if yes:\
 							                    	</label>\
 							                  	</div>\
@@ -437,38 +437,37 @@
 									    	<div class="form-group">\
 									    		<label class="control-label" for="inputWarning"> 48A. IN the past 12 months, how much is the total salary/wages(in cash) she/she has receieved)?</label>\
 				    							<span class="help-block">Noong nakaraang buwan, magkano ang kabuuang halaga ng sweldo/sahod na kaniyang natanggap(SALAPI)?</span>\
-									    		<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px">\
+									    		<input type="text" class="form-control" id="f_48_a" placeholder="" style="width: 200px">\
 									    	</div>\
 									    	<div class="form-group">\
 									    		<label class="control-label" for="inputWarning"> 48B. IN the past 12 months, how much is the total salary/wages(in kind) she/she has receieved)?</label>\
 				    							<span class="help-block">Noong nakaraang buwan, magkano ang kabuuang halaga ng sweldo/sahod na kaniyang natanggap(BAGAY)?</span>\
-									    		<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px">\
+									    		<input type="text" class="form-control" id="f_48_b" placeholder="" style="width: 200px">\
 									    	</div>\
 									    	<div class="form-group">\
 									    		<label class="control-label" for="inputWarning"> 49. Is he/she a member of SSS or GSIS?</label>\
 				    							<span class="help-block">Siya ba ay miyembro ng SS o GSIS?</span>\
-									    		<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px">\
 									    		<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="r49" class="" id="" value="yes">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="yes">\
 							                     		SSS only\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="r49" class="" id="" value="no">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="no">\
 							                     		GSIS only\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="r49" class="" id="" value="no">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="no">\
 							                     		Both SSS and GSIS\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q49Radio" name="r49" class="" id="" value="no">\
+							                      		<input type="radio" class="q49Radio" name="f_49" class="" id="f_49" value="no">\
 							                     		Neither\
 							                    	</label>\
 							                  	</div>\
@@ -483,7 +482,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q50Radio" name="r50" class="" id="" value="yes">\
+									                      		<input type="radio" class="q50Radio" name="g_50" class="" id="g_50" value="1">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -491,7 +490,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q50Radio" name="r50" class="" id="" value="yes">\
+									                      		<input type="radio" class="q50Radio" name="g_50" class="" id="g_50" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -505,7 +504,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q51Radio" name="r51" class="" id="" value="yes">\
+									                      		<input type="radio" class="q51Radio" name="g_51" class="" id="g_51" value="1">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -513,7 +512,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q51Radio" name="r51" class="" id="" value="yes">\
+									                      		<input type="radio" class="q51Radio" name="g_51" class="" id="g_51" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -527,7 +526,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q52Radio" name="r52" class="" id="" value="yes">\
+									                      		<input type="radio" class="q52Radio" name="g_52" class="" id="g_52" value="1">\
 									                     		Yes:if yes, please answer 53:\
 									                    	</label>\
 									                  	</div>\
@@ -535,7 +534,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q52Radio" name="r52" class="" id="" value="no">\
+									                      		<input type="radio" class="q52Radio" name="g_52" class="" id="g_52" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -551,7 +550,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q54Radio" name="r54" class="" id="" value="yes">\
+									                      		<input type="radio" class="q54Radio" name="g_54" class="" id="g_54" value="yes">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -559,7 +558,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q54Radio" name="r54" class="" id="" value="yes">\
+									                      		<input type="radio" class="q54Radio" name="g_54" class="" id="g_54" value="yes">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -574,7 +573,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q55Radio" name="r55" class="" id="" value="yes">\
+									                      		<input type="radio" class="q55Radio" name="g_55" class="" id="g_55" value="yes">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -582,7 +581,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q55Radio" name="r55" class="" id="" value="yes">\
+									                      		<input type="radio" class="q55Radio" name="g_55" class="" id="g_55" value="yes">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -595,25 +594,25 @@
 									    		<span class="help-block">ANTAS NG KALUSUGAN NG BATANG 0-5 TAONG GULANG AYON SA BARANGAY NUTRITION SCHOLAR:?/span>\
 		    									<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                      		<input type="radio" class="q58Radio" name="g_58" class="" id="g_58" value="1">\
 							                     	Above Normal\
 							                    	</label>\
 							                  	</div>\
 		    									<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                      		<input type="radio" class="q58Radio" name="g_58" class="" id="g_58" value="2">\
 							                     		Normal\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                      		<input type="radio" class="q58Radio" name="g_58" class="" id="g_58" value="3">\
 							                     		Moderately Below Normal\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                      		<input type="radio" class="q58Radio" name="g_58" class="" id="g_58" value="4">\
 							                     		Severely Below Normal\
 							                    	</label>\
 							                  	</div>\
@@ -657,55 +656,55 @@
 			    								<div class="col-md-6">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Total Blindness\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Partial Blindness\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Low vision\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53 value="yes">\
 								                     		Total deaf\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Partial deaf\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Oral defect\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		One hand\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		No hands\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		One leg\
 								                    	</label>\
 								                  	</div>\
@@ -713,53 +712,53 @@
 			    								<div class="col-md-6">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		No legs\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Mild cerebral palsy\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Severe cerebral palsy\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Retarded\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Mentally III\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Mentally retardation\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Multiple Impairment\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                      		<input type="radio" class="q53Radio" name="g_53" class="" id="g_53" value="yes">\
 								                     		Others:\
 								                    	</label>\
 								                  	</div>\
-								                  	<input type="text" style="width: 200px" class="form-control"  placeholder="">\
+								                  	<input type="text" style="width: 200px" class="form-control" id="g_53_b" placeholder="">\
 			    								</div>\
 			    							</div>\
 			    						</div>\
@@ -780,13 +779,13 @@
 				    							<span class="help-block">(Kung hindi naghahanapbuhay, mayroon ba siyang negosyo noon nakaraang linggo?)</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q30Radio" name="r30" class="" id="" value="yes">\
+							                      		<input type="radio" class="q30Radio" name="f_30" class="" id="f_30" value="yes">\
 							                     		Yes; if yes, please proceed to question 32-39(check below)\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q30Radio" name="r30" class="" id="" value="no">\
+							                      		<input type="radio" class="q30Radio" name="f_30" class="" id="f_30" value="no">\
 							                     		No; if no please answer the question 40-47:\
 							                    	</label>\
 							                  	</div>\
@@ -808,31 +807,31 @@
 			$(".forq29y").append('<div class="form-group">\
 					                			<label class="control-label" for="inputWarning"> 32. What is his/her primary job, occupation or business during the past week?</label>\
 				    							<span class="help-block">(Ano ang kaniyang pangunahing hanapbuhay/negosyo noong nakaraang linggo?)</span>\
-				    							<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px">\
+				    							<input type="text" class="form-control" id="f_32" placeholder="" style="width: 200px">\
 				    						</div>\
 				    						<div class="form-group">\
 				    							<label class="control-label" for="inputWarning"> 33. In what kind of industry did he/she work during the past week?</label>\
 				    							<span class="help-block">(In what kind of industry did he/she work during the past week?)</span>\
-				    							<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px">\
+				    							<input type="text" class="form-control" id="f_33" placeholder="" style="width: 200px">\
 				    						</div>\
 				    						<div class="form-group">\
 					                			<label class="control-label" for="inputWarning"> 34. What is his/her nature of employment?</label>\
 				    							<span class="help-block">(Ano ang katayuan o kalagayan niya sa trabaho?)</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q34Radio" name="r34" class="" id="" value="yes">\
+							                      		<input type="radio" class="q34Radio" name="f_34" class="" id="" value="1">\
 							                     		Permanent\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q34Radio" name="r34" class="" id="" value="no">\
+							                      		<input type="radio" class="q34Radio" name="f_34" class="" id="" value="2">\
 							                     		Short-term, seasonal, or casual\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q34Radio" name="r34" class="" id="" value="no">\
+							                      		<input type="radio" class="q34Radio" name="f_34" class="" id="" value="3">\
 							                     		Worked on different jobs on day to day or week to week\
 							                    	</label>\
 							                  	</div>\
@@ -843,7 +842,7 @@
 				    									<label class="control-label" for="inputWarning"> 35. Normal working hours per day during the past week?</label>\
 				    								</div>\
 				    								<div class="col-md-4">\
-				    									<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 60px">\
+				    									<input type="text" class="form-control" id="f_35" placeholder="" style="width: 60px">\
 				    								</div>\
 				    							</div>\
 				    						</div>\
@@ -853,7 +852,7 @@
 				    									<label class="control-label" for="inputWarning"> 36. Total number of hours worked during the past week?</label>\
 				    								</div>\
 				    								<div class="col-md-4">\
-				    									<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 60px">\
+				    									<input type="text" class="form-control" id="f_36" placeholder="" style="width: 60px">\
 				    								</div>\
 				    							</div>\
 				    						</div>\
@@ -863,7 +862,7 @@
 			    								<div class="col-md-1">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q37Radio" name="r37" class="" id="" value="yes">\
+								                      		<input type="radio" class="q37Radio" name="f_37" class="" id="f_37" value="1">\
 								                     		Yes\
 								                    	</label>\
 								                  	</div>\
@@ -871,7 +870,7 @@
 			    								<div class="col-md-1">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q37Radio" name="r37" class="" id="" value="no">\
+								                      		<input type="radio" class="q37Radio" name="f_37" class="" id="f_37" value="2">\
 								                     		No\
 								                    	</label>\
 								                  	</div>\
@@ -883,7 +882,7 @@
 			    								<div class="col-md-1">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q38Radio" name="r38" class="" id="" value="yes">\
+								                      		<input type="radio" class="q38Radio" name="f_38" class="" id="f_38" value="1">\
 								                     		Yes\
 								                    	</label>\
 								                  	</div>\
@@ -891,7 +890,7 @@
 			    								<div class="col-md-1">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q38Radio" name="r38" class="" id="" value="no">\
+								                      		<input type="radio" class="q38Radio" name="f_38" class="" id="f_38" value="2">\
 								                     		No\
 								                    	</label>\
 								                  	</div>\
@@ -903,25 +902,25 @@
 			    								<div class="col-md-6">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="yes">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="1">\
 								                     		Working for private household\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="yes">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="2">\
 								                     		Working for private business/establishment/farm\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="yes">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="3">\
 								                     		Working for government/government cooperation\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="yes">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="4">\
 								                     		Self-employed without paid employee\
 								                    	</label>\
 								                  	</div>\
@@ -929,19 +928,19 @@
 			    								<div class="col-md-6">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="no">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="5">\
 								                     		Employee in own family-operated farm or business\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="no">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="6">\
 								                     		Working with pay on own family-operated farm or business\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q39Radio" name="r39" class="" id="" value="no">\
+								                      		<input type="radio" class="q39Radio" name="f_39" class="" id="f_39" value="7">\
 								                     		Working without pay on own family-operated farm or business\
 								                    	</label>\
 								                  	</div>\
@@ -964,13 +963,13 @@
 				    							<span class="help-block">(Naghahanap ba siya ng trabaho o sinubukang mag tayo ng negosyo noong nakaraang linggo?)</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q40Radio" name="r40" class="" id="" value="yes">\
+							                      		<input type="radio" class="q40Radio" name="f_40" class="" id="f_40" value="1">\
 							                     		Yes; if yes, please answer questions 41-43\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q40Radio" name="r40" class="" id="" value="no">\
+							                      		<input type="radio" class="q40Radio" name="f_40" class="" id="f_40" value="2">\
 							                     		No; if no please answer questions 44-47:\
 							                    	</label>\
 							                  	</div>\
@@ -993,7 +992,7 @@
 			    								<div class="col-md-1">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q41Radio" name="r41" class="" id="" value="yes">\
+								                      		<input type="radio" class="q41Radio" name="f_41" class="" id="f_41" value="1">\
 								                     		Yes\
 								                    	</label>\
 								                  	</div>\
@@ -1001,7 +1000,7 @@
 			    								<div class="col-md-1">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q41Radio" name="r41" class="" id="" value="no">\
+								                      		<input type="radio" class="q41Radio" name="f_41" class="" id="f_41" value="2">\
 								                     		No\
 								                    	</label>\
 								                  	</div>\
@@ -1013,19 +1012,19 @@
 			    								<div class="col-md-6">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q42Radio" name="r42" class="" id="" value="yes">\
+								                      		<input type="radio" class="q42Radio" name="f_42" class="" id="f_42" value="1">\
 								                     		Registered in public employment agency\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q42Radio" name="r42" class="" id="" value="yes">\
+								                      		<input type="radio" class="q42Radio" name="f_42" class="" id="f_42" value="2">\
 								                     		Registered in employment agency\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q42Radio" name="r42" class="" id="" value="yes">\
+								                      		<input type="radio" class="q42Radio" name="f_42" class="" id="f_42" value="3">\
 								                     		Approached employee directly\
 								                    	</label>\
 								                  	</div>\
@@ -1033,19 +1032,19 @@
 			    								<div class="col-md-6">\
 			    									<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q42Radio" name="r42" class="" id="" value="no">\
+								                      		<input type="radio" class="q42Radio" name="f_42" class="" id="f_42" value="4">\
 								                     		Approached relatives/friends\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q42Radio" name="r42" class="" id="" value="yes">\
+								                      		<input type="radio" class="q42Radio" name="f_42" class="" id="f_42" value="5">\
 								                     		Place or answerd private advertisements\
 								                    	</label>\
 								                  	</div>\
 								                  	<div class="radio">\
 								                    	<label>\
-								                      		<input type="radio" class="q42Radio" name="r42" class="" id="" value="yes">\
+								                      		<input type="radio" class="q42Radio" name="f_42" class="" id="f_42" value="6">\
 								                     		Others(pls. Specify)\
 								                    	</label>\
 								                  	</div>\
