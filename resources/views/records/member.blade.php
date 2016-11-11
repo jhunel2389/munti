@@ -634,12 +634,18 @@
 		      autoclose: true
 		    });
 		});
-        $(document).on("click",".btnClose",function(){
+		$('.btnClose').bind('click', function(){
+			var status = confirm("Are you sure?");
+        	if(status == true){
+        		$('.modal_info').modal('hide');
+        	}
+		});
+        /*$(document).on("click",".btnClose",function(){
         	var status = confirm("Are you sure?");
         	if(status == true){
         		$('.modal_info').modal('hide');
         	}
-        });
+        });*/
 		$(document).on("change",".q52Radio",function(){
 			if( $(this).is(":checked") ){
 				var val = $(this).val();
