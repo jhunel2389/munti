@@ -239,6 +239,7 @@ class RecordController extends Controller
     	$g_54 = Request::get('g_54');
     	$g_55 = Request::get('g_55');
     	$g_58 = Request::get('g_58');
+    	$mem_20 = Request::get('mem_20');
     	$validator = Validator::make(Request::all(), array(
 			'household_system_id' => 'required',
 			'household_member_no' => 'required',
@@ -329,6 +330,7 @@ class RecordController extends Controller
 			$householdMember -> mem_18 = $mem_18;
 			$householdMember -> ofw_19 = $ofw_19;
 			$householdMember -> mem_20 = $mem_20;
+			$householdMember -> mem_20_b = $mem_20_b;
 			$householdMember -> d_21_schooling = $d_21_schooling;
 			$householdMember -> d_22 = $d_22;
 			$householdMember -> d_23 = $d_23;
@@ -360,6 +362,14 @@ class RecordController extends Controller
 			$householdMember -> f_48_a = $f_48_a;
 			$householdMember -> f_48_b = $f_48_b;
 			$householdMember -> f_49 = $f_49;
+			$householdMember -> g_50 = $g_50;
+			$householdMember -> g_51 = $g_51;
+			$householdMember -> g_52 = $g_52;
+			$householdMember -> g_53 = $g_53;
+			$householdMember -> g_53_b = $g_53_b;
+			$householdMember -> g_54 = $g_54;
+			$householdMember -> g_55 = $g_55;
+			$householdMember -> g_58 = $g_58;
 			$householdMember -> encoded_by = $encoded_by;
 
 			if ($householdMember -> save())
