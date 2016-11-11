@@ -446,7 +446,7 @@
 									    	</div>\
 									    	<div class="form-group">\
 									    		<label class="control-label" for="inputWarning"> 49. Is he/she a member of SSS or GSIS?</label>\
-				    							<span class="help-block">Siya ba ay miyembro ng SS o GSIS?/span>\
+				    							<span class="help-block">Siya ba ay miyembro ng SS o GSIS?</span>\
 									    		<input type="text" class="form-control" id="hh_no" placeholder="" style="width: 200px">\
 									    		<div class="radio">\
 							                    	<label>\
@@ -478,7 +478,7 @@
 									    	<h3></h3>\
 									    	<div class="form-group">\
 									    		<label class="control-label" for="inputWarning"> 50. Is the household member pregnant?</label>\
-				    							<span class="help-block">Siya ba ay miyembro ng SS o GSIS?/span>\
+				    							<span class="help-block">Siya ba ay buntis?/span>\
 				    							<div class="row">\
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
@@ -498,6 +498,126 @@
 				    								</div>\
 				    							</div>\
 									    	</div>\
+									    	<div class="form-group">\
+									    		<label class="control-label" for="inputWarning"> 51. Is he/she a solo parent taking care of child/children?</label>\
+				    							<span class="help-block">Siya ba nag iisang magulang na may kinakailingang anak?/span>\
+				    							<div class="row">\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q51Radio" name="r51" class="" id="" value="yes">\
+									                     		Yes\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q51Radio" name="r51" class="" id="" value="yes">\
+									                     		No\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    							</div>\
+									    	</div>\
+									    	<div class="form-group">\
+									    		<label class="control-label" for="inputWarning"> 52. Does he/she have any physical or mental disablity?</label>\
+				    							<span class="help-block">Siya ba ay may kapansanan?/span>\
+				    							<div class="row">\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q52Radio" name="r52" class="" id="" value="yes">\
+									                     		Yes:if yes, please answer 53:\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q52Radio" name="r52" class="" id="" value="no">\
+									                     		No\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    							</div>\
+									    	</div>\
+									    	<div class="forq52y">\
+									    	</div>\
+									    	<div class="form-group">\
+									    		<label class="control-label" for="inputWarning"> 54. Does he/she have PWDs ID?</label>\
+				    							<span class="help-block">Siya ba ay may ID para sa mga PWD?/span>\
+				    							<div class="row">\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q54Radio" name="r54" class="" id="" value="yes">\
+									                     		Yes\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q54Radio" name="r54" class="" id="" value="yes">\
+									                     		No\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    							</div>\
+									    	</div>\
+									    	<b>"For 60 years old and above"</b>\
+									    	<div class="form-group">\
+									    		<label class="control-label" for="inputWarning"> 55. Does he/she a Senior Citizens ID?</label>\
+				    							<span class="help-block">Siya ba ay may ID para sa mga Senior Citizen?/span>\
+				    							<div class="row">\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q55Radio" name="r55" class="" id="" value="yes">\
+									                     		Yes\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    								<div class="col-md-1">\
+				    									<div class="radio">\
+									                    	<label>\
+									                      		<input type="radio" class="q55Radio" name="r55" class="" id="" value="yes">\
+									                     		No\
+									                    	</label>\
+									                  	</div>\
+				    								</div>\
+				    							</div>\
+									    	</div>\
+									    	<b>"For children ages 0-5:(ANSWER AS PRESCRIBED BY BARANGAY NUTRITION SCHOLAR)"</b>\
+									    	<div class="form-group">\
+									    		<label class="control-label" for="inputWarning"> 58. Nutrition Status of Members 0-5 Years Old?</label>\
+									    		<span class="help-block">ANTAS NG KALUSUGAN NG BATANG 0-5 TAONG GULANG AYON SA BARANGAY NUTRITION SCHOLAR:?/span>\
+		    									<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                     	Above Normal\
+							                    	</label>\
+							                  	</div>\
+		    									<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                     		Normal\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                     		Moderately Below Normal\
+							                    	</label>\
+							                  	</div>\
+							                  	<div class="radio">\
+							                    	<label>\
+							                      		<input type="radio" class="q58Radio" name="r58" class="" id="" value="yes">\
+							                     		Severely Below Normal\
+							                    	</label>\
+							                  	</div>\
+									    	</div>\
 									  	</div>\
 									</div>\
 	                            </div>\
@@ -512,6 +632,131 @@
 		    $('#datepicker').datepicker({
 		      autoclose: true
 		    });
+		});
+
+		$(document).on("change",".q52Radio",function(){
+			if( $(this).is(":checked") ){
+				var val = $(this).val();
+				$(".forq52y").empty();
+				if(val == "yes"){
+					$(".forq52y").append('<div class="form-group">\
+											<label class="control-label" for="inputWarning"> 53. What type of disablity does he/she have?</label>\
+			    							<div class="row">\
+			    								<div class="col-md-6">\
+			    									<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Total Blindness\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Partial Blindness\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Low vision\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Total deaf\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Partial deaf\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Oral defect\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		One hand\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		No hands\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		One leg\
+								                    	</label>\
+								                  	</div>\
+			    								</div>\
+			    								<div class="col-md-6">\
+			    									<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		No legs\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Mild cerebral palsy\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Severe cerebral palsy\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Retarded\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Mentally III\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Mentally retardation\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Multiple Impairment\
+								                    	</label>\
+								                  	</div>\
+								                  	<div class="radio">\
+								                    	<label>\
+								                      		<input type="radio" class="q53Radio" name="r53" class="" id="" value="yes">\
+								                     		Others:\
+								                    	</label>\
+								                  	</div>\
+								                  	<input type="text" style="width: 200px" class="form-control"  placeholder="">\
+			    								</div>\
+			    							</div>\
+			    						</div>\
+										');
+				}
+				else{
+
+				}
+			}
 		});
 
 		$(document).on("change",".q29Radio",function(){
