@@ -622,7 +622,8 @@
 									</div>\
 	                            </div>\
 	                            <div class="modal-footer">\
-	                              	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>\
+	                              	<button type="button" class="btn btn-default btnClose" >Close</button>\
+	                              	<button type="button" class="btn btn-info" >Submit</button>\
 	                            </div>\
                           	</div>\
                         </div>\
@@ -633,7 +634,12 @@
 		      autoclose: true
 		    });
 		});
-
+        $(document).on("click",".btnClose",function(){
+        	var status = confirm("Are you sure?");
+        	if(status == true){
+        		$('.modal_info').modal('hide');
+        	}
+        });
 		$(document).on("change",".q52Radio",function(){
 			if( $(this).is(":checked") ){
 				var val = $(this).val();
