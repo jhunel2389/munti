@@ -396,7 +396,7 @@ function regHouseHold()
 	$c_10 = $("#c_10").val();
 
     $("#btnSubmit").empty();
-    $("#btnSubmit").append('<div class="overlay tbl-overlay"><i class="fa fa-spinner fa-spin"></i></div>');
+    $("#btnSubmit").append('<i class="fa fa-spinner fa-spin"></i>');
     $('#btnSubmit').prop('disabled', true);
 
     $.post('{{URL::Route('savingRecordHousehold')}}', { _token: $_token, region: $region , province: $province, city: $city, brgy_id: $brgy_id, household_id_no: $household_id_no, name_of_respondent: $name_of_respondent, date: $date, time_started: $time_started, interviewer_enumerator: $interviewer_enumerator, a_1: $a_1, a_2: $a_2, a_3: $a_3, a_4: $a_4, b_5: $b_5, b_6: $b_6, b_7: $b_7, b_8: $b_8, b_9: $b_9, c_10: $c_10 ,cid: $cid}, function(data)
