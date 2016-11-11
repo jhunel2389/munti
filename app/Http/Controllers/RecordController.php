@@ -44,6 +44,7 @@ class RecordController extends Controller
 
     function brgySummary($cid)
     {
+    	$statisticSummarry = App::make("App\Http\Controllers\GlobalController")->statisticSummarry($cid);
     	$brgyInfo = App::make("App\Http\Controllers\GlobalController")->brgyInfo($cid);
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
 		return View::Make("records.summary")->with("userInfo",$userInfo)->with('mt','db')->with("brgyInfo",$brgyInfo);

@@ -65,6 +65,8 @@ Route::group(array('prefix' => '/ajax'),function()
 					middleware' => 'auth'));
 
 			Route::get('/statsbox', array('uses' => 'GlobalController@statsbox', 'as' => 'statsbox','middleware' => 'auth'));
+			Route::get('/statisticSummarry/{bid}', array('uses' => 'GlobalController@statisticSummarry', 'as' => 'statisticSummarry','
+					middleware' => 'auth'));
 		});
 	});
 });
