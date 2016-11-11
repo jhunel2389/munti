@@ -35,7 +35,7 @@
 			</div>
         </div>
         <div class="box-body">
-          <div class="col-lg-10">
+          <div class="col-lg-12">
       			<div class="panel panel-default">
 				  	<div class="panel-body">
 					    <div class="input-group">
@@ -54,27 +54,388 @@
 						</div>
 					</div>
 
-					<div class="panel-body">
-				  		<table class="table	table-bordered">
+					<div class="panel-body table-responsive">
+				  		<table class="table	table-bordered table-hover table-striped">
 							<tr>
-							  <th colspan="1" rowspan="3">Indicator</th>
-							  <th colspan="2">Households</th>
-							  <th colspan="6">Population</th>
+							  <th colspan="1" rowspan="3" style="text-align: center;">Indicator</th>
+							  <th colspan="2" style="text-align: center;">Households</th>
+							  <th colspan="6" style="text-align: center;">Population</th>
 							</tr>
 							<tr>
-							  <th colspan="1" rowspan="2">Magnitude</th>
-							  <th colspan="1" rowspan="2">Proportion</th>
-							  <th colspan="3">Magnitude</th>
+							  <th colspan="1" rowspan="2" style="text-align: center;">Magnitude</th>
+							  <th colspan="1" rowspan="2" style="text-align: center;">Proportion</th>
+							  <th colspan="3" style="text-align: center;">Magnitude</th>
 							  <th colspan="3">Proportion</th>
 							</tr>
 							<tr>
-							  <th colspan="1">Total</th>
-							  <th colspan="1">Male</th>
-							  <th colspan="1">Female</th>
-							  <th colspan="1">Total</th>
-							  <th colspan="1">Male</th>
-							  <th colspan="1">Female</th>
-
+							  <th colspan="1" style="text-align: center;">Total</th>
+							  <th colspan="1" style="text-align: center;">Male</th>
+							  <th colspan="1" style="text-align: center;">Female</th>
+							  <th colspan="1" style="text-align: center;">Total</th>
+							  <th colspan="1" style="text-align: center;">Male</th>
+							  <th colspan="1" style="text-align: center;">Female</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">DEMOGRAPHY</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Population</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Average household size</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Children under 1 year old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Children under 5 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Children 0-5 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Children 6-11 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Children 6-12 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Members 12-15 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Members 13-16 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Members 6-15 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Members 6-16 years old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Members 10 years old and above</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Members of the labor force</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">HEALTH AND NUTRITION</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children under 5 years old who died</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">women who died due to pregnancy related-causes</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">malnourished children 0-5 year old</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">HOUSING</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">households living in makeshift housing</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">househols who are informal settlers</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">WATER AND SANITATION</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">households without access to safe water</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">households without access to sanitary toilet facility</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">BASIC EDUCATION</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children 6-11 years old not attending elementary</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children 6-12 years old not attending elementary</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children 12-15 years old not attending high school</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children 13-16 years old not attending high school</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children 6-15 years old not attending school</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">children 6-16 years old not attending school</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">INCOME AND LIVELIHOOD</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">households with income below poverty threshold</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">households with income below food threshold</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">households who experienced food shortage</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Unemployed members of the labor force</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+							</tr>
+							<tr>
+								<th bgcolor="black" style="" colspan="9"><font color="#fff">PEACE AND ORDER</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Victims of crime</font></th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
+								<th style="text-align: right;">123</th>
 							</tr>
 						</table>
 					</div>
@@ -85,7 +446,7 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          Footer
+          Summary for {{$brgyInfo['name']}}
         </div>
         <!-- /.box-footer-->
       </div>
