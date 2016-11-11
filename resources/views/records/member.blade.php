@@ -771,23 +771,22 @@
 		});
 
 		$(document).on("change",".q29Radio",function(){
-			$(".forq29y").empty();
-			$(".forq29n").empty();
 			if( $(this).is(":checked") ){
 				var val = $(this).val();
 				if(val == "1"){
+					$(".forq29n").empty();
 					$(".forq29n").append('<div class="form-group">\
 					                			<label class="control-label" for="inputWarning"> 30. Although he/she did not work, did he/she have a job or business during the pastweek?</label>\
 				    							<span class="help-block">(Kung hindi naghahanapbuhay, mayroon ba siyang negosyo noon nakaraang linggo?)</span>\
 				    							<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q30Radio" name="f_30" class="" id="f_30" value="yes">\
+							                      		<input type="radio" class="q30Radio" name="f_30" class="" id="f_30" value="1">\
 							                     		Yes; if yes, please proceed to question 32-39(check below)\
 							                    	</label>\
 							                  	</div>\
 							                  	<div class="radio">\
 							                    	<label>\
-							                      		<input type="radio" class="q30Radio" name="f_30" class="" id="f_30" value="no">\
+							                      		<input type="radio" class="q30Radio" name="f_30" class="" id="f_30" value="2">\
 							                     		No; if no please answer the question 40-47:\
 							                    	</label>\
 							                  	</div>\
