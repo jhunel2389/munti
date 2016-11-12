@@ -1524,17 +1524,20 @@
         $('#btnSubmit').prop('disabled', false);
         if(data.status == "success")
         {
-          //promptMsg(data.status,data.message);
+        	$('.modal_info').modal('hide');
+          	promptMsg(data.status,data.message);
           //alert(data.postback);
           window.location.replace(data.postback);
         }
         else
         {
-          //promptMsg(data.status,data.message);
+        	$('.modal_info').modal('hide');
+          	promptMsg(data.status,data.message);
         }
     });
 	    
   	}
+
 </script>
 @endsection
 
