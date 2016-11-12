@@ -83,6 +83,7 @@
 												<div class="form-group">\
 							                  		<label for="hh_no" class="col-sm-4 control-label">Household Member Number</label>\
 								                  	<div class="col-sm-8">\
+								                  		<input type="hidden" id="cid">\
 								                    	<input type="text" class="form-control" id="household_member_no" placeholder="Household Member Number">\
 								                  	</div>\
 							                	</div>\
@@ -498,7 +499,7 @@
 									    	<h3></h3>\
 									    	<div class="form-group">\
 									    		<label class="control-label" for="inputWarning"> 50. Is the household member pregnant?</label>\
-				    							<span class="help-block">Siya ba ay buntis?/span>\
+				    							<span class="help-block">Siya ba ay buntis?</span>\
 				    							<div class="row">\
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
@@ -571,7 +572,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q54Radio" name="g_54" class="" id="g_54" value="yes">\
+									                      		<input type="radio" class="q54Radio" name="g_54" class="" id="g_54" value="1">\
 									                     		Yes\
 									                    	</label>\
 									                  	</div>\
@@ -579,7 +580,7 @@
 				    								<div class="col-md-1">\
 				    									<div class="radio">\
 									                    	<label>\
-									                      		<input type="radio" class="q54Radio" name="g_54" class="" id="g_54" value="yes">\
+									                      		<input type="radio" class="q54Radio" name="g_54" class="" id="g_54" value="2">\
 									                     		No\
 									                    	</label>\
 									                  	</div>\
@@ -1376,7 +1377,74 @@
 		{
 			if(data.length != 0)
 			{
+				$("#cid").val(data.id);
 				$("#household_member_no").val(data.household_member_no);
+				$("#fname").val(data.fname);
+				$("#lname").val(data.lname);
+				$("#mname").val(data.mname);
+				$("#mem_12").val(data.mem_12);
+				$('input:radio[value='+data.mem_13+'][id=mem_13]').prop('checked', true);
+				$('input:radio[value='+data.sex_14+'][id=sex_14]').prop('checked', true);
+				var date = new Date(data.dob_15)
+				$("#datepicker").val((date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear());
+				$('input:radio[value='+data.civil_reg_16+'][id=civil_reg_16]').prop('checked', true);
+				$("#stats_17").val(data.stats_17);
+				$('input:radio[value='+data.mem_18+'][id=mem_18]').prop('checked', true);
+				$('input:radio[value='+data.ofw_19+'][id=ofw_19]').prop('checked', true);
+				$('input:radio[value='+data.mem_20+'][id=mem_20]').prop('checked', true);
+				$("#mem_20_b").val(data.mem_20_b);
+				$('input:radio[value='+data.d_21_schooling+'][id=d_21_schooling]').prop('checked', true);
+				$("#d_25_a").val(data.d_25_a);
+				$("#d_25_b").val(data.d_25_b);
+				$('input:radio[value='+data.f_27+'][id=f_27]').prop('checked', true);
+				$('input:radio[value='+data.f_28+'][id=f_28]').prop('checked', true);
+				$('input:radio[value='+data.f_29+'][id=f_29]').prop('checked', true);
+				$("#f_31").val(data.f_31);
+				$("#f_32").val(data.f_32);
+				$("#f_33").val(data.f_33);
+				$('input:radio[value='+data.f_34+'][id=f_34]').prop('checked', true);
+				$("#f_35").val(data.f_35);
+				$("#f_36").val(data.f_36);
+				$('input:radio[value='+data.f_37+'][id=f_37]').prop('checked', true);
+				$('input:radio[value='+data.f_38+'][id=f_38]').prop('checked', true);
+				$('input:radio[value='+data.f_39+'][id=f_39]').prop('checked', true);
+				$("#f_48_a").val(data.f_48_a);
+				$("#f_48_b").val(data.f_48_b);
+				$('input:radio[value='+data.f_49+'][id=f_49]').prop('checked', true);
+				$('input:radio[value='+data.g_50+'][id=g_50]').prop('checked', true);
+				$('input:radio[value='+data.g_51+'][id=g_51]').prop('checked', true);
+				$('input:radio[value='+data.g_52+'][id=g_52]').prop('checked', true);
+				$('input:radio[value='+data.g_53+'][id=g_53]').prop('checked', true);
+				$('input:radio[value='+data.g_54+'][id=g_54]').prop('checked', true);
+				$('input:radio[value='+data.g_55+'][id=g_55]').prop('checked', true);
+				$('input:radio[value='+data.g_58+'][id=g_58]').prop('checked', true);
+
+				//event trigger for radio
+				$(".q21Radio").change();
+				$("#d_22").val(data.d_22);
+				$('input:radio[value='+data.d_23+'][id=d_23]').prop('checked', true);
+				$("#d_23_b").val(data.d_23_b);
+				$("#d_23_c").val(data.d_23_c);
+				$('input:radio[value='+data.d_24+'][id=d_24]').prop('checked', true);
+				$("#d_24_b").val(data.d_24_b);
+
+
+				$(".q29Radio").change();
+				$('input:radio[value='+data.f_30+'][id=f_30]').prop('checked', true);
+
+				$(".q30Radio").change();
+				$('input:radio[value='+data.f_40+'][id=f_40]').prop('checked', true);
+
+				$(".q40Radio").change();
+				$('input:radio[value='+data.f_41+'][id=f_41]').prop('checked', true);
+				$('input:radio[value='+data.f_42+'][id=f_42]').prop('checked', true);
+				$("#f_42_b").val(data.f_42_b);
+				$("#f_43").val(data.f_43);
+				$('input:radio[value='+data.f_44+'][id=f_44]').prop('checked', true);
+				$("#f_44_b").val(data.f_44_b);
+				$('input:radio[value='+data.f_45+'][id=f_45]').prop('checked', true);
+				$('input:radio[value='+data.f_46+'][id=f_46]').prop('checked', true);
+				$('input:radio[value='+data.f_47+'][id=f_47]').prop('checked', true);
 			}
 		});
 	}
@@ -1384,7 +1452,7 @@
   	function submitMem()
   	{
   		$_token = "{{ csrf_token() }}";
-		//$cid = 0;
+		$cid = $("#cid").val();
 		$household_system_id = "{{$householdInfo['id']}}";
 		$household_member_no = $("#household_member_no").val();
 		$fname = $("#fname").val();
@@ -1407,7 +1475,7 @@
 		$d_23_c = $("#d_23_c").val();
 		$d_24 = $('input[name=d_24]:checked').val();
 		$d_24_b = $("#d_24_b").val();
-		$d_25_a = $("#d_23_b").val();
+		$d_25_a = $("#d_25_a").val();
 		$d_25_b = $("#d_25_b").val();
 		$f_27 = $('input[name=f_27]:checked').val();
 		$f_28 = $('input[name=f_28]:checked').val();
@@ -1449,7 +1517,7 @@
 	    $('#btnSubmit').prop('disabled', true);
 	    $('.btnClose').prop('disabled', true);*/
 
-	    $.post('{{URL::Route('savingHouseholdMember')}}', { _token: $_token, household_system_id: $household_system_id, household_member_no: $household_member_no, fname: $fname, lname: $lname, mname: $mname, mem_12: $mem_12, mem_13: $mem_13, sex_14: $sex_14, dob_15: $dob_15, civil_reg_16: $civil_reg_16, stats_17: $stats_17, mem_18: $mem_18, ofw_19: $ofw_19, mem_20: $mem_20, mem_20_b: $mem_20_b, d_21_schooling: $d_21_schooling, d_22: $d_22, d_23: $d_23, d_23_b: $d_23_b, d_23_c: $d_23_c, d_24: $d_24, d_24_b: $d_24_b, d_25_a: $d_25_a, d_25_b: $d_25_b, f_27: $f_27, f_28: $f_28, f_29: $f_29, f_30: $f_30, f_31: $f_31, f_32: $f_32, f_33: $f_33, f_34: $f_34, f_35: $f_35, f_36: $f_36, f_37: $f_37, f_38: $f_38, f_39: $f_39, f_40: $f_40, f_41: $f_41, f_42: $f_42, f_42_b: $f_42_b, f_43: $f_43, f_44: $f_44, f_44_b: $f_44_b, f_45: $f_45, f_46: $f_46, f_47: $f_47, f_48_a: $f_48_a, f_48_b: $f_48_b, f_49: $f_49, g_50: $g_50, g_51: $g_51, g_52: $g_52, g_53: $g_53, g_54: $g_54, g_55: $g_55, g_58: $g_58}, function(data)
+	    $.post('{{URL::Route('savingHouseholdMember')}}', { _token: $_token, cid : $cid, household_system_id: $household_system_id, household_member_no: $household_member_no, fname: $fname, lname: $lname, mname: $mname, mem_12: $mem_12, mem_13: $mem_13, sex_14: $sex_14, dob_15: $dob_15, civil_reg_16: $civil_reg_16, stats_17: $stats_17, mem_18: $mem_18, ofw_19: $ofw_19, mem_20: $mem_20, mem_20_b: $mem_20_b, d_21_schooling: $d_21_schooling, d_22: $d_22, d_23: $d_23, d_23_b: $d_23_b, d_23_c: $d_23_c, d_24: $d_24, d_24_b: $d_24_b, d_25_a: $d_25_a, d_25_b: $d_25_b, f_27: $f_27, f_28: $f_28, f_29: $f_29, f_30: $f_30, f_31: $f_31, f_32: $f_32, f_33: $f_33, f_34: $f_34, f_35: $f_35, f_36: $f_36, f_37: $f_37, f_38: $f_38, f_39: $f_39, f_40: $f_40, f_41: $f_41, f_42: $f_42, f_42_b: $f_42_b, f_43: $f_43, f_44: $f_44, f_44_b: $f_44_b, f_45: $f_45, f_46: $f_46, f_47: $f_47, f_48_a: $f_48_a, f_48_b: $f_48_b, f_49: $f_49, g_50: $g_50, g_51: $g_51, g_52: $g_52, g_53: $g_53, g_54: $g_54, g_55: $g_55, g_58: $g_58}, function(data)
     {
         $("#btnSubmit").empty();
         $("#btnSubmit").append("Submit");

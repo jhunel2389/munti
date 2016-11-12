@@ -184,7 +184,8 @@ class RecordController extends Controller
 			                    'message'  => 'Your account accesss level are not allowed to process the request.',
 			                ));
     	}
-
+    	
+    	$cid = Request::get('cid');
     	$household_system_id = Request::get('household_system_id');
     	$household_member_no = Request::get('household_member_no');
     	$fname = Request::get('fname');
