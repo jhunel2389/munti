@@ -9,9 +9,9 @@
 		<!-- Bootstrap 3.3.6 -->
 		<link rel="stylesheet" href="{{env('FILE_PATH_CUSTOM')}}bootstrap/css/bootstrap.min.css">
 		<!-- Font Awesome -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="{{env('FILE_PATH_CUSTOM')}}css/font-awesome.min.css">
 		<!-- Ionicons -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" href="{{env('FILE_PATH_CUSTOM')}}ionicons-2.0.1/css/ionicons.min.css">
 		<!-- Bootstrap time Picker -->
   		<link rel="stylesheet" href="{{env('FILE_PATH_CUSTOM')}}plugins/timepicker/bootstrap-timepicker.css">
 		<!-- iCheck -->
@@ -27,7 +27,7 @@
 		<!-- jQuery 2.2.0 -->
 		<script src="{{env('FILE_PATH_CUSTOM')}}plugins/jQuery/jQuery-2.2.0.min.js"></script>
 		<!-- jQuery UI 1.11.4 -->
-		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<script src="{{env('FILE_PATH_CUSTOM')}}jquery-ui-1.12.1/jquery-ui.min.js"></script>
 		<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 		<!-- Go Map -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXLVRaZrYJiRQLqJAUTmqKkU0qmTJnxeo&signed_in=false&libraries=places"></script>
@@ -167,7 +167,7 @@
 	<!-- jQuery Knob Chart -->
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/knob/jquery.knob.js"></script>
 	<!-- daterangepicker -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+	<script src="{{env('FILE_PATH_CUSTOM')}}js/moment.min.js"></script>
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/daterangepicker/daterangepicker.js"></script>
 	<!-- datepicker -->
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/datepicker/bootstrap-datepicker.js"></script>
