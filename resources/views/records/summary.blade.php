@@ -94,7 +94,7 @@
 								<th style="text-align: right;" id="d_2_a">0</th>
 								<th style="text-align: right;" id="d_2_b">0</th>
 								<th style="text-align: right;" id="d_2_c">0</th>
-								<th style="text-align: right;" id="d_2_d>0</th>
+								<th style="text-align: right;" id="d_2_d">0</th>
 								<th style="text-align: right;" id="d_2_e">0</th>
 								<th style="text-align: right;" id="d_2_f">0</th>
 								<th style="text-align: right;" id="d_2_g">0</th>

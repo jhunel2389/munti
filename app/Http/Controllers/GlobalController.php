@@ -12,7 +12,7 @@ use Input;
 use Response;
 use Request;
 use URL;
-
+use Carbon\carbon;
 
 class GlobalController extends Controller {
 
@@ -117,52 +117,71 @@ class GlobalController extends Controller {
 		return $response;
 	}
 
+	//Date range tracker (Drt)
+	//under age of given param
+	public function drtAge($age)
+	{
+		return array (
+				'rangeFrom' => Carbon::today()->subYears($age+1)->addDay()->toDateString(),
+				'rangeTo'	=> Carbon::today()->toDateString(),
+			); 
+	}
+
+	//Date range tracker (Drt)
+	//between two age of given param
+	public function drtAge2($ageFrom,$ageTo)
+	{
+		return array (
+				'rangeFrom' => Carbon::today()->subYears($ageTo+1)->addDay()->toDateString(),
+				'rangeTo'	=> Carbon::today()->subYears($ageFrom)->toDateString(),
+			); 
+	}
+
 	public function statisticSummarry($bid)
 	{
+		//return $this->drtAge(1);
 		//$response = array();
-
-		
-
+		$houseHoldList = Household::whereBrgy_id($bid)->select(array('id'))->get();
 		$response = array(
 
 			//demo'graphy
-			0 => [143,'d_1_a'],
-			1 => [12,'d_1_b'],
-			2 => [0,'d_1_c'],
-			3 => [0,'d_1_d'],
-			4 => [0,'d_1_e'],
+			0 => [count($houseHoldList),'d_1_a'],
+			1 => ['','d_1_b'],
+			2 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->count(),'d_1_c'],
+			3 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->whereSex_14(1)->count(),'d_1_d'],
+			4 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->whereSex_14(2)->count(),'d_1_e'],
 			5 => [0,'d_1_f'],
 			6 => [0,'d_1_g'],
 			7 => [0,'d_1_h'],
 			8 => [0,'d_2_a'],
-			9 => [0,'d_2_b'],
-			10 => [0,'d_2_c'],
-			11 => [0,'d_2_d'],
-			12 => [0,'d_2_e'],
-			13 => [0,'d_2_f'],
-			14 => [0,'d_2_g'],
-			15 => [0,'d_2_h'],
+			9 => ['','d_2_b'],
+			10 => ['','d_2_c'],
+			11 => ['','d_2_d'],
+			12 => ['','d_2_e'],
+			13 => ['','d_2_f'],
+			14 => ['','d_2_g'],
+			15 => ['','d_2_h'],
 			16 => [0,'d_3_a'],
 			17 => [0,'d_3_b'],
-			18 => [0,'d_3_c'],
-			19 => [0,'d_3_d'],
-			20 => [0,'d_3_e'],
+			18 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge(1)['rangeFrom'])->where('dob_15','<=',$this->drtAge(1)['rangeTo'])->count(),'d_3_c'],
+			19 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge(1)['rangeFrom'])->where('dob_15','<=',$this->drtAge(1)['rangeTo'])->whereSex_14(1)->count(),'d_3_d'],
+			20 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge(1)['rangeFrom'])->where('dob_15','<=',$this->drtAge(1)['rangeTo'])->whereSex_14(2)->count(),'d_3_e'],
 			21 => [0,'d_3_f'],
 			22 => [0,'d_3_g'],
 			23 => [0,'d_3_h'],
 			24 => [0,'d_4_a'],
 			25 => [0,'d_4_b'],
-			26 => [0,'d_4_c'],
-			27 => [0,'d_4_d'],
-			28 => [0,'d_4_e'],
+			26 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge(5)['rangeFrom'])->where('dob_15','<=',$this->drtAge(5)['rangeTo'])->count(),'d_4_c'],
+			27 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge(5)['rangeFrom'])->where('dob_15','<=',$this->drtAge(5)['rangeTo'])->whereSex_14(1)->count(),'d_4_d'],
+			28 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge(5)['rangeFrom'])->where('dob_15','<=',$this->drtAge(5)['rangeTo'])->whereSex_14(2)->count(),'d_4_e'],
 			29 => [0,'d_4_f'],
 			30 => [0,'d_4_g'],
 			31 => [0,'d_4_h'],
 			32 => [0,'d_5_a'],
 			33 => [0,'d_5_b'],
-			34 => [0,'d_5_c'],
-			35 => [0,'d_5_d'],
-			36 => [0,'d_5_e'],
+			34 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(0,5)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(0,5)['rangeTo'])->count(),'d_5_c'],
+			35 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(0,5)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(0,5)['rangeTo'])->whereSex_14(1)->count(),'d_5_d'],
+			36 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(0,5)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(0,5)['rangeTo'])->whereSex_14(2)->count(),'d_5_e'],
 			37 => [0,'d_5_f'],
 			38 => [0,'d_5_g'],
 			39 => [0,'d_5_h'],
