@@ -433,6 +433,5 @@ class GlobalController extends Controller {
               ->get());
 		}
 		return $data;
-		//return array (54564,5445,5454,45,545644,564654,564,564564,4654,546,546,564);
 	}
 }
