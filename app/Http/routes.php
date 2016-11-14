@@ -69,6 +69,9 @@ Route::group(array('prefix' => '/ajax'),function()
 					middleware' => 'auth'));
 			Route::get('/householdMemInfo', array('uses' => 'GlobalController@householdMemInfo', 'as' => 'householdMemInfo','
 					middleware' => 'auth'));
+
+			Route::get('/chartStatS', array('uses' => 'GlobalController@chartStatS', 'as' => 'chartStatS','
+					middleware' => 'auth'));
 		});
 	});
 });

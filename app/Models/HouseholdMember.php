@@ -7,3 +7,5 @@ class HouseholdMember extends Model
 {
 	protected $table = 'household_member';
 }
+
+

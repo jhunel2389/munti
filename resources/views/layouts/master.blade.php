@@ -195,7 +195,8 @@
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.js"></script>
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
 	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/input-mask/jquery.inputmask.extensions.js"></script>
-
+	<!-- ChartJS 1.0.1 -->
+	<script src="{{env('FILE_PATH_CUSTOM')}}plugins/chartjs/Chart.min.js"></script>
 
 </body>
 </html>
