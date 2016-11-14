@@ -422,6 +422,17 @@ class GlobalController extends Controller {
 
 	public function chartStatS()
 	{
-		return array (54564,5445,5454,45,545644,564654,564,564564,4654,546,546,564);
+		$year = Request::get("year");
+		$month = 1;
+		//$leads = Leads::all();
+		$data = array();
+		for ($month = 1; $month < 13; $month++) { 
+		   // $data[] = $month;
+		    $data[] = count(HouseholdMember::whereYear('created_at', '=', $year)
+              ->whereMonth('created_at', '=', $month)
+              ->get());
+		}
+		return $data;
+		//return array (54564,5445,5454,45,545644,564654,564,564564,4654,546,546,564);
 	}
 }

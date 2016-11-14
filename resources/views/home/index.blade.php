@@ -27,8 +27,15 @@
       <!-- AREA CHART -->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Population Chart</h3>
-
+          <h3 class="box-title" style="text-align: center;">Population Chart</h3>
+          <div class="form-group has-feedback  col-md-2">
+            <label>Select Year:</label>
+              <select class="form-control" id="optYear">
+                @for($a = 2015 ; $a <= date("Y") ;$a++)
+                <option value="{{$a}}" {{(date("Y") == $a) ? 'selected' : ''}}>{{$a}}</option>
+                @endfor
+            </select>
+          </div>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
@@ -71,7 +78,11 @@
 	@include('includes.footer')
 </div>
 <script type="text/javascript">
-      $(document).ready(function(){
+    $( "#optYear" ).change(function() {
+       loadChart();
+    });
+    loadChart();
+    function loadChart(){
     $.ajax({
         xhr: function() {
             var xhr = new window.XMLHttpRequest();
@@ -103,6 +114,7 @@
         url: '{{URL::Route('chartStatS')}}',
         data: {
             "_token": "{{ csrf_token() }}",
+            "year": $("#optYear").val(),
         },
 
         beforeSend: function () {
@@ -190,7 +202,7 @@
         }
     });
     //get 
-  });
+  };
 </script>
 @endsection
 
