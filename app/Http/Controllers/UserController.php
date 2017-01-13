@@ -18,7 +18,7 @@ class UserController extends Controller {
 
 	public function getLogin()
 	{
-		return Redirect::route('index');
+		return view::make('user.login');
 	}
 
 	public function getRegister()

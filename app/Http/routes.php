@@ -64,7 +64,7 @@ Route::group(array('prefix' => '/ajax'),function()
 			Route::get('/admin/accountAccessChecker/{event}', array('uses' => 'GlobalController@accountAccessChecker', 'as' => 'accountAccessChecker','
 					middleware' => 'auth'));
 
-			Route::get('/statsbox', array('uses' => 'GlobalController@statsbox', 'as' => 'statsbox','middleware' => 'auth'));
+			Route::get('/statsbox', array('uses' => 'GlobalController@statsbox', 'as' => 'statsbox'));
 			Route::get('/statisticSummarry/{bid}', array('uses' => 'GlobalController@statisticSummarry', 'as' => 'statisticSummarry','
 					middleware' => 'auth'));
 			Route::get('/householdMemInfo', array('uses' => 'GlobalController@householdMemInfo', 'as' => 'householdMemInfo','

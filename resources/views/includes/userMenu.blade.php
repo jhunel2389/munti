@@ -1,10 +1,13 @@
 <!-- User Account: style can be found in dropdown.less -->
 <li class="dropdown user user-menu">
+   @if(Auth::User())
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     <span class="hidden-xs">{{$userInfo['fname']}} {{$userInfo['lname']}}</span>
   </a>
+ 
   <ul class="dropdown-menu">
     <!-- User image -->
+    
     <li class="user-header">
       <p>
         {{$userInfo['fname']}} {{$userInfo['lname']}}
@@ -36,4 +39,7 @@
       </div>
     </li>
   </ul>
+  @else
+    <a href="{{ URL::Route('getLogin') }}">Log in</a>
+  @endif
 </li>
