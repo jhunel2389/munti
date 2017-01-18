@@ -152,7 +152,7 @@ class GlobalController extends Controller {
 	{
 		
 		//$response = array();
-		$houseHoldList = Household::whereBrgy_id($bid)->whereYear('created_at', '=', $year)->select(array('id'))->get();
+		$houseHoldList = Household::whereBrgy_id($bid)->select(array('id'))->whereYear('created_at', '=', $year)->get();
 		$totalHouseHold = count($houseHoldList);
 		$totalHouseHoldMember = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->count();
 		//return $householdMember->whereSex_14(2)->count();
@@ -434,25 +434,57 @@ class GlobalController extends Controller {
 		return $data;
 	}
 
+	public function generateMonthlyGraph($houseHoldList,$sex,$type,$drtAgefrom,$drtAgeto)
+	{
+		$response = array();
+		
+
+		for ($i=1; $i <= 12; $i++) {
+			switch ($type) {
+				case 1:
+						$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->whereSex_14($sex)->whereMonth('created_at', '=', $i)->count();
+					break;
+				case 2:
+						$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge($drtAgefrom)['rangeFrom'])->where('dob_15','<=',$this->drtAge($drtAgefrom)['rangeTo'])->whereSex_14($sex)->whereMonth('created_at', '=', $i)->count();
+					break;
+				case 3:
+						$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2($drtAgefrom,$drtAgeto)['rangeFrom'])->where('dob_15','<=',$this->drtAge2($drtAgefrom,$drtAgeto)['rangeTo'])->whereSex_14($sex)->whereMonth('created_at', '=', $i)->count();
+					break;
+				case 4:
+						$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2($drtAgefrom,$drtAgeto)['rangeFrom'])->where('dob_15','<=',$this->drtAge2($drtAgefrom,$drtAgeto)['rangeTo'])->whereSex_14($sex)->whereD_21_schooling(2)->whereMonth('created_at', '=', $i)->count();
+					break;
+				default:
+					# code...
+					break;
+			}
+		}
+
+		return $response;
+	}
+
 	public function generateGraph($bid,$year)
 	{
+		$houseHoldList = Household::whereBrgy_id($bid)->select(array('id'))->whereYear('created_at', '=', $year)->get();
+		$totalHouseHoldMember = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->count();
+
 		$response = array(
-			0 => [[$year, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			1 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			2 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			3 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			4 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			5 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			6 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			7 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			8 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			9 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			10 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			11 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			12 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			13 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			14 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
-			15 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			0 => [$this->generateMonthlyGraph($houseHoldList,1,1,0,0),$this->generateMonthlyGraph($houseHoldList,2,1,0,0)],
+			1 => [$this->generateMonthlyGraph($houseHoldList,1,2,1,0),$this->generateMonthlyGraph($houseHoldList,2,2,1,0)],
+			2 => [$this->generateMonthlyGraph($houseHoldList,1,2,5,0),$this->generateMonthlyGraph($houseHoldList,2,2,5,0)],
+			3 => [$this->generateMonthlyGraph($houseHoldList,1,3,0,5),$this->generateMonthlyGraph($houseHoldList,2,3,0,5)],
+			4 => [$this->generateMonthlyGraph($houseHoldList,1,3,6,11),$this->generateMonthlyGraph($houseHoldList,2,3,6,11)],
+			5 => [$this->generateMonthlyGraph($houseHoldList,1,3,6,12),$this->generateMonthlyGraph($houseHoldList,2,3,6,12)],
+			6 => [$this->generateMonthlyGraph($houseHoldList,1,3,12,15),$this->generateMonthlyGraph($houseHoldList,2,3,12,15)],
+			7 => [$this->generateMonthlyGraph($houseHoldList,1,3,13,16),$this->generateMonthlyGraph($houseHoldList,2,3,13,16)],
+			8 => [$this->generateMonthlyGraph($houseHoldList,1,3,6,15),$this->generateMonthlyGraph($houseHoldList,2,3,6,15)],
+			9 => [$this->generateMonthlyGraph($houseHoldList,1,3,6,16),$this->generateMonthlyGraph($houseHoldList,2,3,6,16)],
+			10 => [$this->generateMonthlyGraph($houseHoldList,1,3,6,1000),$this->generateMonthlyGraph($houseHoldList,2,3,6,1000)],
+			11 => [$this->generateMonthlyGraph($houseHoldList,1,4,6,11),$this->generateMonthlyGraph($houseHoldList,2,4,6,11)],
+			12 => [$this->generateMonthlyGraph($houseHoldList,1,4,6,12),$this->generateMonthlyGraph($houseHoldList,2,4,6,12)],
+			13 => [$this->generateMonthlyGraph($houseHoldList,1,4,12,15),$this->generateMonthlyGraph($houseHoldList,2,4,12,15)],
+			14 => [$this->generateMonthlyGraph($houseHoldList,1,4,13,16),$this->generateMonthlyGraph($houseHoldList,2,4,13,16)],
+			15 => [$this->generateMonthlyGraph($houseHoldList,1,4,6,15),$this->generateMonthlyGraph($houseHoldList,2,4,6,15)],
+			16 => [$this->generateMonthlyGraph($houseHoldList,1,4,6,16),$this->generateMonthlyGraph($houseHoldList,2,4,6,16)],
 		);
 
 		return $response;

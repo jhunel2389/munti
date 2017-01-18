@@ -59,7 +59,7 @@
 						  	<span class="input-group-addon" id="sizing-addon2">Year :</span>
 						  	<select class="form-control" id="optYear">
 				                @for($a = 2015 ; $a <= date("Y") ;$a++)
-				                <option value="{{$a}}" {{(date("Y") == $a) ? 'selected' : ''}}>{{$a}}</option>
+				                <option value="{{$a}}" {{($year == $a) ? 'selected' : ''}}>{{$a}}</option>
 				                @endfor
             				</select>
 						</div>
@@ -443,7 +443,9 @@
 								</th>
 							</tr>
 							<tr>
-								<th><font color="#696369">children 6-12 years old not attending elementary</font></th>
+								<th><font color="#696369">children 6-12 years old not attending elementary</font>
+								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats13"><i class="fa fa-line-chart"></i></button>
+								</th>
 								<th style="text-align: right;" id="be_2_a">0</th>
 								<th style="text-align: right;" id="be_2_b">0</th>
 								<th style="text-align: right;" id="be_2_c">0</th>
@@ -454,8 +456,15 @@
 								<th style="text-align: right;" id="be_2_h">0</th>
 							</tr>
 							<tr>
+								<th colspan="9">
+								<!-- Bar chart -->
+							          <div class="box box-primary" id="grpstats13"></div>
+							    <!-- /.box -->
+								</th>
+							</tr>
+							<tr>
 								<th><font color="#696369">children 12-15 years old not attending high school</font>
-								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats13"><i class="fa fa-line-chart"></i></button>
+								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats14"><i class="fa fa-line-chart"></i></button>
 								</th>
 								<th style="text-align: right;" id="be_3_a">0</th>
 								<th style="text-align: right;" id="be_3_b">0</th>
@@ -469,13 +478,13 @@
 							<tr>
 								<th colspan="9">
 								<!-- Bar chart -->
-							          <div class="box box-primary" id="grpstats13"></div>
+							          <div class="box box-primary" id="grpstats14"></div>
 							    <!-- /.box -->
 								</th>
 							</tr>
 							<tr>
 								<th><font color="#696369">children 13-16 years old not attending high school</font>
-								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats14"><i class="fa fa-line-chart"></i></button>
+								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats15"><i class="fa fa-line-chart"></i></button>
 								</th>
 								<th style="text-align: right;" id="be_4_a">0</th>
 								<th style="text-align: right;" id="be_4_b">0</th>
@@ -489,13 +498,13 @@
 							<tr>
 								<th colspan="9">
 								<!-- Bar chart -->
-							          <div class="box box-primary" id="grpstats14"></div>
+							          <div class="box box-primary" id="grpstats15"></div>
 							    <!-- /.box -->
 								</th>
 							</tr>
 							<tr>
 								<th><font color="#696369">children 6-15 years old not attending school</font>
-								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats15"><i class="fa fa-line-chart"></i></button>
+								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats16"><i class="fa fa-line-chart"></i></button>
 								</th>
 								<th style="text-align: right;" id="be_5_a">0</th>
 								<th style="text-align: right;" id="be_5_b">0</th>
@@ -509,13 +518,13 @@
 							<tr>
 								<th colspan="9">
 								<!-- Bar chart -->
-							          <div class="box box-primary" id="grpstats15"></div>
+							          <div class="box box-primary" id="grpstats16"></div>
 							    <!-- /.box -->
 								</th>
 							</tr>
 							<tr>
 								<th><font color="#696369">children 6-16 years old not attending school</font>
-								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats16"><i class="fa fa-line-chart"></i></button>
+								<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats17"><i class="fa fa-line-chart"></i></button>
 								</th>
 								<th style="text-align: right;" id="be_6_a">0</th>
 								<th style="text-align: right;" id="be_6_b">0</th>
@@ -529,7 +538,7 @@
 							<tr>
 								<th colspan="9">
 								<!-- Bar chart -->
-							          <div class="box box-primary" id="grpstats16"></div>
+							          <div class="box box-primary" id="grpstats17"></div>
 							    <!-- /.box -->
 								</th>
 							</tr>
@@ -630,7 +639,7 @@
 			}
     	});
 
-    	for(var i=1; i <= 16 ; i++) {
+    	for(var i=1; i <= 17 ; i++) {
     		$("#grpstats"+i).append(
     			$('<div />', {'class': 'box-header with-border' }).append(
     				$('<i />' , { 'class' : 'fa fa-bar-chart-o' }),
@@ -718,5 +727,15 @@
     barChart.Bar(barChartData, barChartOptions);
     $("#grpstats"+element).addClass("collapse");
 }
+
+	$( "#optYear" ).change(function() {
+		$cid = {{ $brgyInfo['id'] }};
+		$year = $("#optYear").val();
+		$.get('{{URL::Route('brgySummaryGenerateLink')}}',{ cid: $cid , year: $year}, function(data)
+		{
+			window.location.replace(data);
+    	});
+       
+    });
 </script>
 @endsection

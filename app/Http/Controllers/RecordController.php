@@ -51,6 +51,14 @@ class RecordController extends Controller
 		return View::Make("records.summary")->with("userInfo",$userInfo)->with('mt','db')->with("brgyInfo",$brgyInfo)->with("year", $year);
     }
 
+    function brgySummaryGenerateLink()
+    {
+    	$cid = Request::get('cid');
+    	$year = Request::get('year');
+
+    	return URL::route('brgySummary',[$cid , $year]);
+    }
+
     function savingRecordHousehold()
     {
     	$actChecker = App::make("App\Http\Controllers\GlobalController")->accountAccessChecker("add");
