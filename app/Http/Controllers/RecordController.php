@@ -44,12 +44,11 @@ class RecordController extends Controller
 		return View::Make("records.member")->with("userInfo",$userInfo)->with("householdInfo",$householdInfo)->with("householdMember",$householdMember)->with('mt','re');
     }
 
-    function brgySummary($cid)
+    function brgySummary($cid,$year)
     {
-    	$statisticSummarry = App::make("App\Http\Controllers\GlobalController")->statisticSummarry($cid);
     	$brgyInfo = App::make("App\Http\Controllers\GlobalController")->brgyInfo($cid);
     	$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
-		return View::Make("records.summary")->with("userInfo",$userInfo)->with('mt','db')->with("brgyInfo",$brgyInfo);
+		return View::Make("records.summary")->with("userInfo",$userInfo)->with('mt','db')->with("brgyInfo",$brgyInfo)->with("year", $year);
     }
 
     function savingRecordHousehold()

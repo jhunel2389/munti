@@ -109,7 +109,7 @@ class GlobalController extends Controller {
 				$response[] = array(
 					"total_population" => (!empty($total_pop)) ? $total_pop : 0,
 					"brgy_name" => $brgyListi['name'],
-					"link" => URL::route('brgySummary',$brgyListi['id']),
+					"link" => URL::route('brgySummary',[$brgyListi['id'] , date("Y")]),
 				);
 			}
 		}
@@ -148,12 +148,11 @@ class GlobalController extends Controller {
 		return round($b,1);
 	}
 
-	public function statisticSummarry($bid)
+	public function statisticSummarry($bid,$year)
 	{
 		
 		//$response = array();
-
-		$houseHoldList = Household::whereBrgy_id($bid)->select(array('id'))->get();
+		$houseHoldList = Household::whereBrgy_id($bid)->whereYear('created_at', '=', $year)->select(array('id'))->get();
 		$totalHouseHold = count($houseHoldList);
 		$totalHouseHoldMember = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->count();
 		//return $householdMember->whereSex_14(2)->count();
@@ -168,7 +167,7 @@ class GlobalController extends Controller {
 		5 => [$this->proportionCalc($totalHouseHoldMember,$totalHouseHoldMember),'d_1_f'],
 		6 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->whereSex_14(1)->count()),'d_1_g'],
 		7 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->whereSex_14(2)->count()),'d_1_h'],
-		8 => [round($totalHouseHoldMember/$totalHouseHold),'d_2_a'],
+		8 => [(!empty($totalHouseHoldMember)) ? round($totalHouseHoldMember/$totalHouseHold) : 0 ,'d_2_a'],
 		9 => ['','d_2_b'],
 		10 => ['','d_2_c'],
 		11 => ['','d_2_d'],
@@ -433,5 +432,29 @@ class GlobalController extends Controller {
               ->get());
 		}
 		return $data;
+	}
+
+	public function generateGraph($bid,$year)
+	{
+		$response = array(
+			0 => [[$year, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			1 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			2 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			3 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			4 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			5 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			6 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			7 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			8 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			9 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			10 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			11 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			12 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			13 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			14 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+			15 => [[0, 0, 0, 0, 0, 0, 0],[0, 0, 0, 0, 0, 0, 0]],
+		);
+
+		return $response;
 	}
 }
