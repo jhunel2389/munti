@@ -53,6 +53,12 @@
             </a>
           </li>
         @endif
+        
+        <li class="treeview {{ ($mt == "help") ? "active" : ""}}">
+          <a href="{{ URL::Route('getHelp') }}" target="_blank">
+            <i class="fa  fa-question-circle"></i> <span>Help</span> <i class="fa pull-right"></i>
+          </a>
+        </li>         
       </ul>
     </section>
     <!-- /.sidebar -->

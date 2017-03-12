@@ -105,3 +105,8 @@ Route::group(array('prefix' => '/filemaintenance'),function()
 		Route::get('/getSecret', array('uses' => 'FileMaintenanceController@getSecret', 'as' => 'getSecret','middleware' => 'auth'));
 	});
 });
+
+Route::group(array('prefix' => '/help'),function()
+{
+		Route::get('/guides', array('uses' => 'UserController@getHelp', 'as' => 'getHelp'));
+});
