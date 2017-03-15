@@ -323,7 +323,7 @@
 								</th>
 							</tr>
 							<tr>
-								<th><font color="#696369">Members of the labor force</font></th>
+								<th><font color="#696369">Person With Disabilites</font></th>
 								<th style="text-align: right;" id="d_13_a">0</th>
 								<th style="text-align: right;" id="d_13_b">0</th>
 								<th style="text-align: right;" id="d_13_c">0</th>
@@ -333,6 +333,20 @@
 								<th style="text-align: right;" id="d_13_g">0</th>
 								<th style="text-align: right;" id="d_13_h">0</th>
 							</tr>
+							
+							<tr>
+								<th><font color="#696369">Senior Citizens</font></th>
+								<th style="text-align: right;" id="d_14_a">0</th>
+								<th style="text-align: right;" id="d_14_b">0</th>
+								<th style="text-align: right;" id="d_14_c">0</th>
+								<th style="text-align: right;" id="d_14_d">0</th>
+								<th style="text-align: right;" id="d_14_e">0</th>
+								<th style="text-align: right;" id="d_14_f">0</th>
+								<th style="text-align: right;" id="d_14_g">0</th>
+								<th style="text-align: right;" id="d_14_h">0</th>
+							</tr>
+							
+
 							<tr>
 								<th bgcolor="black" style="" colspan="9"><font color="#fff">HEALTH AND NUTRITION</font></th>
 							</tr>
@@ -541,6 +555,42 @@
 							          <div class="box box-primary" id="grpstats17"></div>
 							    <!-- /.box -->
 								</th>
+							</tr>
+							<tr>
+							<th bgcolor="black" style="" colspan="9"><font color="#fff">EMPLOYMENT</font></th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Employed</font></th>
+								<th style="text-align: right;" id="emp_1_a">0</th>
+								<th style="text-align: right;" id="emp_1_b">0</th>
+								<th style="text-align: right;" id="emp_1_c">0</th>
+								<th style="text-align: right;" id="emp_1_d">0</th>
+								<th style="text-align: right;" id="emp_1_e">0</th>
+								<th style="text-align: right;" id="emp_1_f">0</th>
+								<th style="text-align: right;" id="emp_1_g">0</th>
+								<th style="text-align: right;" id="emp_1_h">0</th>      
+							</tr>
+							<tr>
+								<th><font color="#696369">Unemployed</font></th>
+								<th style="text-align: right;" id="emp_2_a">0</th>
+								<th style="text-align: right;" id="emp_2_b">0</th>
+								<th style="text-align: right;" id="emp_2_c">0</th>
+								<th style="text-align: right;" id="emp_2_d">0</th>
+								<th style="text-align: right;" id="emp_2_e">0</th>
+								<th style="text-align: right;" id="emp_2_f">0</th>
+								<th style="text-align: right;" id="emp_2_g">0</th>
+								<th style="text-align: right;" id="emp_2_h">0</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Underemployed</font></th>
+								<th style="text-align: right;" id="emp_3_a">0</th>
+								<th style="text-align: right;" id="emp_3_b">0</th>
+								<th style="text-align: right;" id="emp_3_c">0</th>
+								<th style="text-align: right;" id="emp_3_d">0</th>
+								<th style="text-align: right;" id="emp_3_e">0</th>
+								<th style="text-align: right;" id="emp_3_f">0</th>
+								<th style="text-align: right;" id="emp_3_g">0</th>
+								<th style="text-align: right;" id="emp_3_h">0</th>
 							</tr>
 							<tr>
 								<th bgcolor="black" style="" colspan="9"><font color="#fff">INCOME AND LIVELIHOOD</font></th>
