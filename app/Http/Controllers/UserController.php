@@ -330,4 +330,10 @@ class UserController extends Controller {
 			}
 		}
 	}
+
+	public function getHelp()
+	{
+		$userInfo = App::make("App\Http\Controllers\GlobalController")->userInfoList(Auth::User()['id']);
+		return view::make('help.index')->with("userInfo",$userInfo)->with('mt','help');
+	}
 }
