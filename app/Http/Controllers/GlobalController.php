@@ -439,7 +439,7 @@ class GlobalController extends Controller {
 		270 => [0,'emp_3_g'],
 		271 => [0,'emp_3_h'],
 		//SeniorCitizens
-		264 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(1,60)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(1,60)['rangeTo'])->groupBy('Household_system_id')->count(),'d_14_a'],
+		264 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,200)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->groupBy('Household_system_id')->count(),'d_14_a'],
 		265 => [0,'d_14_b'],
 		266 => [0,'d_14_c'],
 		267 => [0,'d_14_d'],
