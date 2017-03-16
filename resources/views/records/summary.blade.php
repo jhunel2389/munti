@@ -323,7 +323,8 @@
 								</th>
 							</tr>
 							<tr>
-								<th><font color="#696369">Person With Disabilites</font></th>
+								<th><font color="#696369">Person With Disabilites</font>
+									<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats18"><i class="fa fa-line-chart"></i></button></th>
 								<th style="text-align: right;" id="d_13_a">0</th>
 								<th style="text-align: right;" id="d_13_b">0</th>
 								<th style="text-align: right;" id="d_13_c">0</th>
@@ -333,9 +334,17 @@
 								<th style="text-align: right;" id="d_13_g">0</th>
 								<th style="text-align: right;" id="d_13_h">0</th>
 							</tr>
-							
 							<tr>
-								<th><font color="#696369">Senior Citizens</font></th>
+								<th colspan="9">
+								<!-- Bar chart -->
+							          <div class="box box-primary" id="grpstats18"></div>
+							    <!-- /.box -->
+								</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Senior Citizens</font>
+									<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats19"><i class="fa fa-line-chart"></i></button>
+								</th>
 								<th style="text-align: right;" id="d_14_a">0</th>
 								<th style="text-align: right;" id="d_14_b">0</th>
 								<th style="text-align: right;" id="d_14_c">0</th>
@@ -345,7 +354,13 @@
 								<th style="text-align: right;" id="d_14_g">0</th>
 								<th style="text-align: right;" id="d_14_h">0</th>
 							</tr>
-							
+							<tr>
+								<th colspan="9">
+								<!-- Bar chart -->
+							          <div class="box box-primary" id="grpstats19"></div>
+							    <!-- /.box -->
+								</th>
+							</tr>
 
 							<tr>
 								<th bgcolor="black" style="" colspan="9"><font color="#fff">HEALTH AND NUTRITION</font></th>
@@ -560,7 +575,9 @@
 							<th bgcolor="black" style="" colspan="9"><font color="#fff">EMPLOYMENT</font></th>
 							</tr>
 							<tr>
-								<th><font color="#696369">Employed</font></th>
+								<th><font color="#696369">Employed</font>
+									<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats20"><i class="fa fa-line-chart"></i></button>
+								</th>
 								<th style="text-align: right;" id="emp_1_a">0</th>
 								<th style="text-align: right;" id="emp_1_b">0</th>
 								<th style="text-align: right;" id="emp_1_c">0</th>
@@ -571,7 +588,16 @@
 								<th style="text-align: right;" id="emp_1_h">0</th>      
 							</tr>
 							<tr>
-								<th><font color="#696369">Unemployed</font></th>
+								<th colspan="9">
+								<!-- Bar chart -->
+							          <div class="box box-primary" id="grpstats20"></div>
+							    <!-- /.box -->
+								</th>
+							</tr>
+							<tr>
+								<th><font color="#696369">Unemployed</font>
+									<button type="button" class="btn btn-info pull-right" data-toggle="collapse" data-target="#grpstats21"><i class="fa fa-line-chart"></i></button>
+								</th>
 								<th style="text-align: right;" id="emp_2_a">0</th>
 								<th style="text-align: right;" id="emp_2_b">0</th>
 								<th style="text-align: right;" id="emp_2_c">0</th>
@@ -582,15 +608,11 @@
 								<th style="text-align: right;" id="emp_2_h">0</th>
 							</tr>
 							<tr>
-								<th><font color="#696369">Underemployed</font></th>
-								<th style="text-align: right;" id="emp_3_a">0</th>
-								<th style="text-align: right;" id="emp_3_b">0</th>
-								<th style="text-align: right;" id="emp_3_c">0</th>
-								<th style="text-align: right;" id="emp_3_d">0</th>
-								<th style="text-align: right;" id="emp_3_e">0</th>
-								<th style="text-align: right;" id="emp_3_f">0</th>
-								<th style="text-align: right;" id="emp_3_g">0</th>
-								<th style="text-align: right;" id="emp_3_h">0</th>
+								<th colspan="9">
+								<!-- Bar chart -->
+							          <div class="box box-primary" id="grpstats21"></div>
+							    <!-- /.box -->
+								</th>
 							</tr>
 							<tr>
 								<th bgcolor="black" style="" colspan="9"><font color="#fff">INCOME AND LIVELIHOOD</font></th>
@@ -689,7 +711,7 @@
 			}
     	});
 
-    	for(var i=1; i <= 17 ; i++) {
+    	for(var i=1; i <= 21 ; i++) {
     		$("#grpstats"+i).append(
     			$('<div />', {'class': 'box-header with-border' }).append(
     				$('<i />' , { 'class' : 'fa fa-bar-chart-o' }),

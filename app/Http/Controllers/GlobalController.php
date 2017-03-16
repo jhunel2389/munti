@@ -414,39 +414,31 @@ class GlobalController extends Controller {
 		246 => [0,'pao_1_g'],
 		247 => [0,'pao_1_h'],
 		//Employment
-		248 => [0,'emp_1_a'],
-		249 => [0,'emp_1_b'],
-		250 => [0,'emp_1_c'],
-		251 => [0,'emp_1_d'],
-		252 => [0,'emp_1_e'],
-		253 => [0,'emp_1_f'],
-		254 => [0,'emp_1_g'],
-		255 => [0,'emp_1_h'],
-		256 => [0,'emp_2_a'],
-		257 => [0,'emp_2_b'],
-		258 => [0,'emp_2_c'],
-		259 => [0,'emp_2_d'],
-		260 => [0,'emp_2_e'],
-		261 => [0,'emp_2_f'],
-		262 => [0,'emp_2_g'],
-		263 => [0,'emp_2_h'],
-		264 => [0,'emp_3_a'],
-		265 => [0,'emp_3_b'],
-		266 => [0,'emp_3_c'],
-		267 => [0,'emp_3_d'],
-		268 => [0,'emp_3_e'],
-		269 => [0,'emp_3_f'],
-		270 => [0,'emp_3_g'],
-		271 => [0,'emp_3_h'],
+		248 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->groupBy('Household_system_id')->count(),'emp_1_a'],
+		249 => [$this->proportionCalc($totalHouseHold,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->groupBy('Household_system_id')->count()),'emp_1_b'],
+		250 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->count(),'emp_1_c'],
+		251 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->whereSex_14(1)->count(),'emp_1_d'],
+		252 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->whereSex_14(2)->count(),'emp_1_e'],
+		253 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->count()),'emp_1_f'],
+		254 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->whereSex_14(1)->count()),'emp_1_g'],
+		255 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',2)->whereSex_14(2)->count()),'emp_1_h'],
+		256 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->groupBy('Household_system_id')->count(),'emp_2_a'],
+		257 => [$this->proportionCalc($totalHouseHold,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->groupBy('Household_system_id')->count()),'emp_2_b'],
+		258 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->count(),'emp_2_c'],
+		259 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->whereSex_14(1)->count(),'emp_2_d'],
+		260 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->whereSex_14(2)->count(),'emp_2_e'],
+		261 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->count()),'emp_2_f'],
+		262 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->whereSex_14(1)->count()),'emp_2_g'],
+		263 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',1)->whereSex_14(2)->count()),'emp_2_h'],
 		//SeniorCitizens
-		264 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,200)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->groupBy('Household_system_id')->count(),'d_14_a'],
-		265 => [0,'d_14_b'],
-		266 => [0,'d_14_c'],
-		267 => [0,'d_14_d'],
-		268 => [0,'d_14_e'],
-		269 => [0,'d_14_f'],
-		270 => [0,'d_14_g'],
-		271 => [0,'d_14_h'],
+		264 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->groupBy('Household_system_id')->count(),'d_14_a'],
+		265 => [$this->proportionCalc($totalHouseHold,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->groupBy('Household_system_id')->count()),'d_14_b'],
+		266 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->count(),'d_14_c'],
+		267 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->whereSex_14(1)->count(),'d_14_d'],
+		268 => [HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->whereSex_14(2)->count(),'d_14_e'],
+		269 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->count()),'d_14_f'],
+		270 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->whereSex_14(1)->count()),'d_14_g'],
+		271 => [$this->proportionCalc($totalHouseHoldMember,HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2(60,150)['rangeFrom'])->where('dob_15','<=',$this->drtAge2(60,150)['rangeTo'])->whereSex_14(2)->count()),'d_14_h'],
 		);
 
 	return $response;
@@ -486,6 +478,12 @@ class GlobalController extends Controller {
 				case 4:
 						$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('dob_15','>=',$this->drtAge2($drtAgefrom,$drtAgeto)['rangeFrom'])->where('dob_15','<=',$this->drtAge2($drtAgefrom,$drtAgeto)['rangeTo'])->whereSex_14($sex)->whereD_21_schooling(2)->whereMonth('created_at', '=', $i)->count();
 					break;
+				case 5:
+						$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('g_54','=',$drtAgefrom)->whereSex_14($sex)->whereMonth('created_at', '=', $i)->count();
+					break;
+				case 6:
+					$response[$i-1] = HouseholdMember::whereIn('Household_system_id', $houseHoldList)->where('f_29','=',$drtAgefrom)->whereSex_14($sex)->whereMonth('created_at', '=', $i)->count();
+				break;
 				default:
 					# code...
 					break;
@@ -518,6 +516,10 @@ class GlobalController extends Controller {
 			14 => [$this->generateMonthlyGraph($houseHoldList,1,4,13,16),$this->generateMonthlyGraph($houseHoldList,2,4,13,16)],
 			15 => [$this->generateMonthlyGraph($houseHoldList,1,4,6,15),$this->generateMonthlyGraph($houseHoldList,2,4,6,15)],
 			16 => [$this->generateMonthlyGraph($houseHoldList,1,4,6,16),$this->generateMonthlyGraph($houseHoldList,2,4,6,16)],
+			17 => [$this->generateMonthlyGraph($houseHoldList,1,5,1,16),$this->generateMonthlyGraph($houseHoldList,2,5,1,16)],
+			18 => [$this->generateMonthlyGraph($houseHoldList,1,3,60,150),$this->generateMonthlyGraph($houseHoldList,2,3,60,150)],
+			19 => [$this->generateMonthlyGraph($houseHoldList,1,6,2,150),$this->generateMonthlyGraph($houseHoldList,2,6,2,150)],
+			20 => [$this->generateMonthlyGraph($houseHoldList,1,6,1,150),$this->generateMonthlyGraph($houseHoldList,2,6,1,150)],
 		);
 
 		return $response;
